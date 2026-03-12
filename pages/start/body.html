@@ -1,0 +1,108 @@
+<script>
+(function(){
+  if(window.__pmc_start_page)return;
+  window.__pmc_start_page=true;
+  try{if(window.Webflow&&Webflow.env&&Webflow.env('design'))return;}catch(e){}
+
+  (function(){
+    var s=document.querySelector('.section-primary-wrapper');
+    if(!s)return;
+    var rect=null,rafM=null,rafS=null;
+    function upRect(){rect=s.getBoundingClientRect();}
+    upRect();
+    window.addEventListener('resize',upRect,{passive:true});
+    window.addEventListener('mousemove',function(e){
+      if(rafM)return;
+      rafM=requestAnimationFrame(function(){
+        if(rect){
+          s.style.setProperty('--pmc-x',(((e.clientX-rect.left)/rect.width)*100).toFixed(1)+'%');
+          s.style.setProperty('--pmc-y',(((e.clientY-rect.top)/rect.height)*100).toFixed(1)+'%');
+        }
+        rafM=null;
+      });
+    },{passive:true});
+    function onScroll(){
+      if(rafS)return;
+      rafS=requestAnimationFrame(function(){
+        upRect();
+        if(rect){
+          var p=Math.min(1,Math.max(0,1-(rect.top/(window.innerHeight||800))));
+          s.style.setProperty('--pmc-s',Math.round(p*70)+'px');
+        }
+        rafS=null;
+      });
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+  })();
+
+  (function(){
+    var c=document.querySelector('.pmc-start');
+    if(!c)return;
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          en.isIntersecting?c.classList.add('pmc-shimmer-active'):c.classList.remove('pmc-shimmer-active');
+        });
+      },{threshold:0.15});
+      obs.observe(c);
+      window.__pmc_start_obs=obs;
+    }else{
+      c.classList.add('pmc-shimmer-active');
+    }
+  })();
+
+  (function(){
+    var form=document.getElementById('pmc-start-form');
+    if(!form)return;
+    var submitBtn=form.querySelector('.submit-btn'),
+        errorEl=form.parentElement.querySelector('.form-error'),
+        successEl=form.parentElement.querySelector('.form-success'),
+        submitting=false;
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(submitting)return;
+      submitting=true;
+      if(errorEl){errorEl.textContent='';errorEl.classList.remove('is-visible');}
+
+      var fn=form.querySelector('[name="first_name"]').value.trim(),
+          ln=form.querySelector('[name="last_name"]').value.trim(),
+          em=form.querySelector('[name="email"]').value.trim(),
+          ph=form.querySelector('[name="phone"]').value.trim(),
+          bu=form.querySelector('[name="budget"]').value,
+          sv=form.querySelectorAll('[name="services"]:checked'),
+          rf=form.querySelector('[name="referral"]').value.trim();
+
+      if(!fn||!ln||!em||!ph){showErr('Please fill in all required fields.');return;}
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){showErr('Please enter a valid email address.');return;}
+      if(sv.length===0){showErr('Please select at least one service.');return;}
+      if(!bu){showErr('Please select a budget range.');return;}
+      if(!rf){showErr('Please let me know how you found me.');return;}
+
+      submitBtn.classList.add('is-loading');
+
+      var fd=new FormData(form),data={};
+      fd.forEach(function(v,k){
+        if(data[k]){data[k]=Array.isArray(data[k])?data[k].concat(v):[data[k],v];}
+        else{data[k]=v;}
+      });
+      if(Array.isArray(data.services))data.services=data.services.join(', ');
+      data.source='start';
+
+      fetch('https://hook.us2.make.com/i4ig2ne5wf2e1dwqisjiblwbed6rcyvt',{
+        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
+      }).then(function(r){
+        if(!r.ok)throw new Error('Server error');
+        form.style.display='none';
+        if(successEl)successEl.classList.add('is-visible');
+      }).catch(function(){
+        showErr('Something went wrong. Please try again or email joe@pfendermarketing.com directly.');
+        submitBtn.classList.remove('is-loading');submitting=false;
+      });
+    });
+
+    function showErr(msg){submitting=false;if(errorEl){errorEl.textContent=msg;errorEl.classList.add('is-visible');}}
+  })();
+})();
+</script>

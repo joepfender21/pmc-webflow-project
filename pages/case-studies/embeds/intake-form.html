@@ -1,0 +1,88 @@
+<div class="pmc-csa-card" id="csa-intake-form">
+  <div class="pmc-csa-header">
+    <div class="csa-headline">Ready to grow?</div>
+    <p class="csa-sub">Send me the details and I'll be in touch within 24 hours.</p>
+  </div>
+
+  <div class="pmc-csa-panel is-active" role="region">
+    <form id="csa-intake-form" novalidate>
+      <div class="field-group">
+        <div class="field-row">
+          <div class="field-col">
+            <label for="csa-fname">First Name <span class="req">*</span></label>
+            <input type="text" id="csa-fname" name="first_name" placeholder="First name" autocomplete="given-name" required>
+          </div>
+          <div class="field-col">
+            <label for="csa-lname">Last Name <span class="req">*</span></label>
+            <input type="text" id="csa-lname" name="last_name" placeholder="Last name" autocomplete="family-name" required>
+          </div>
+        </div>
+      </div>
+      <div class="field-group">
+        <label for="csa-email">Email <span class="req">*</span></label>
+        <p class="field-hint">The best email for me to reach you at.</p>
+        <input type="email" id="csa-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+      </div>
+      <div class="field-group">
+        <div class="field-row">
+          <div class="field-col">
+            <label for="csa-phone">Phone <span class="req">*</span></label>
+            <input type="tel" id="csa-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel" required>
+          </div>
+          <div class="field-col">
+            <label for="csa-website">Website</label>
+            <input type="text" id="csa-website" name="website" placeholder="yoursite.com" autocomplete="off">
+          </div>
+        </div>
+      </div>
+      <div class="group-divider"></div>
+      <fieldset class="field-group" style="border:none;padding:0;">
+        <legend style="display:block;font-family:'Satoshi',sans-serif;font-weight:500;font-size:13px;color:rgba(245,240,232,0.5);letter-spacing:0.3px;margin-bottom:10px;">What do you need help with? <span style="color:rgba(215,175,51,0.6);margin-left:2px;">*</span></legend>
+        <div class="pill-group" role="group" aria-label="Services">
+          <label><input type="checkbox" name="services" value="SEO"><span class="pill-label">SEO Strategy</span></label>
+          <label><input type="checkbox" name="services" value="Paid Media"><span class="pill-label">Paid Media</span></label>
+          <label><input type="checkbox" name="services" value="Analytics"><span class="pill-label">Analytics &amp; Tracking</span></label>
+          <label><input type="checkbox" name="services" value="Web Dev"><span class="pill-label">Web Development</span></label>
+          <label><input type="checkbox" name="services" value="Full Audit"><span class="pill-label">Full Audit</span></label>
+          <label><input type="checkbox" name="services" value="Not Sure"><span class="pill-label">Not sure yet</span></label>
+        </div>
+      </fieldset>
+      <div class="field-group">
+        <label for="csa-budget">Monthly marketing budget <span class="req">*</span></label>
+        <select id="csa-budget" name="budget" required>
+          <option value="" disabled selected>Select a range</option>
+          <option value="Under $1K">Under $1,000/mo</option>
+          <option value="$1K-$3K">$1,000 - $3,000/mo</option>
+          <option value="$3K-$5K">$3,000 - $5,000/mo</option>
+          <option value="$5K-$10K">$5,000 - $10,000/mo</option>
+          <option value="$10K+">$10,000+/mo</option>
+          <option value="Not sure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="group-divider"></div>
+      <div class="field-group">
+        <label for="csa-referral">How did you hear about me? <span class="req">*</span></label>
+        <textarea id="csa-referral" name="referral" placeholder="A name, a link, a case study - anything helps." style="min-height:70px;" required></textarea>
+      </div>
+      <div class="field-group">
+        <label for="csa-message">Anything else I should know?</label>
+        <textarea id="csa-message" name="message" placeholder="Tell me about your business, your goals, or what's on your mind."></textarea>
+      </div>
+      <button type="submit" class="csa-submit">
+        <span class="btn-text">SEND IT OVER &rarr;</span>
+        <span class="btn-loader"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
+      </button>
+      <div class="csa-form-error" role="alert" aria-live="polite"></div>
+    </form>
+
+    <div class="csa-form-success" aria-live="polite">
+      <div class="csa-success-check">
+        <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+          <path class="csa-check-path" d="M5 13l4 4L19 7" stroke="#457340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Got it. I'll be in touch.</h3>
+      <p>Expect a response within 24 hours.</p>
+    </div>
+  </div>
+</div>
