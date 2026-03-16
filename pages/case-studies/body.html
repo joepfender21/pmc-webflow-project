@@ -1,8 +1,9 @@
 <script>
 (function(){
+  try{if(window.Webflow&&Webflow.env&&Webflow.env('design'))return;}catch(e){}
+  if(document.documentElement.classList.contains('wf-design-mode'))return;
   if(window.__pmc_cs_page)return;
   window.__pmc_cs_page=true;
-  try{if(window.Webflow&&Webflow.env&&Webflow.env('design'))return;}catch(e){}
 
   /* TOPBAR DISMISS */
   (function(){
@@ -131,7 +132,7 @@
 
   /* FORM SUBMISSION */
   (function(){
-    var form=document.getElementById('csa-intake-form');
+    var form=document.querySelector('#csa-intake-form form');
     if(!form)return;
     var submitBtn=form.querySelector('.csa-submit'),
         panel=form.closest('.pmc-csa-panel'),
@@ -186,6 +187,10 @@
 <!-- LIGHTBOX - Event delegation -->
 <script>
 (function(){
+  if(window.__pmc_cs_lightbox)return;
+  window.__pmc_cs_lightbox=true;
+  try{if(window.Webflow&&Webflow.env&&Webflow.env('design'))return;}catch(e){}
+
   var lb=document.getElementById('sc-lightbox');
   if(!lb) return;
 
