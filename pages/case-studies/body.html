@@ -10,14 +10,20 @@
     var bar=document.querySelector('.topbar-component'),btn=document.querySelector('.topbar-dismiss');
     if(!bar||!btn)return;
     try{if(sessionStorage.getItem('pmc-cs-topbar-dismissed')==='1'){bar.style.display='none';return;}}catch(e){}
-    btn.addEventListener('click',function(e){
-      e.preventDefault();e.stopPropagation();
+    btn.style.minWidth='44px'; btn.style.minHeight='44px'; btn.style.position='relative'; btn.style.zIndex='9999'; btn.style.touchAction='manipulation';
+    var dismissed=false;
+    function doDismiss(e){
+      if(dismissed)return; dismissed=true;
+      if(e){e.preventDefault();e.stopPropagation();}
       bar.style.transition='transform 0.35s cubic-bezier(0.22,1,0.36,1),opacity 0.25s ease';
       bar.style.overflow='hidden';
       requestAnimationFrame(function(){bar.style.transform='translateY(-100%)';bar.style.opacity='0';});
       setTimeout(function(){bar.style.display='none';bar.style.transform='';bar.style.opacity='';bar.style.transition='';bar.style.overflow='';},400);
       try{sessionStorage.setItem('pmc-cs-topbar-dismissed','1');}catch(e){}
-    });
+    }
+    btn.addEventListener('pointerdown',doDismiss);
+    btn.addEventListener('click',doDismiss);
+    bar.addEventListener('click',function(e){if(btn.contains(e.target))doDismiss(e);});
   })();
 
   /* AMBIENT SPOTLIGHT + AURORA */
@@ -130,15 +136,25 @@
     setActive('website');
   })();
 
-  /* SHOWCASE-MYBS ENTRY ANIMATION */
+  /* SHOWCASE-MYBS ENTRY ANIMATION + LAPTOP SCROLL TRIGGER */
   (function(){
     var el=document.getElementById('showcase-mybs');
     if(!el)return;
-    try{if(window.Webflow&&Webflow.env&&Webflow.env('design')){el.classList.add('smybs-is-visible');return;}}catch(e){}
-    if(!('IntersectionObserver' in window)){el.classList.add('smybs-is-visible');return;}
+    try{if(window.Webflow&&Webflow.env&&Webflow.env('design')){el.classList.add('smybs-is-visible');el.classList.add('smybs-scroll-active');return;}}catch(e){}
+    if(!('IntersectionObserver' in window)){el.classList.add('smybs-is-visible');el.classList.add('smybs-scroll-active');return;}
+
+    // Fade-in entry: fire early as the section comes into view
     new IntersectionObserver(function(entries,obs){
       if(entries[0].isIntersecting){el.classList.add('smybs-is-visible');obs.disconnect();}
     },{threshold:0.1}).observe(el);
+
+    // Scroll animation: only start when the laptop viewport is mostly visible
+    var laptop=el.querySelector('.laptop-viewport');
+    if(laptop){
+      new IntersectionObserver(function(entries,obs){
+        if(entries[0].isIntersecting){el.classList.add('smybs-scroll-active');obs.disconnect();}
+      },{threshold:0.85}).observe(laptop);
+    }
   })();
 
   /* FORM SUBMISSION */
@@ -191,6 +207,20 @@
     });
 
     function showErr(msg){submitting=false;if(errorEl){errorEl.textContent=msg;errorEl.classList.add('is-visible');}}
+  })();
+
+  /* SMOOTH SCROLL WITH OFFSET */
+  (function(){
+    document.addEventListener('click',function(e){
+      var link=e.target.closest('a[href^="#"]');
+      if(!link)return;
+      var id=link.getAttribute('href');
+      if(!id||id==='#')return;
+      var target=document.querySelector(id);
+      if(!target)return;
+      e.preventDefault();
+      window.scrollTo({top:target.getBoundingClientRect().top+window.pageYOffset-40,behavior:'smooth'});
+    });
   })();
 })();
 </script>
