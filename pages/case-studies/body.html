@@ -136,27 +136,6 @@
     setActive('website');
   })();
 
-  /* SHOWCASE-MYBS ENTRY ANIMATION + LAPTOP SCROLL TRIGGER */
-  (function(){
-    var el=document.getElementById('showcase-mybs');
-    if(!el)return;
-    try{if(window.Webflow&&Webflow.env&&Webflow.env('design')){el.classList.add('smybs-is-visible');el.classList.add('smybs-scroll-active');return;}}catch(e){}
-    if(!('IntersectionObserver' in window)){el.classList.add('smybs-is-visible');el.classList.add('smybs-scroll-active');return;}
-
-    // Fade-in entry: fire early as the section comes into view
-    new IntersectionObserver(function(entries,obs){
-      if(entries[0].isIntersecting){el.classList.add('smybs-is-visible');obs.disconnect();}
-    },{threshold:0.1}).observe(el);
-
-    // Scroll animation: only start when the laptop viewport is mostly visible
-    var laptop=el.querySelector('.laptop-viewport');
-    if(laptop){
-      new IntersectionObserver(function(entries,obs){
-        if(entries[0].isIntersecting){el.classList.add('smybs-scroll-active');obs.disconnect();}
-      },{threshold:0.85}).observe(laptop);
-    }
-  })();
-
   /* FORM SUBMISSION */
   (function(){
     var form=document.querySelector('#csa-intake-form form');
