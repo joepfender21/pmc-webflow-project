@@ -60,13 +60,13 @@
 
   /* === RESULTS TABS === */
   .pmc-results { max-width:780px; margin:0 auto; padding:0 20px; }
-  .pmc-results-tabs { display:flex; gap:4px; margin-bottom:0; padding:4px; background:#040D0D; border:1px solid rgba(255,255,255,0.06); border-radius:10px 10px 0 0; width:fit-content; max-width:100%; }
+  .pmc-results-tabs { display:flex; gap:4px; margin-bottom:0; padding:4px; background:#040D0D; border:1px solid rgba(255,255,255,0.06); border-radius:10px 10px 0 0; width:100%; }
   .pmc-results-tab { flex:1; padding:10px 20px; font-family:'Satoshi',sans-serif; font-size:12.5px; font-weight:600; letter-spacing:0.3px; color:rgba(245,240,232,0.35); background:transparent; border:none; border-radius:7px; cursor:pointer; transition:all 0.25s ease; text-align:center; white-space:nowrap; }
   .pmc-results-tab:hover { color:rgba(245,240,232,0.6); }
   .pmc-results-tab.is-active { color:#040D0D; background:#D7AF33; font-weight:700; }
   .pmc-results-slide { display:none; }
   .pmc-results-slide.is-active { display:block; }
-  .pmc-results-card { background:rgba(255,255,255,0.015); border:1px solid rgba(69,115,64,0.1); border-radius:0 16px 16px 16px; padding:40px 36px; position:relative; overflow:hidden; }
+  .pmc-results-card { background:rgba(255,255,255,0.015); border:1px solid rgba(69,115,64,0.1); border-radius:0 0 16px 16px; padding:40px 36px; position:relative; overflow:hidden; }
   .pmc-results-card::before { content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, rgba(69,115,64,0.5), rgba(215,175,51,0.4), rgba(69,115,64,0.2), transparent); }
   .pmc-results-card .results-eyebrow { font-family:'Satoshi',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#D7AF33; margin-bottom:8px; }
   .pmc-results-card .results-title { font-family:'Clash Display',sans-serif; font-weight:600; font-size:26px; color:#F5F0E8; letter-spacing:-0.3px; line-height:1.2; margin-bottom:4px; }
@@ -303,7 +303,7 @@
     .pmc-results { padding-left:0 !important; padding-right:0 !important; }
     .pmc-results-tabs { width:100% !important; max-width:100% !important; }
     .pmc-results-tab { flex:1 !important; font-size:14px !important; padding:10px 16px !important; min-width:0 !important; }
-    .pmc-results-card { padding:24px 16px !important; border-radius:8px !important; }
+    .pmc-results-card { padding:24px 16px !important; border-radius:0 0 8px 8px !important; }
     .results-eyebrow { font-size:11px !important; }
     .results-title { font-size:22px !important; line-height:1.3 !important; }
     .results-client { font-size:13px !important; }
