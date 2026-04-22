@@ -2,7 +2,7 @@
 
 ## Standard Embed Template
 
-All Tree CRM iframes on pfendermarketing.com use these exact attributes:
+All Tree CRM iframes on pfendermarketing.com use these exact attributes. There is **no Webflow wrapper card** around the iframe — Tree CRM's embed mode renders its own card. Adding an outer card wrapper causes a nested-card visual (two frames, mismatched shimmer lines). The iframe is the card.
 
 ```html
 <iframe
@@ -19,6 +19,8 @@ All Tree CRM iframes on pfendermarketing.com use these exact attributes:
   <a href="https://app.treecrm.co/{type}/{id}" target="_blank" rel="noopener noreferrer" style="color: #D7AF33;">fill it out here</a>.
 </p>
 ```
+
+If a wrapper div is needed for scroll-targeting or centering (e.g., `/case-studies` uses `id="csa-intake-form"` as a scroll anchor), make it a **bare positioning wrapper** — `max-width` and `margin: 0 auto` only, no `background`, `border`, `border-radius`, `box-shadow`, `padding`, or pseudo-element shimmer.
 
 ## Why `scrolling="no"`?
 
