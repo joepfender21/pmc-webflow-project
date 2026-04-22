@@ -1,1 +1,25 @@
-<!-- Global Footer: Intentionally empty. Do not duplicate head code here. -->
+<!-- Site Settings > Footer — runs on every page -->
+
+<!-- Tree CRM auto-height resize listener -->
+<script id="treecrmautoheight">
+(function(){
+  if (window.__treeCrmAutoHeightInstalled) return;
+  window.__treeCrmAutoHeightInstalled = true;
+  window.addEventListener('message', function(e){
+    if (!e || !e.data) return;
+    var d = e.data;
+    if (d.type !== 'tree-crm-resize' && d.type !== 'tree-crm-form:height') return;
+    var height = d.height;
+    if (typeof height !== 'number' || height <= 0) return;
+    var iframes = document.querySelectorAll('iframe[src*="app.treecrm.co"]');
+    iframes.forEach(function(f){
+      try {
+        var w = f.contentWindow;
+        if (w === e.source) {
+          f.style.height = (height + 20) + 'px';
+        }
+      } catch(err) {}
+    });
+  });
+})();
+</script>
