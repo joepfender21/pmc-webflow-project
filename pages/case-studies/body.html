@@ -136,58 +136,6 @@
     setActive('website');
   })();
 
-  /* FORM SUBMISSION */
-  (function(){
-    var form=document.querySelector('#csa-intake-form form');
-    if(!form)return;
-    var submitBtn=form.querySelector('.csa-submit'),
-        panel=form.closest('.pmc-csa-panel'),
-        errorEl=panel?panel.querySelector('.csa-form-error'):null,
-        successEl=panel?panel.querySelector('.csa-form-success'):null,
-        submitting=false;
-
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      if(submitting)return;
-      submitting=true;
-      if(errorEl){errorEl.textContent='';errorEl.classList.remove('is-visible');}
-
-      var fn=form.querySelector('[name="first_name"]').value.trim(),
-          ln=form.querySelector('[name="last_name"]').value.trim(),
-          em=form.querySelector('[name="email"]').value.trim(),
-          ph=form.querySelector('[name="phone"]').value.trim(),
-          bu=form.querySelector('[name="budget"]').value,
-          sv=form.querySelectorAll('[name="services"]:checked'),
-          rf=form.querySelector('[name="referral"]').value.trim();
-
-      if(!fn||!ln||!em||!ph){showErr('Please fill in all required fields.');return;}
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){showErr('Please enter a valid email address.');return;}
-      if(sv.length===0){showErr('Please select at least one service.');return;}
-      if(!bu){showErr('Please select a budget range.');return;}
-      if(!rf){showErr('Please let me know how you found me.');return;}
-
-      submitBtn.classList.add('is-loading');
-
-      var fd=new FormData(form),data={};
-      fd.forEach(function(v,k){if(data[k]){data[k]=Array.isArray(data[k])?data[k].concat(v):[data[k],v];}else{data[k]=v;}});
-      if(Array.isArray(data.services))data.services=data.services.join(', ');
-      data.source='case-studies';
-
-      fetch('https://hook.us2.make.com/i4ig2ne5wf2e1dwqisjiblwbed6rcyvt',{
-        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
-      }).then(function(r){
-        if(!r.ok)throw new Error('Server error');
-        form.style.display='none';
-        if(successEl)successEl.classList.add('is-visible');
-      }).catch(function(){
-        showErr('Something went wrong. Please try again or email joe@pfendermarketing.com directly.');
-        submitBtn.classList.remove('is-loading');submitting=false;
-      });
-    });
-
-    function showErr(msg){submitting=false;if(errorEl){errorEl.textContent=msg;errorEl.classList.add('is-visible');}}
-  })();
-
   /* SMOOTH SCROLL WITH OFFSET */
   (function(){
     document.addEventListener('click',function(e){
