@@ -39,12 +39,13 @@ CSS `background: transparent` alone is not consistently honored on iOS Safari fo
 ### /start — Discovery Intake Form
 - Tree CRM URL: `https://app.treecrm.co/form/79098f68-4ef7-4849-9506-06d097c9ed37`
 - Embed file: [pages/start/embeds/lead-form.html](../pages/start/embeds/lead-form.html)
-- Wrapper class: `.pmc-start` — shimmer target in head.html, do not remove
+- Pattern: bare iframe + fallback paragraph, no wrapper div
 
 ### /meeting — Discovery Call Booking
 - Tree CRM URL: `https://app.treecrm.co/book/discovery-call`
 - Embed file: [pages/meeting/embeds/scheduler.html](../pages/meeting/embeds/scheduler.html)
-- Wrapper class: `.pmc-scheduler-card` — shimmer target in head.html, do not remove
+- Pattern: bare iframe + fallback paragraph, no wrapper div
+- Page title ("Book a 30-Minute Intro Call") lives in the Webflow hero section above the embed, not in the embed HTML
 
 ### /case-studies — Tell Me About Your Business Form
 - Tree CRM URL: `https://app.treecrm.co/form/be009c2c-c585-4ae7-a519-aac1dfc9b776`
@@ -64,6 +65,6 @@ Registered once in **Site Settings > Footer** ([global/footer.html](../global/fo
 
 1. Get the full Tree CRM form or booking URL.
 2. Copy the standard template above, replacing `{type}`, `{id}`, and `{title}`.
-3. Wrap in the appropriate page container class (`.pmc-start`, `.pmc-scheduler-card`, etc.) — these are class name contracts that the page's CSS and JS depend on. Check CLAUDE.md for the full list.
+3. Only add a wrapper div if a scroll anchor or explicit centering target is needed (see `/case-studies` pattern above). If used, keep it a bare positioning wrapper only.
 4. Paste into the Webflow embed element on the canvas. Embeds are HTML only — never add `<style>` or `<script>` tags inside.
 5. The global auto-height listener in `global/footer.html` handles resizing automatically. No per-page JS is needed.
