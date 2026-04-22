@@ -5,6 +5,7 @@
      PMC MEETING PAGE - ALL PAGE CSS
      ======================================== */
 
+  /* --- AMBIENT SPOTLIGHT + AURORA --- */
   .section-primary-wrapper { position: relative; overflow: hidden; }
   .section-primary-wrapper::before,
   .section-primary-wrapper::after {
@@ -29,6 +30,7 @@
   }
   .section-primary-wrapper > * { position: relative; z-index: 1; }
 
+  /* --- LOGO HALO --- */
   .start-logo-stage {
     position: relative; border-radius: 999px;
     transition: transform 400ms cubic-bezier(0.22,1,0.36,1);
@@ -46,11 +48,41 @@
   }
   @keyframes pmc-orbit { to { transform: rotate(360deg); } }
 
+  /* --- HERO TEXT BALANCE --- */
   .h1-start,
   .meeting-pmc-hero-sub { text-wrap: balance; }
+
+  /* --- SCHEDULER CARD CONTAINER + SHIMMER --- */
+  .pmc-scheduler-card {
+    position: relative; overflow: hidden;
+    max-width: 960px; margin-left: auto; margin-right: auto; margin-top: 80px;
+  }
+  .pmc-scheduler-card::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: rgba(215,175,51,0.18); pointer-events: none; z-index: 2;
+  }
+  .pmc-scheduler-card::before {
+    content: ""; position: absolute; top: 0; left: -40%; width: 180%; height: 2px;
+    background: linear-gradient(90deg, rgba(215,175,51,0) 0%, rgba(215,175,51,0.20) 30%, rgba(215,175,51,0.95) 50%, rgba(215,175,51,0.20) 70%, rgba(215,175,51,0) 100%);
+    opacity: 0; transform: translateX(-35%); filter: drop-shadow(0 0 10px rgba(215,175,51,0.22));
+    pointer-events: none; z-index: 3;
+  }
+  .pmc-scheduler-card.pmc-shimmer-active::before {
+    opacity: 0.95; animation: pmc-top-shimmer 2.6s linear infinite, pmc-top-glow 4.5s ease-in-out infinite;
+  }
+  @keyframes pmc-top-shimmer { 0% { transform: translateX(-35%); } 100% { transform: translateX(35%); } }
+  @keyframes pmc-top-glow {
+    0%,100% { filter: drop-shadow(0 0 8px rgba(215,175,51,0.18)); opacity: 0.70; }
+    50%      { filter: drop-shadow(0 0 14px rgba(215,175,51,0.30)); opacity: 0.98; }
+  }
+
+  @media (max-width: 767px) {
+    .pmc-scheduler-card { margin-top: 48px; }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .start-logo-stage::after { animation: none !important; }
     .section-primary-wrapper::before, .section-primary-wrapper::after { transition: none !important; }
+    .pmc-scheduler-card::before { animation: none !important; opacity: 0 !important; }
   }
 </style>
