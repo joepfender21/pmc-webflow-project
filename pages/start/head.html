@@ -64,9 +64,38 @@
     100% { transform: skewX(-18deg) translateX(420%); }
   }
 
+  /* --- FORM CARD CONTAINER + SHIMMER --- */
+  .pmc-start {
+    position: relative; overflow: hidden;
+    max-width: 960px; margin-left: auto; margin-right: auto; margin-top: 80px;
+  }
+  .pmc-start::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: rgba(215,175,51,0.18); pointer-events: none; z-index: 2;
+  }
+  .pmc-start::before {
+    content: ""; position: absolute; top: 0; left: -40%; width: 180%; height: 2px;
+    background: linear-gradient(90deg, rgba(215,175,51,0) 0%, rgba(215,175,51,0.20) 30%, rgba(215,175,51,0.95) 50%, rgba(215,175,51,0.20) 70%, rgba(215,175,51,0) 100%);
+    opacity: 0; transform: translateX(-35%); filter: drop-shadow(0 0 10px rgba(215,175,51,0.22));
+    pointer-events: none; z-index: 3;
+  }
+  .pmc-start.pmc-shimmer-active::before {
+    opacity: 0.95; animation: pmc-top-shimmer 2.6s linear infinite, pmc-top-glow 4.5s ease-in-out infinite;
+  }
+  @keyframes pmc-top-shimmer { 0% { transform: translateX(-35%); } 100% { transform: translateX(35%); } }
+  @keyframes pmc-top-glow {
+    0%,100% { filter: drop-shadow(0 0 8px rgba(215,175,51,0.18)); opacity: 0.70; }
+    50%      { filter: drop-shadow(0 0 14px rgba(215,175,51,0.30)); opacity: 0.98; }
+  }
+
+  @media (max-width: 767px) {
+    .pmc-start { margin-top: 48px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .start-logo-stage::after { animation: none !important; }
     .section-primary-wrapper::before, .section-primary-wrapper::after { transition: none !important; }
     .div-embed-divider::after { animation: none !important; opacity: 0 !important; }
+    .pmc-start::before { animation: none !important; opacity: 0 !important; }
   }
 </style>
