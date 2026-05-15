@@ -1,1 +1,714 @@
-<!-- Home draft page head CSS - populate from Website OS doc, Custom Code Library tab -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,400i,500i,700i&display=swap" rel="stylesheet">
+
+<style>
+/* PMC HOMEPAGE HEAD CSS v6.5 - full replacement.
+   v6.4 base + (1) hero cred strip 2-col after third card removal,
+   (2) Why Pfender single-column after small figure removal, large img
+   constrained to 620px max for editorial left-alignment,
+   (3) #pmc-contact-avatar 64px circle styling. */
+
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #040D0D; --bg-deep: #02080A;
+  --paper: #0A1A18; --paper-elevated: #0F2220;
+  --ink: #F5F0E8;
+  --ink-90: rgba(245,240,232,0.90); --ink-80: rgba(245,240,232,0.80);
+  --ink-70: rgba(245,240,232,0.70); --ink-60: rgba(245,240,232,0.60);
+  --ink-50: rgba(245,240,232,0.50); --ink-40: rgba(245,240,232,0.40);
+  --gold: #D7AF33; --gold-bright: #E5C044;
+  --gold-soft: rgba(215,175,51,0.12); --gold-line: rgba(215,175,51,0.20);
+  --leaf: #457340; --leaf-bright: #5A9E54; --leaf-soft: rgba(69,115,64,0.15);
+  --hairline: rgba(245,240,232,0.08); --hairline-soft: rgba(245,240,232,0.04);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --pmc-icon-url: url('https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e8ed2a9fcf8841af248_PMC_Icon_512x512.png');
+  --pmc-logo-white: url('https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e7aad43cb489b68ec98_PMC_Horizontal_WhiteText.png');
+  --pmc-logo-gold-knockout: url('https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e90114688fe3e8f467c_PMC_Wordmark_WhiteText.avif');
+}
+
+
+/* ===== RESET ===== */
+.pmc-home, .pmc-home * { box-sizing: border-box; }
+.pmc-home { font-family: 'Satoshi', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--bg); position: relative; }
+.pmc-home a { color: inherit; text-decoration: none; }
+.pmc-home img { max-width: 100%; display: block; }
+.pmc-home p { margin: 0; }
+.pmc-home h1, .pmc-home h2, .pmc-home h3, .pmc-home h4 { margin: 0; }
+.pmc-home ul { list-style: none; padding: 0; margin: 0; }
+
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+.pmc-home ::selection { background: var(--gold); color: var(--bg); }
+.pmc-home ::-moz-selection { background: var(--gold); color: var(--bg); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: rgba(215,175,51,0.3); border-radius: 5px; border: 2px solid var(--bg-deep); }
+::-webkit-scrollbar-thumb:hover { background: rgba(215,175,51,0.55); }
+.pmc-home a:focus-visible, .pmc-home button:focus-visible, .pmc-home input:focus-visible, .pmc-home textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
+
+
+/* ===== LAYOUT ===== */
+.pmc-home .pmc-container { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 28px; padding-right: 28px; }
+.pmc-home .pmc-section { padding-top: 100px; padding-bottom: 100px; }
+.pmc-home .pmc-section + .pmc-section, .pmc-home .pmc-section + .pmc-footer, .pmc-home .pmc-hero + .pmc-section { border-top: 1px solid var(--hairline-soft); }
+
+
+/* ===== NAV (logo as image) ===== */
+.pmc-home .pmc-nav-logo {
+  display: inline-block !important;
+  width: 132px;
+  height: 32px;
+  background-image: var(--pmc-logo-white);
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  font-size: 0 !important;
+  text-indent: -9999px;
+  overflow: hidden;
+  transition: opacity 200ms var(--ease-out-expo);
+}
+.pmc-home .pmc-nav-logo:hover { opacity: 0.85; }
+.pmc-home .pmc-nav-logo > * { display: none !important; }
+
+
+/* ===== HERO ===== */
+.pmc-hero { position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 100px; }
+.pmc-hero::before, .pmc-hero::after { content: ""; position: absolute; inset: -2px; pointer-events: none; z-index: 0; transition: opacity 500ms ease; }
+.pmc-hero::before { opacity: 0.55; background: radial-gradient(420px circle at var(--pmc-x, 30%) var(--pmc-y, 30%), rgba(215,175,51,0.10), rgba(69,115,64,0.07) 35%, rgba(0,0,0,0) 70%); mix-blend-mode: screen; }
+.pmc-hero::after { opacity: 0.65; background: radial-gradient(700px circle at 12% calc(20% + var(--pmc-s, 0px)), rgba(69,115,64,0.10), rgba(0,0,0,0) 60%), radial-gradient(760px circle at 88% calc(40% + var(--pmc-s, 0px)), rgba(215,175,51,0.08), rgba(0,0,0,0) 65%); filter: blur(10px); mix-blend-mode: screen; }
+.pmc-hero > * { position: relative; z-index: 1; }
+.pmc-home .pmc-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+.pmc-home .pmc-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-70); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; margin-bottom: 20px; }
+@keyframes pmc-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(90,158,84,0.40); } 50% { box-shadow: 0 0 0 6px rgba(90,158,84,0.0); } }
+.pmc-home .pmc-hero-eyebrow-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--leaf-bright); box-shadow: 0 0 0 3px rgba(90,158,84,0.18); animation: pmc-pulse 2.4s var(--ease) infinite; }
+.pmc-home .pmc-hero-h1 { font-family: 'Satoshi', sans-serif; font-size: clamp(56px, 9vw, 110px); line-height: 0.98; font-weight: 700; letter-spacing: -0.04em; color: var(--ink); margin: 0 0 28px; }
+.pmc-home .pmc-hero-h1 em { color: var(--gold) !important; font-style: italic !important; font-weight: inherit !important; }
+.pmc-home .pmc-hero-sub { font-size: 19px; line-height: 1.55; color: var(--ink-80); max-width: 520px; margin: 0 0 36px; }
+.pmc-home .pmc-hero-ctas { display: flex; gap: 14px; margin-bottom: 60px; flex-wrap: wrap; align-items: center; }
+.pmc-home .pmc-hero-creds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; padding-top: 32px; border-top: 1px solid var(--hairline); max-width: 480px; }
+.pmc-home .pmc-cred-num { font-size: 38px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.pmc-home .pmc-cred-label { font-size: 13px; color: var(--ink-60); line-height: 1.4; }
+
+
+/* ===== BUTTONS ===== */
+.pmc-home .pmc-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; font-size: 15px; font-weight: 600; border-radius: 999px; text-decoration: none; transition: all 220ms var(--ease-out-expo); cursor: pointer; }
+.pmc-home .pmc-btn-primary { background-color: var(--gold); color: var(--bg); }
+.pmc-home .pmc-btn-primary:hover { background-color: var(--gold-bright); transform: translateY(-1px); box-shadow: 0 8px 24px -8px rgba(215,175,51,0.5); }
+.pmc-home .pmc-btn-secondary { background-color: transparent; color: var(--ink); border: 1px solid rgba(245,240,232,0.2); }
+.pmc-home .pmc-btn-secondary:hover { border-color: rgba(245,240,232,0.5); color: var(--ink); }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary { background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; height: auto !important; min-width: 0 !important; color: var(--ink-70) !important; font-size: 14px !important; font-weight: 500 !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important; gap: 6px !important; letter-spacing: normal !important; transition: color 200ms var(--ease) !important; box-shadow: none !important; }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary::after { content: '\2192'; display: inline-block; color: var(--gold); font-size: 16px; transition: transform 200ms var(--ease); }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary:hover { color: var(--ink) !important; }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary:hover::after { transform: translateX(3px); }
+
+
+/* ===== TYPE HEADERS ===== */
+.pmc-home .pmc-h2 {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+.pmc-home .pmc-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ink-70); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.pmc-home .pmc-eyebrow::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf-bright); }
+
+
+/* ===== SERVICES (PMC brand icon) ===== */
+.pmc-home .pmc-services-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 64px; }
+.pmc-home .pmc-services-sub { font-size: 17px; line-height: 1.6; color: var(--ink-70); max-width: 480px; margin: 0; }
+.pmc-home .pmc-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 48px; }
+.pmc-home .pmc-service-card { background-color: var(--paper); border: 1px solid var(--hairline); border-radius: 16px; padding: 32px; transition: all 280ms var(--ease-out-expo); position: relative; }
+.pmc-home .pmc-service-card:hover { background-color: var(--paper-elevated); border-color: rgba(215,175,51,0.3); transform: translateY(-3px); box-shadow: 0 24px 48px -16px rgba(0,0,0,0.6); }
+.pmc-home .pmc-service-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 320ms var(--ease-out-expo); background: radial-gradient(420px circle at var(--pmc-card-x, 50%) var(--pmc-card-y, 50%), rgba(215,175,51,0.10), transparent 65%); }
+.pmc-home .pmc-service-card:hover::after { opacity: 1; }
+
+.pmc-home .pmc-service-icon {
+  width: 56px !important;
+  height: 56px !important;
+  background-color: transparent !important;
+  background-image: var(--pmc-icon-url) !important;
+  background-size: contain !important;
+  background-position: left center !important;
+  background-repeat: no-repeat !important;
+  margin-bottom: 24px;
+  border-radius: 0 !important;
+  display: block !important;
+}
+.pmc-home .pmc-service-icon svg,
+.pmc-home .pmc-service-icon > * { display: none !important; }
+
+.pmc-home .pmc-service-title { font-size: 22px; font-weight: 700; color: var(--ink); margin: 0 0 12px; letter-spacing: -0.01em; }
+.pmc-home .pmc-service-body { font-size: 15px; line-height: 1.55; color: var(--ink-70); margin: 0 0 20px; }
+.pmc-home .pmc-service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.pmc-home .pmc-service-tag { font-size: 12px; color: var(--ink-60); padding: 5px 12px; background-color: rgba(245,240,232,0.04); border: 1px solid var(--hairline); border-radius: 999px; font-weight: 500; }
+.pmc-home .pmc-link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 600; font-size: 15px; text-decoration: none; transition: all 220ms var(--ease-out-expo); }
+.pmc-home .pmc-link-arrow:hover { color: var(--gold-bright); }
+.pmc-home .pmc-link-arrow svg { transition: transform 220ms var(--ease-out-expo); }
+.pmc-home .pmc-link-arrow:hover svg { transform: translateX(4px); }
+
+
+/* ===== PROCESS STEPPER (mobile collapse for html.to.design auto-class) ===== */
+@media (max-width: 768px) {
+  body .pmc-home .inline-div-14-1,
+  .pmc-home .inline-div-14-1.inline-div-14-1 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+  body .pmc-home .inline-div-14-1 > * {
+    width: 100% !important;
+    max-width: none !important;
+    grid-column: 1 / -1 !important;
+  }
+}
+
+
+/* ============================================================================
+   WHY PFENDER - TREE CRM PROOF COMPOSITION (v6.1)
+   Stacked grid (eyebrow + H2 above, prose embed below) so H2 gets full width.
+   Asymmetric image grid with 2 real Tree CRM screenshots.
+   Real-workspace stat row pulled from Supabase.
+   Editorial pull quote with oversized gold quote glyph.
+   Link row with tree crm cross-site pointer.
+   ============================================================================ */
+
+/* Section atmosphere - subtle radial gradient backdrop */
+.pmc-home .pmc-why { position: relative; }
+.pmc-home .pmc-why::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px circle at 25% 30%, rgba(215,175,51,0.025), transparent 60%),
+    radial-gradient(600px circle at 75% 70%, rgba(69,115,64,0.025), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.pmc-home .pmc-why > * { position: relative; z-index: 1; }
+
+/* Stack the why-grid so H2 + eyebrow get full width above the prose embed */
+.pmc-home .pmc-why .pmc-why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+.pmc-home .pmc-why-aside {
+  position: static;
+  max-width: 720px;
+  top: auto;
+}
+
+/* H2 - oversized two-line treatment with italic gold em on "operating system" */
+.pmc-home .pmc-why-aside .pmc-h2 {
+  font-size: clamp(36px, 5.5vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  max-width: 720px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.pmc-home .pmc-why-aside .pmc-h2 span {
+  letter-spacing: -0.025em;
+}
+.pmc-home .pmc-why-aside .pmc-h2 em {
+  color: var(--gold) !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+}
+
+/* Redesigned prose column wrapper */
+.pmc-home .pmc-why-redesigned {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* Lead paragraph */
+.pmc-home .pmc-why-lead {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-90);
+  max-width: 560px;
+  margin: 0;
+}
+.pmc-home .pmc-why-lead strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Image grid - asymmetric 60/40 with two Tree CRM screenshots */
+.pmc-home .pmc-why-grid-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+/* v6.5: constrain solo portrait so it doesn't run page-wide */
+.pmc-home .pmc-why-grid-images .pmc-why-img-large { max-width: 620px; }
+.pmc-home .pmc-why-img {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 280ms var(--ease-out-expo);
+}
+.pmc-home .pmc-why-img:hover { transform: translateY(-2px); }
+.pmc-home .pmc-why-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(245,240,232,0.10);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+  transition: border-color 280ms var(--ease-out-expo), box-shadow 280ms var(--ease-out-expo);
+  display: block;
+}
+.pmc-home .pmc-why-img:hover img {
+  border-color: rgba(215,175,51,0.30);
+  box-shadow: 0 40px 80px -24px rgba(0,0,0,0.85), 0 0 60px rgba(215,175,51,0.05);
+}
+
+/* v6.1 polish: cap the large image height + crop from top so the unusually tall
+   contact-detail screenshot balances visually with the smaller right column.
+   Shows contact header + first few activity rows, crops the long tail. */
+.pmc-home .pmc-why-img-large img {
+  max-height: 580px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* v6.4: match small slot cap so future asset swaps don't render as tall towers */
+.pmc-home .pmc-why-img-small img {
+  max-height: 580px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.pmc-home .pmc-why-img figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--ink-50);
+  letter-spacing: 0.04em;
+}
+.pmc-home .pmc-why-img-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--leaf-bright);
+  flex-shrink: 0;
+}
+
+/* Stat row - real workspace numbers from Supabase */
+.pmc-home .pmc-why-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.pmc-home .pmc-why-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.pmc-home .pmc-why-stat-num {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.pmc-home .pmc-why-stat-label {
+  font-size: 13px;
+  color: var(--ink-60);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.pmc-home .pmc-why-stat-sep {
+  color: var(--ink-40);
+  font-size: 18px;
+}
+
+/* Pull quote with typographic flourish */
+.pmc-home .pmc-why-pullquote {
+  position: relative;
+  margin: 8px 0 0;
+  padding: 32px 0 0 80px;
+  border: 0;
+}
+.pmc-home .pmc-why-quotemark {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 144px;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.4;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+.pmc-home .pmc-why-pullquote-text {
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.35;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.pmc-home .pmc-why-pullquote-attr {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-50);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Link row - More about + tree crm cross-site pointer */
+.pmc-home .pmc-why-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.pmc-home .pmc-why-links-sep { color: var(--ink-40); }
+.pmc-home .pmc-why-treecrm-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 220ms var(--ease-out-expo);
+}
+.pmc-home .pmc-why-treecrm-link:hover { color: var(--gold-bright); }
+.pmc-home .pmc-why-treecrm-link svg:first-of-type { flex-shrink: 0; }
+.pmc-home .pmc-why-treecrm-link svg:last-of-type {
+  transition: transform 220ms var(--ease-out-expo);
+}
+.pmc-home .pmc-why-treecrm-link:hover svg:last-of-type { transform: translateX(4px); }
+
+
+/* ===== RECENT WORK ===== */
+.pmc-home .pmc-work-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 48px; gap: 32px; }
+.pmc-home .pmc-work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pmc-home .pmc-work-card { background-color: var(--paper); border: 1px solid var(--hairline); border-radius: 20px; padding: 36px; transition: all 280ms var(--ease-out-expo); position: relative; }
+.pmc-home .pmc-work-card:hover { background-color: var(--paper-elevated); border-color: rgba(215,175,51,0.3); transform: translateY(-2px); }
+.pmc-home .pmc-work-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 320ms var(--ease-out-expo); background: radial-gradient(420px circle at var(--pmc-card-x, 50%) var(--pmc-card-y, 50%), rgba(215,175,51,0.10), transparent 65%); }
+.pmc-home .pmc-work-card:hover::after { opacity: 1; }
+.pmc-home .pmc-work-card-coming { opacity: 0.85; }
+.pmc-home .pmc-work-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.pmc-home .pmc-work-meta-name { font-size: 13px; font-weight: 600; color: var(--ink-60); letter-spacing: 0.06em; text-transform: uppercase; }
+.pmc-home .pmc-pill { font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background-color: rgba(69,115,64,0.18); color: var(--leaf-bright); letter-spacing: 0.04em; text-transform: uppercase; }
+.pmc-home .pmc-pill-queued { background-color: rgba(215,175,51,0.15); color: var(--gold); }
+.pmc-home .pmc-work-title { font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.2; margin: 0 0 16px; letter-spacing: -0.01em; }
+.pmc-home .pmc-work-blurb { font-size: 15px; line-height: 1.6; color: var(--ink-70); margin: 0 0 28px; }
+.pmc-home .pmc-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-top: 24px; padding-bottom: 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px; }
+.pmc-home .pmc-metric-label { font-size: 11px; font-weight: 500; color: var(--ink-50); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+.pmc-home .pmc-metric-num { font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+.pmc-home .pmc-metric-context { font-size: 12px; color: var(--ink-50); line-height: 1.4; }
+.pmc-home .pmc-work-quote { padding: 0; margin: 0 0 24px; border-left: 2px solid rgba(215,175,51,0.4); padding-left: 16px; }
+.pmc-home .pmc-work-quote-text { font-size: 15px; line-height: 1.55; color: var(--ink-90); font-style: italic; margin: 0 0 8px; }
+.pmc-home .pmc-work-quote-author { font-size: 12px; color: var(--ink-50); margin: 0; }
+
+
+/* ===== TREE CRM SECTION ===== */
+.pmc-home .pmc-tree { background: linear-gradient(180deg, transparent 0%, rgba(69,115,64,0.04) 100%); }
+.pmc-home .pmc-tree-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.pmc-home .pmc-tree-blurb { font-size: 18px; line-height: 1.6; color: var(--ink-80); margin: 24px 0 28px; max-width: 480px; }
+.pmc-home .pmc-tree-bullets { list-style: none; padding: 0; margin: 0 0 32px; }
+.pmc-home .pmc-tree-bullet {
+  font-size: 15px;
+  color: var(--ink-90);
+  padding: 10px 0 10px 28px;
+  position: relative;
+  border-bottom: 1px solid rgba(245,240,232,0.06);
+  overflow-wrap: break-word;
+}
+.pmc-home .pmc-tree-bullet:before { content: ""; position: absolute; left: 0; top: 12px; width: 18px; height: 18px; background-image: url("https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e8b686f7573e1b0f6dc_PMC_Icon_32x32.png"); background-repeat: no-repeat; background-position: center; background-size: contain; }
+.pmc-home .pmc-tree-bullet:last-child { border-bottom: 0; }
+.pmc-home .pmc-tree-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+
+/* ===== TREE CRM OS PANEL ===== */
+.pmc-tree-os {
+  position: relative;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid rgba(245,240,232,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 60px 120px -40px rgba(0,0,0,0.85), 0 0 80px rgba(215,175,51,0.03), inset 0 1px 0 rgba(255,255,255,0.04);
+  isolation: isolate;
+  font-family: inherit;
+  color: var(--ink);
+}
+.pmc-tree-os::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(215,175,51,0.4) 50%, transparent 100%); z-index: 3; pointer-events: none; }
+.pmc-tree-os-nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid rgba(245,240,232,0.06); background: rgba(255,255,255,0.015); gap: 16px; }
+.pmc-tree-os-brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-width: 0; }
+.pmc-tree-os-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.pmc-tree-os-workspace { font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; line-height: 1.2; }
+.pmc-tree-os-workspace-sub { font-size: 11px; color: rgba(245,240,232,0.4); font-family: Menlo, Monaco, monospace; margin-top: 2px; }
+.pmc-tree-os-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.pmc-tree-os-search { display: flex; align-items: center; gap: 8px; background: rgba(245,240,232,0.04); border: 1px solid rgba(245,240,232,0.06); border-radius: 8px; padding: 6px 12px; color: rgba(245,240,232,0.4); font-size: 12px; min-width: 200px; }
+.pmc-tree-os-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, rgba(215,175,51,0.25), rgba(215,175,51,0.08)); border: 1px solid rgba(215,175,51,0.3); color: #D7AF33; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pmc-tree-os-body { display: flex; min-height: 380px; }
+.pmc-tree-os-sidebar { flex-shrink: 0; width: 180px; border-right: 1px solid rgba(245,240,232,0.06); padding: 14px 10px; display: flex; flex-direction: column; gap: 2px; background: rgba(0,0,0,0.18); }
+.pmc-tree-os-feature { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: rgba(245,240,232,0.55); font-size: 13px; font-weight: 500; border: 1px solid transparent; transition: background 200ms ease, color 200ms ease, border-color 200ms ease; }
+.pmc-tree-os-feature svg { flex-shrink: 0; opacity: 0.7; }
+.pmc-tree-os-feature-active { background: rgba(215,175,51,0.08); color: #D7AF33; border-color: rgba(215,175,51,0.18); }
+.pmc-tree-os-feature-active svg { opacity: 1; }
+.pmc-tree-os-main { flex: 1; padding: 22px 24px 20px; display: flex; flex-direction: column; min-width: 0; }
+.pmc-tree-os-contact { display: flex; align-items: center; gap: 14px; }
+.pmc-tree-os-contact-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, rgba(90,158,84,0.30), rgba(69,115,64,0.10)); border: 1px solid rgba(90,158,84,0.35); color: #5A9E54; font-size: 14px; font-weight: 700; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pmc-tree-os-contact-info { flex: 1; min-width: 0; }
+.pmc-tree-os-contact-name { font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+.pmc-tree-os-contact-meta { font-size: 12px; color: rgba(245,240,232,0.5); margin-top: 3px; }
+.pmc-tree-os-contact-pill { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5A9E54; background: rgba(90,158,84,0.10); border: 1px solid rgba(90,158,84,0.22); padding: 4px 10px; border-radius: 999px; flex-shrink: 0; }
+.pmc-tree-os-divider { height: 1px; background: rgba(245,240,232,0.06); margin: 18px 0 12px; }
+.pmc-tree-os-timeline-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.4); font-weight: 600; margin-bottom: 6px; }
+.pmc-tree-os-timeline { display: flex; flex-direction: column; }
+.pmc-tree-os-event { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(245,240,232,0.04); }
+.pmc-tree-os-event:last-child { border-bottom: none; }
+.pmc-tree-os-event-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(245,240,232,0.04); color: rgba(245,240,232,0.55); }
+.pmc-tree-os-event-body { flex: 1; min-width: 0; }
+.pmc-tree-os-event-title { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.35; }
+.pmc-tree-os-event-meta { font-size: 11px; color: rgba(245,240,232,0.45); margin-top: 3px; }
+.pmc-tree-os-event-time { font-size: 11px; color: rgba(245,240,232,0.4); font-family: Menlo, Monaco, monospace; flex-shrink: 0; }
+.pmc-tree-os-event-live { background: linear-gradient(90deg, rgba(215,175,51,0.04) 0%, rgba(215,175,51,0.07) 50%, rgba(215,175,51,0.02) 100%); margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
+.pmc-tree-os-event-icon-live { background: rgba(215,175,51,0.12) !important; color: #D7AF33 !important; border: 1px solid rgba(215,175,51,0.25); }
+.pmc-tree-os-event-time-live { color: #D7AF33 !important; display: flex; align-items: center; gap: 6px; }
+.pmc-tree-os-pulse { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #D7AF33; box-shadow: 0 0 0 0 rgba(215,175,51,0.7); animation: pmc-tree-pulse 1.6s ease-in-out infinite; }
+@keyframes pmc-tree-pulse { 0% { box-shadow: 0 0 0 0 rgba(215,175,51,0.7); } 70% { box-shadow: 0 0 0 8px rgba(215,175,51,0); } 100% { box-shadow: 0 0 0 0 rgba(215,175,51,0); } }
+.pmc-tree-os-eyebrow { margin-top: 22px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.45); font-weight: 600; text-align: center; }
+
+
+/* ===== CONTACT SECTION ===== */
+.pmc-home .pmc-contact-head { max-width: 700px; margin-left: auto; margin-right: auto; margin-bottom: 36px; text-align: center; }
+.pmc-home .pmc-contact-head .pmc-eyebrow { justify-content: center; }
+.pmc-home .pmc-contact-sub { font-size: 18px; line-height: 1.6; color: var(--ink-80); margin-top: 18px; }
+.pmc-home .pmc-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.pmc-home .pmc-contact-trust { display: flex; flex-direction: column; gap: 16px; }
+.pmc-home .pmc-trust-row { display: flex; align-items: center; gap: 14px; }
+.pmc-home .pmc-trust-check { width: 28px; height: 28px; border-radius: 8px; background-color: rgba(69,115,64,0.18); color: var(--leaf-bright); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0; flex-shrink: 0; position: relative; }
+.pmc-home .pmc-trust-check::before { content: ""; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A9E54' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 55%; }
+.pmc-home .pmc-trust-text { font-size: 15px; color: var(--ink-90); }
+.pmc-home .pmc-contact-card { background-color: var(--paper); border: 1px solid var(--hairline); border-radius: 16px; padding: 32px; }
+.pmc-home .pmc-contact-card-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.06); }
+.pmc-home .pmc-contact-card-row:first-child { padding-top: 0; }
+.pmc-home .pmc-contact-card-label { font-size: 12px; color: var(--ink-50); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.pmc-home .pmc-contact-card-value { font-size: 15px; color: var(--ink); font-weight: 500; text-decoration: none; transition: color 200ms ease; }
+.pmc-home .pmc-contact-card-value:hover { color: var(--gold); }
+.pmc-home .pmc-contact-card-actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+
+/* v6.5: contact card avatar - 64px circle, no shadow, hairline border */
+.pmc-home #pmc-contact-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid rgba(245,240,232,0.10);
+}
+
+
+/* ===== FOOTER (logo as image, "Still here?" stripe hidden) ===== */
+.pmc-home .pmc-footer { background-color: var(--bg); border-top: 1px solid var(--hairline); padding-top: 64px; padding-bottom: 32px; }
+.pmc-home .pmc-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+/* v6.4: footer wordmark is now a real <img> element (no longer CSS bg on a Link) */
+.pmc-home #pmc-footer-wordmark {
+  display: block;
+  width: auto;
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 18px;
+}
+/* keep legacy rules for backward-compat in case stale embeds reappear */
+.pmc-home .pmc-footer-logo { display: none !important; }
+.pmc-home .pmc-footer-mark { display: none !important; }
+.pmc-home .pmc-footer-blurb { font-size: 14px; line-height: 1.5; color: var(--ink-60); max-width: 320px; }
+.pmc-home .pmc-footer-col-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+.pmc-home .pmc-footer-col ul { list-style: none; padding: 0; margin: 0; }
+.pmc-home .pmc-footer-col li { padding: 4px 0; }
+.pmc-home .pmc-footer-col a { font-size: 14px; color: var(--ink-60); text-decoration: none; transition: color 200ms ease; }
+.pmc-home .pmc-footer-col a:hover { color: var(--gold); }
+.pmc-home .pmc-footer-fine { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.06); font-size: 13px; color: var(--ink-40); }
+.pmc-home .pmc-footer-legal-links { display: flex; gap: 18px; }
+.pmc-home .pmc-footer-legal-links a { color: var(--ink-40); text-decoration: none; transition: color 200ms ease; }
+.pmc-home .pmc-footer-legal-links a:hover { color: var(--gold); }
+
+.pmc-home .pmc-footer .inline-div-0-1-2-3-4-5-6 { display: none !important; }
+
+
+/* ===== AUDIT WIDGET PROMINENCE ===== */
+[data-pmc-aw] { max-width: 600px !important; margin: 0 auto !important; display: flex !important; flex-direction: column !important; position: relative !important; box-shadow: 0 60px 120px -40px rgba(0,0,0,0.85), 0 0 60px rgba(215,175,51,0.04), inset 0 1px 0 rgba(255,255,255,0.04) !important; isolation: isolate; }
+[data-pmc-aw]::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, rgba(215,175,51,0.35) 25%, var(--gold) 50%, rgba(215,175,51,0.35) 75%, transparent 100%); z-index: 3; pointer-events: none; border-radius: 18px 18px 0 0; }
+[data-pmc-aw] > div:not([data-pmc-aw-stream]):not([data-pmc-aw-input-row]):not([data-pmc-aw-capture]) { order: 1 !important; }
+[data-pmc-aw] > [data-pmc-aw-input-row] { order: 2 !important; border-top: 1px solid rgba(245,240,232,0.08) !important; border-bottom: 1px solid rgba(245,240,232,0.08) !important; }
+[data-pmc-aw] > [data-pmc-aw-stream] { order: 3 !important; }
+[data-pmc-aw] > [data-pmc-aw-capture] { order: 4 !important; }
+[data-pmc-aw].is-scanning [data-pmc-aw-status]::after { content: ' \2022 \2022 \2022'; display: inline-block; margin-left: 6px; letter-spacing: 2px; animation: pmc-aw-dots-blink 1.2s ease-in-out infinite; }
+@keyframes pmc-aw-dots-blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+[data-pmc-aw].is-scanning::after { content: ''; position: absolute; left: 0; right: 0; height: 80px; background: linear-gradient(180deg, transparent 0%, rgba(215,175,51,0.06) 40%, rgba(215,175,51,0.10) 50%, rgba(215,175,51,0.06) 60%, transparent 100%); pointer-events: none; animation: pmc-aw-scanline 2.4s ease-in-out infinite; z-index: 2; }
+@keyframes pmc-aw-scanline { 0% { top: -80px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
+
+/* ===== MOTION POLISH ===== */
+.pmc-home .pmc-reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); will-change: opacity, transform; }
+.pmc-home .pmc-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.pmc-home .pmc-hero-h1 .pmc-word { display: inline-block; opacity: 0; transform: translateY(40px); transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+.pmc-home .pmc-hero-h1.is-loaded .pmc-word { opacity: 1; transform: translateY(0); }
+
+
+/* ===== STICKY MOBILE CTA BAR ===== */
+@media (max-width: 768px) {
+  .pmc-home .pmc-mobile-cta-bar { display: flex !important; }
+  .pmc-home { padding-bottom: 72px; }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .pmc-home .pmc-section { padding-top: 60px; padding-bottom: 60px; }
+  .pmc-home .pmc-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .pmc-home .pmc-hero-creds { grid-template-columns: 1fr; gap: 18px; }
+  .pmc-home .pmc-services-head { grid-template-columns: 1fr; gap: 24px; }
+  .pmc-home .pmc-services-grid { grid-template-columns: 1fr; }
+  .pmc-home .pmc-why-redesigned { gap: 40px; }
+  .pmc-home .pmc-why-grid-images { grid-template-columns: 1fr; gap: 18px; }
+  .pmc-home .pmc-why-img-large img { max-height: 480px; }
+  .pmc-home .pmc-why-pullquote { padding: 24px 0 0 56px; }
+  .pmc-home .pmc-why-quotemark { font-size: 96px; top: -8px; }
+  .pmc-home .pmc-why-stats { gap: 12px; padding: 16px 0; }
+  .pmc-home .pmc-why-stat-num { font-size: 22px; }
+  .pmc-home .pmc-work-grid { grid-template-columns: 1fr; }
+  .pmc-home .pmc-work-head { flex-direction: column; align-items: flex-start; }
+  .pmc-home .pmc-tree-grid { grid-template-columns: 1fr; gap: 32px; }
+  .pmc-home .pmc-contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .pmc-home .pmc-contact-head { margin-bottom: 24px; }
+  .pmc-home .pmc-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .pmc-home .pmc-footer-fine { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 768px) {
+  .pmc-home .pmc-nav-links { display: none !important; }
+  .pmc-home .pmc-nav-cta { display: none !important; }
+  .pmc-home .pmc-nav { padding-left: 18px !important; padding-right: 18px !important; }
+}
+@media (max-width: 760px) {
+  .pmc-tree-os-body { flex-direction: column; min-height: auto; }
+  .pmc-tree-os-sidebar { width: 100%; flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid rgba(245,240,232,0.06); padding: 10px 12px; gap: 4px; scrollbar-width: none; }
+  .pmc-tree-os-sidebar::-webkit-scrollbar { display: none; }
+  .pmc-tree-os-feature { padding: 6px 10px; font-size: 12px; flex-shrink: 0; white-space: nowrap; }
+  .pmc-tree-os-main { padding: 18px 16px; }
+  .pmc-tree-os-search { display: none; }
+  .pmc-tree-os-event-live { margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+}
+@media (max-width: 640px) {
+  .pmc-home .pmc-footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+@media (max-width: 480px) {
+  .pmc-home .pmc-why-stats { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .pmc-home .pmc-why-stat-sep { display: none; }
+  .pmc-home .pmc-why-stat { width: 100%; }
+  .pmc-tree-os-workspace-sub { display: none; }
+  .pmc-tree-os-contact-pill { display: none; }
+  .pmc-tree-os-event-time { font-size: 10px; }
+}
+
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pmc-hero::before, .pmc-hero::after { transition: none !important; }
+  .pmc-home .pmc-hero-eyebrow-dot { animation: none !important; }
+  body::before { animation: none !important; }
+  .pmc-home .pmc-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .pmc-home .pmc-hero-h1 .pmc-word { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .pmc-home .pmc-service-card::after, .pmc-home .pmc-work-card::after { display: none !important; }
+  .pmc-home .pmc-why-img:hover { transform: none !important; }
+  [data-pmc-aw].is-scanning::after { animation: none !important; opacity: 0 !important; }
+  [data-pmc-aw].is-scanning [data-pmc-aw-status]::after { animation: none !important; opacity: 0.7 !important; }
+  .pmc-tree-os-pulse { animation: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ============================================================
+   ===== V6.2 ADDITIONS - Tree CRM v2 + How I Work section ====
+   ============================================================ */
+
+/* Tree CRM section v2 - bullet refresh */
+.pmc-home .pmc-tree-bullets-v2 .pmc-tree-bullet { font-size: 16px; line-height: 1.55; color: var(--ink-80); padding: 14px 0 14px 32px; }
+.pmc-home .pmc-tree-bullets-v2 .pmc-tree-bullet strong { color: var(--gold); font-weight: 600; letter-spacing: -0.005em; }
+
+/* Product surface composite (4-up below Tree CRM panel) */
+.pmc-home .pmc-product-composite { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--hairline); }
+.pmc-home .pmc-product-composite-head { display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin-bottom: 48px; }
+.pmc-home .pmc-product-composite-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 8px; }
+.pmc-home .pmc-product-composite-title { font-family: 'Satoshi', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 600; line-height: 1.15; color: var(--ink); margin: 0; letter-spacing: -0.02em; max-width: 16ch; }
+.pmc-home .pmc-product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.pmc-home .pmc-product-tile { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.pmc-home .pmc-product-tile-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.pmc-home .pmc-product-tile-img { display: block; width: 100%; aspect-ratio: 16 / 10; border: 1px solid rgba(245,240,232,0.10); border-radius: 12px; box-shadow: rgba(0,0,0,0.6) 0px 30px 60px -20px; overflow: hidden; background: var(--paper); transition: border-color 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo); }
+.pmc-home .pmc-product-tile-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.pmc-home .pmc-product-tile:hover .pmc-product-tile-img { border-color: rgba(215,175,51,0.35); transform: translateY(-2px); }
+.pmc-home .pmc-product-tile-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--paper) 0%, var(--paper-elevated) 100%); border-style: dashed; border-color: rgba(245,240,232,0.12); }
+.pmc-home .pmc-product-tile-placeholder-text { font-size: 13px; color: var(--ink-40); text-align: center; line-height: 1.5; letter-spacing: 0.02em; }
+.pmc-home .pmc-product-tile-caption { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-60); line-height: 1.45; }
+.pmc-home .pmc-product-tile-caption-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--leaf-bright); flex-shrink: 0; }
+
+/* How I Work / Operator Method section */
+.pmc-home .pmc-how { padding: 96px 0; }
+.pmc-home .pmc-how-head { max-width: 760px; margin: 0 auto 64px 0; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; text-align: left; }
+.pmc-home .pmc-how-head .pmc-h2 { font-size: clamp(36px, 5vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; color: var(--ink); margin: 4px 0 0; max-width: 22ch; }
+.pmc-home .pmc-how-lead { font-size: 18px; line-height: 1.65; color: var(--ink-80); max-width: 56ch; margin: 12px 0 0; }
+.pmc-home .pmc-how-loops { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; }
+.pmc-home .pmc-how-loop { background: var(--paper); border: 1px solid var(--hairline); border-radius: 18px; padding: 32px 28px; position: relative; transition: border-color 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo); }
+.pmc-home .pmc-how-loop:hover { border-color: rgba(215,175,51,0.25); transform: translateY(-2px); }
+.pmc-home .pmc-how-loop-num { font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 24px; opacity: 0.7; }
+.pmc-home .pmc-how-loop-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-50); margin-bottom: 8px; }
+.pmc-home .pmc-how-loop-title { font-size: 28px; font-weight: 700; color: var(--ink); margin: 0 0 14px; letter-spacing: -0.015em; line-height: 1.15; }
+.pmc-home .pmc-how-loop-body { font-size: 15px; line-height: 1.6; color: var(--ink-70); margin: 0 0 20px; }
+.pmc-home .pmc-how-loop-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.pmc-home .pmc-how-loop-list li { font-size: 13px; color: var(--ink-60); line-height: 1.45; padding-left: 18px; position: relative; }
+.pmc-home .pmc-how-loop-list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf-bright); }
+.pmc-home .pmc-how-video-placeholder { background: linear-gradient(135deg, var(--paper) 0%, var(--paper-elevated) 100%); border: 1px dashed rgba(245,240,232,0.12); border-radius: 18px; aspect-ratio: 21 / 9; display: flex; align-items: center; justify-content: center; }
+.pmc-home .pmc-how-video-placeholder-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.pmc-home .pmc-how-video-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.pmc-home .pmc-how-video-text { font-size: 14px; color: var(--ink-50); line-height: 1.5; }
+
+/* V6.2 mobile */
+@media (max-width: 900px) {
+  .pmc-home .pmc-product-grid { grid-template-columns: 1fr; gap: 28px; }
+  .pmc-home .pmc-how-loops { grid-template-columns: 1fr; gap: 16px; }
+  .pmc-home .pmc-how { padding: 64px 0; }
+  .pmc-home .pmc-how-head { margin-bottom: 40px; }
+  .pmc-home .pmc-product-composite { margin-top: 56px; padding-top: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pmc-home .pmc-how-loop:hover, .pmc-home .pmc-product-tile:hover .pmc-product-tile-img { transform: none !important; }
+}
+
+
+</style>

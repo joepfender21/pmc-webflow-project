@@ -1,1 +1,520 @@
-<!-- Home draft page body JS - populate from Website OS doc, Custom Code Library tab -->
+<!-- PMC HOMEPAGE - BODY/FOOTER CUSTOM CODE (v5.0 - full replacement)
+     Six self-contained <script> blocks. Each is an IIFE with idempotency guard.
+     NO nested script tags. NO bare JS without wrappers.
+
+     Order:
+       1. Motion polish v3.5 (section reveals, hero word stagger, magnetic CTAs, card spotlight, count-up)
+       2. PMC body JS v3.1 (topbar dismiss, sticky nav, hero spotlight, smooth scroll)
+       3. Audit widget live wiring v1.0 (scan handler)
+       4. Audit widget scan-state observer v3.9.1 (toggles .is-scanning class)
+       5. Tree CRM OS panel scroll-in stagger reveal v4.0
+       6. Audit widget capture form handler v1.1 (4s reveal, fetch /api/capture)
+
+     This block matches the v5.0 head CSS. -->
+
+
+<script>
+/* PMC HOMEPAGE - MOTION POLISH (v3.5) */
+(function () {
+  if (window.__pmc_motion) return;
+  window.__pmc_motion = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  function init() {
+    var ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
+    var sections = document.querySelectorAll('.pmc-home > section, .pmc-home > footer');
+    sections.forEach(function (el) { el.classList.add('pmc-reveal'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      sections.forEach(function (el) { io.observe(el); });
+    }
+    var heroSection = document.querySelector('.pmc-hero');
+    if (heroSection && 'IntersectionObserver' in window) {
+      var animated = false;
+      var heroIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            document.querySelectorAll('.pmc-cred-num').forEach(function (el) {
+              var raw = el.textContent.trim();
+              var num = parseInt(raw, 10);
+              if (isNaN(num) || num === 0) return;
+              var suffix = raw.replace(String(num), '');
+              var duration = 1400;
+              var start = null;
+              function step(ts) {
+                if (!start) start = ts;
+                var p = Math.min((ts - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(num * eased) + suffix;
+                if (p < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+            heroIO.unobserve(heroSection);
+          }
+        });
+      }, { threshold: 0.5 });
+      heroIO.observe(heroSection);
+    }
+    document.querySelectorAll('.pmc-btn-primary, .pmc-nav-cta').forEach(function (btn) {
+      btn.addEventListener('mouseenter', function () { btn.style.transition = 'transform 80ms ' + ease; });
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var dx = (e.clientX - rect.left - rect.width / 2) * 0.18;
+        var dy = (e.clientY - rect.top - rect.height / 2) * 0.18 - 1.5;
+        btn.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transition = 'transform 280ms ' + ease;
+        btn.style.transform = '';
+      });
+    });
+    var heroH1 = document.querySelector('.pmc-hero-h1');
+    if (heroH1) {
+      var html = heroH1.innerHTML;
+      var newHtml = html.replace(/(>|^)([^<]+?)(<|$)/g, function (_, before, text, after) {
+        var parts = text.split(/(\s+)/);
+        var wrapped = parts.map(function (p) {
+          if (!p.trim()) return p;
+          return '<span class="pmc-word">' + p + '</span>';
+        }).join('');
+        return before + wrapped + after;
+      });
+      heroH1.innerHTML = newHtml;
+      requestAnimationFrame(function () {
+        var words = heroH1.querySelectorAll('.pmc-word');
+        words.forEach(function (w, i) { w.style.transitionDelay = (50 + i * 70) + 'ms'; });
+        heroH1.classList.add('is-loaded');
+      });
+    }
+    document.querySelectorAll('.pmc-service-card, .pmc-work-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width) * 100;
+        var y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--pmc-card-x', x + '%');
+        card.style.setProperty('--pmc-card-y', y + '%');
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<script>
+/* PMC HOMEPAGE - PAGE BODY JS (v3.1) - topbar dismiss, nav scroll, hero spotlight, smooth scroll */
+(function () {
+  if (window.__pmc_home_page) return;
+  window.__pmc_home_page = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  document.addEventListener('DOMContentLoaded', function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var topbar = document.querySelector('.pmc-topbar');
+    if (topbar) {
+      if (sessionStorage.getItem('pmc_topbar_dismissed')) topbar.classList.add('dismissed');
+      var btn = topbar.querySelector('.pmc-topbar-dismiss');
+      if (btn) btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        topbar.classList.add('dismissed');
+        sessionStorage.setItem('pmc_topbar_dismissed', 'true');
+      });
+    }
+    var nav = document.querySelector('.pmc-nav');
+    function navState() {
+      if (!nav) return;
+      if (window.scrollY > 8) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', navState, { passive: true });
+    navState();
+    if (!reduce) {
+      var hero = document.querySelector('.pmc-hero');
+      if (hero) {
+        var heroRect = hero.getBoundingClientRect();
+        var pendingMove = false, pendingScroll = false;
+        var mouse = { x: 0, y: 0 };
+        function refresh() { heroRect = hero.getBoundingClientRect(); }
+        window.addEventListener('resize', refresh, { passive: true });
+        window.addEventListener('scroll', refresh, { passive: true });
+        hero.addEventListener('mousemove', function (e) {
+          mouse.x = e.clientX; mouse.y = e.clientY;
+          if (pendingMove) return;
+          pendingMove = true;
+          requestAnimationFrame(function () {
+            pendingMove = false;
+            hero.style.setProperty('--pmc-x', ((mouse.x - heroRect.left) / heroRect.width * 100) + '%');
+            hero.style.setProperty('--pmc-y', ((mouse.y - heroRect.top) / heroRect.height * 100) + '%');
+          });
+        });
+        window.addEventListener('scroll', function () {
+          if (pendingScroll) return;
+          pendingScroll = true;
+          requestAnimationFrame(function () {
+            pendingScroll = false;
+            hero.style.setProperty('--pmc-s', (window.scrollY * 0.15) + 'px');
+          });
+        }, { passive: true });
+      }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        var t = document.querySelector(href);
+        if (!t) return;
+        e.preventDefault();
+        t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
+  });
+})();
+</script>
+
+
+<script>
+/* PMC HOMEPAGE - AUDIT WIDGET LIVE WIRING (v1.0) */
+(function () {
+  if (window.__pmc_audit) return;
+  window.__pmc_audit = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  var API_URL = 'https://audit.pfendermarketing.com/api/scan';
+  var ICONS = {
+    warn: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>',
+    error: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>',
+    ok: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>'
+  };
+  var COLORS = {
+    warn: { bg: 'rgba(215,175,51,0.10)', text: '#D7AF33' },
+    error: { bg: 'rgba(217,82,82,0.10)', text: '#d95252' },
+    ok: { bg: 'rgba(69,115,64,0.15)', text: '#5A9E54' }
+  };
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function buildRow(finding, isLast) {
+    var sev = finding.severity in COLORS ? finding.severity : 'warn';
+    var c = COLORS[sev];
+    var ic = ICONS[sev];
+    var border = isLast ? '' : 'border-bottom:1px solid rgba(245,240,232,0.04);';
+    return '<div style="display:flex;align-items:center;gap:14px;padding:14px 0;' + border + '">' +
+      '<div style="width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:' + c.bg + ';color:' + c.text + '">' + ic + '</div>' +
+      '<div style="flex:1;min-width:0">' +
+        '<div data-pmc-aw-row-title style="font-size:14px;color:#F5F0E8;font-weight:500;line-height:1.35;margin-bottom:2px">' + escapeHtml(finding.title) + '</div>' +
+        '<div data-pmc-aw-row-meta style="font-size:12px;color:rgba(245,240,232,0.5)">' + escapeHtml(finding.meta) + '</div>' +
+      '</div>' +
+      '<div data-pmc-aw-row-metric data-pmc-aw-row-severity="' + sev + '" style="font-weight:700;font-size:18px;color:' + c.text + ';flex-shrink:0">' + escapeHtml(finding.metric) + '</div>' +
+    '</div>';
+  }
+  function init() {
+    var widget = document.querySelector('[data-pmc-aw]');
+    if (!widget) return;
+    var input = widget.querySelector('[data-pmc-aw-input]');
+    var submit = widget.querySelector('[data-pmc-aw-submit]');
+    var status = widget.querySelector('[data-pmc-aw-status]');
+    var stream = widget.querySelector('[data-pmc-aw-stream]');
+    var titleEl = widget.querySelector('[data-pmc-aw-title]');
+    function setLoading(on) {
+      if (on) {
+        widget.style.opacity = '0.85';
+        if (status) { status.textContent = 'Scanning'; status.style.color = '#D7AF33'; }
+        if (input) input.disabled = true;
+        if (submit) { submit.disabled = true; submit.textContent = 'Scanning'; submit.style.opacity = '0.7'; }
+      } else {
+        widget.style.opacity = '1';
+        if (input) input.disabled = false;
+        if (submit) { submit.disabled = false; submit.textContent = 'Scan'; submit.style.opacity = '1'; }
+      }
+    }
+    function showError(msg) {
+      if (status) { status.textContent = 'Error'; status.style.color = '#d95252'; }
+      if (stream) stream.innerHTML = '<div style="padding:32px 0;text-align:center;font-size:13px;color:rgba(245,240,232,0.7)">' + escapeHtml(msg) + '</div>';
+    }
+    function renderFindings(findings, scannedUrl) {
+      if (stream && Array.isArray(findings)) {
+        stream.innerHTML = findings.map(function (f, i) { return buildRow(f, i === findings.length - 1); }).join('');
+      }
+      if (titleEl) {
+        try { titleEl.textContent = new URL(scannedUrl).hostname; } catch (e) { titleEl.textContent = scannedUrl; }
+      }
+      if (status) { status.textContent = 'Result'; status.style.color = '#5A9E54'; }
+    }
+    async function scan(rawUrl) {
+      var url = rawUrl.trim();
+      if (!url) return;
+      if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+      setLoading(true);
+      try {
+        var res = await fetch(API_URL + '?url=' + encodeURIComponent(url));
+        var data = await res.json();
+        if (data && data.error) showError(data.error);
+        else if (data && Array.isArray(data.findings)) renderFindings(data.findings, data.url || url);
+        else showError('Unexpected response. Try again.');
+      } catch (e) {
+        showError('Could not reach the audit service. Try again.');
+      } finally {
+        setLoading(false);
+      }
+    }
+    if (submit) submit.addEventListener('click', function (e) { e.preventDefault(); if (input) scan(input.value); });
+    if (input) input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); scan(input.value); } });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<script>
+/* PMC AUDIT WIDGET - SCANNING STATE OBSERVER (v3.9.1) */
+(function () {
+  if (window.__pmc_aw_scan_observer) return;
+  window.__pmc_aw_scan_observer = true;
+  function init() {
+    var widgets = document.querySelectorAll('[data-pmc-aw]');
+    if (!widgets.length) return;
+    widgets.forEach(function (widget) {
+      var statusEl = widget.querySelector('[data-pmc-aw-status]');
+      if (!statusEl) return;
+      function syncState() {
+        var text = (statusEl.textContent || '').trim().toLowerCase();
+        if (text.indexOf('scan') !== -1 || text.indexOf('analyz') !== -1 || text.indexOf('audit') !== -1) {
+          widget.classList.add('is-scanning');
+        } else {
+          widget.classList.remove('is-scanning');
+        }
+      }
+      try {
+        var observer = new MutationObserver(syncState);
+        observer.observe(statusEl, { childList: true, characterData: true, subtree: true });
+      } catch (e) {}
+      syncState();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<script>
+/* TREE CRM OS PANEL - SCROLL-IN STAGGER REVEAL (v4.0) */
+(function () {
+  if (window.__pmc_tree_os_reveal) return;
+  window.__pmc_tree_os_reveal = true;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function init() {
+    var panel = document.querySelector('.pmc-tree-os');
+    if (!panel || !('IntersectionObserver' in window)) return;
+    var events = panel.querySelectorAll('.pmc-tree-os-event');
+    events.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(8px)';
+      el.style.transition = 'opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1)';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        events.forEach(function (el, i) {
+          setTimeout(function () {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, 80 + i * 80);
+        });
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.3 });
+    io.observe(panel);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<script>
+/* PMC AUDIT WIDGET - CAPTURE FORM HANDLER (v1.1) */
+(function () {
+  if (window.__pmc_aw_capture) return;
+  window.__pmc_aw_capture = true;
+
+  var CAPTURE_URL = 'https://audit.pfendermarketing.com/api/capture';
+  var REVEAL_DELAY_MS = 4000;
+  var lastScan = { url: null, scanned_at: null };
+
+  function uuid() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (Math.random() * 16) | 0;
+      var v = c === 'x' ? r : ((r & 0x3) | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  function setState(captureRoot, state) {
+    var nodes = captureRoot.querySelectorAll('[data-pmc-aw-capture-state]');
+    nodes.forEach(function (el) {
+      el.style.display = el.getAttribute('data-pmc-aw-capture-state') === state ? '' : 'none';
+    });
+  }
+
+  function parseFindings(streamEl) {
+    if (!streamEl) return [];
+    var titles = streamEl.querySelectorAll('[data-pmc-aw-row-title]');
+    var findings = [];
+    titles.forEach(function (titleEl) {
+      var rowParent = titleEl.parentElement && titleEl.parentElement.parentElement;
+      if (!rowParent) return;
+      var meta = rowParent.querySelector('[data-pmc-aw-row-meta]');
+      var metric = rowParent.querySelector('[data-pmc-aw-row-metric]');
+      var severity = metric ? (metric.getAttribute('data-pmc-aw-row-severity') || 'warn') : 'warn';
+      findings.push({
+        title: (titleEl.textContent || '').trim(),
+        meta: meta ? (meta.textContent || '').trim() : '',
+        severity: severity,
+        metric: metric ? (metric.textContent || '').trim() : '',
+      });
+    });
+    return findings;
+  }
+
+  function revealForm(capture) {
+    if (capture.dataset.pmcRevealed === '1') return;
+    capture.style.display = '';
+    capture.style.opacity = '0';
+    capture.style.transform = 'translateY(8px)';
+    capture.dataset.pmcRevealed = '1';
+    requestAnimationFrame(function () {
+      capture.style.transition = 'opacity 400ms cubic-bezier(0.16,1,0.3,1), transform 400ms cubic-bezier(0.16,1,0.3,1)';
+      capture.style.opacity = '1';
+      capture.style.transform = 'translateY(0)';
+    });
+  }
+
+  function init() {
+    var widget = document.querySelector('[data-pmc-aw]');
+    if (!widget) return;
+    var capture = widget.querySelector('[data-pmc-aw-capture]');
+    if (!capture) return;
+    var statusEl = widget.querySelector('[data-pmc-aw-status]');
+    var titleEl = widget.querySelector('[data-pmc-aw-title]');
+    var streamEl = widget.querySelector('[data-pmc-aw-stream]');
+    var inputEl = widget.querySelector('[data-pmc-aw-input]');
+    var form = capture.querySelector('[data-pmc-aw-capture-form]');
+    var emailInput = capture.querySelector('[data-pmc-aw-capture-email]');
+    var honeypotInput = capture.querySelector('[data-pmc-aw-capture-honeypot]');
+    var retryBtn = capture.querySelector('[data-pmc-aw-capture-retry]');
+    if (!statusEl || !form || !emailInput || !honeypotInput) return;
+
+    var revealTimer = null;
+    function checkScanComplete() {
+      var text = (statusEl.textContent || '').trim().toLowerCase();
+      if (text === 'result') {
+        var resolvedUrl = null;
+        if (inputEl && inputEl.value) {
+          var raw = inputEl.value.trim();
+          resolvedUrl = /^https?:\/\//i.test(raw) ? raw : 'https://' + raw;
+        } else if (titleEl) {
+          var host = (titleEl.textContent || '').trim();
+          resolvedUrl = host ? 'https://' + host : null;
+        }
+        lastScan.url = resolvedUrl;
+        lastScan.scanned_at = new Date().toISOString();
+        if (revealTimer) clearTimeout(revealTimer);
+        revealTimer = setTimeout(function () { revealForm(capture); }, REVEAL_DELAY_MS);
+      }
+    }
+    try {
+      var observer = new MutationObserver(checkScanComplete);
+      observer.observe(statusEl, { childList: true, characterData: true, subtree: true });
+    } catch (e) {}
+    checkScanComplete();
+
+    function submit(e) {
+      if (e) e.preventDefault();
+      var email = (emailInput.value || '').trim();
+      var honeypot = honeypotInput.value || '';
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailInput.style.borderBottomColor = '#d95252';
+        emailInput.focus();
+        setTimeout(function () { emailInput.style.borderBottomColor = ''; }, 2400);
+        return;
+      }
+      setState(capture, 'submitting');
+      var findings = parseFindings(streamEl);
+      var payload = {
+        email: email,
+        url: lastScan.url || (inputEl && inputEl.value) || window.location.href,
+        scanned_at: lastScan.scanned_at || new Date().toISOString(),
+        version: '1.0.0',
+        source: 'homepage_widget',
+        findings: findings,
+        signals: {},
+        honeypot: honeypot,
+        request_id: uuid()
+      };
+      fetch(CAPTURE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            return { ok: res.status >= 200 && res.status < 300, status: res.status, data: data };
+          });
+        })
+        .then(function (result) {
+          if (result.ok) {
+            setState(capture, 'success');
+          } else {
+            var errMsgEl = capture.querySelector('[data-pmc-aw-capture-error-msg]');
+            if (errMsgEl) {
+              /* v5.1 fix: defensive stringification to avoid "[object Object]"
+                 if upstream returns a non-string error shape */
+              var raw = result.data && result.data.error;
+              var msg = 'Something went wrong. Please try again.';
+              if (typeof raw === 'string') {
+                msg = raw;
+              } else if (raw && typeof raw === 'object') {
+                if (typeof raw.message === 'string') msg = raw.message;
+                else if (typeof raw.error === 'string') msg = raw.error;
+              }
+              errMsgEl.textContent = msg;
+            }
+            setState(capture, 'error');
+          }
+        })
+        .catch(function () {
+          var errMsgEl = capture.querySelector('[data-pmc-aw-capture-error-msg]');
+          if (errMsgEl) errMsgEl.textContent = 'Could not reach the service. Try again.';
+          setState(capture, 'error');
+        });
+    }
+
+    form.addEventListener('submit', submit);
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        setState(capture, 'idle');
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
