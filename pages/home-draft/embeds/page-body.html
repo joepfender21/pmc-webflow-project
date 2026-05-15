@@ -1,0 +1,511 @@
+<!-- ============================================================
+     PMC HOMEPAGE - BODY MARKUP
+     Wrap entire page in .pmc-home scope. CSS in page head,
+     JS in page footer, this is HTML-only.
+     ============================================================ -->
+
+<div class="pmc-home">
+
+  <!-- TOPBAR -->
+  <div class="pmc-topbar">
+    <span>Founding client spots are limited</span>
+    <span class="pmc-topbar-arrow">&rarr;</span>
+    <a href="#contact" class="pmc-topbar-link">Apply now</a>
+    <button class="pmc-topbar-dismiss" type="button" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- NAV -->
+  <header class="pmc-nav">
+    <div class="pmc-nav-inner">
+      <a href="#" class="pmc-nav-logo">
+        <span class="pmc-nav-logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 18 L9 14 L7 12 L11 8 L13 10 L17 6" stroke="#457340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="6" y="16" width="2" height="3" fill="#D7AF33"/>
+            <rect x="10" y="14" width="2" height="5" fill="#D7AF33"/>
+            <rect x="14" y="10" width="2" height="9" fill="#D7AF33"/>
+          </svg>
+        </span>
+        Pfender Marketing Co.
+      </a>
+      <nav class="pmc-nav-links" aria-label="Primary">
+        <a href="#services" class="pmc-nav-link">Services</a>
+        <a href="#work" class="pmc-nav-link">Work</a>
+        <a href="#about" class="pmc-nav-link">About</a>
+        <a href="/tree-crm" class="pmc-nav-link">Tree CRM</a>
+      </nav>
+      <a href="#contact" class="pmc-nav-cta">Get an audit</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pmc-hero">
+    <div class="pmc-container pmc-hero-grid">
+      <div>
+        <div class="pmc-hero-eyebrow">
+          <span class="dot"></span>
+          <span>Philadelphia &middot; working nationwide</span>
+        </div>
+        <h1 class="display h1 pmc-hero-h1">
+          Full-stack marketing<br>
+          for <em>founders.</em>
+        </h1>
+        <p class="pmc-hero-sub">
+          Senior, AI-augmented, run by one operator. No agency stack to manage, no junior handoffs, no playbook you've already seen. Audits, SEO, paid media, attribution, websites, brand - the whole funnel, owned end to end.
+        </p>
+        <div class="pmc-hero-ctas">
+          <a href="#contact" class="pmc-btn pmc-btn-primary">
+            Get an audit
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#work" class="pmc-btn pmc-btn-secondary">
+            See the work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="pmc-hero-creds">
+          <div>
+            <div class="pmc-cred-num">10+</div>
+            <div class="pmc-cred-label">Years inside agencies, in-house, and the funnel</div>
+          </div>
+          <div>
+            <div class="pmc-cred-num">1</div>
+            <div class="pmc-cred-label">Operator. You work directly with me, every step</div>
+          </div>
+          <div>
+            <div class="pmc-cred-num">&infin;</div>
+            <div class="pmc-cred-label">AI surface. Built into the workflow, not bolted on</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUDIT PREVIEW WIDGET -->
+      <div class="pmc-aw shimmer-active" aria-label="Live audit preview">
+        <div class="pmc-aw-header">
+          <div class="pmc-aw-dots"><span></span><span></span><span></span></div>
+          <div class="pmc-aw-title">audit.pfendermarketing.com</div>
+          <div class="pmc-aw-status"><span class="live-dot"></span>Scanning</div>
+        </div>
+        <div class="pmc-aw-stream" id="pmcAuditStream"></div>
+        <div class="pmc-aw-foot">
+          <span>Findings refresh every 4s</span>
+          <a href="#contact" class="pmc-aw-foot-cta">Run yours &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="pmc-section" id="services">
+    <div class="pmc-container">
+      <div class="pmc-services-head">
+        <div class="editorial">
+          <span class="eyebrow">Services</span>
+          <h2 class="display h2" style="margin-top:14px">The whole funnel, run by one person.</h2>
+        </div>
+        <p class="body-sm" style="max-width:380px">
+          Most consultants pick a lane and outsource the rest. Joe owns every layer, so the strategy, the execution, and the measurement actually talk to each other.
+        </p>
+      </div>
+
+      <div class="pmc-services-grid">
+        <div class="pmc-service-card">
+          <h3 class="h4">Strategy &amp; growth audits</h3>
+          <p class="body-sm">Full-funnel audit of your marketing stack, attribution, conversion, and messaging. Output is a 90-day plan, not a 40-page deck.</p>
+          <div class="pmc-service-tags">
+            <span class="pmc-service-tag">SEO</span>
+            <span class="pmc-service-tag">Attribution</span>
+            <span class="pmc-service-tag">CRO</span>
+            <span class="pmc-service-tag">Messaging</span>
+          </div>
+        </div>
+        <div class="pmc-service-card">
+          <h3 class="h4">Paid media &amp; performance</h3>
+          <p class="body-sm">Apple Search Ads, Meta, Google. Budgets sized to the goal, landing pages built to convert, attribution wired so you know what's working.</p>
+          <div class="pmc-service-tags">
+            <span class="pmc-service-tag">Apple Search Ads</span>
+            <span class="pmc-service-tag">Meta</span>
+            <span class="pmc-service-tag">Google</span>
+          </div>
+        </div>
+        <div class="pmc-service-card">
+          <h3 class="h4">Websites &amp; product surfaces</h3>
+          <p class="body-sm">Webflow and React builds, design systems, embedded forms, scheduling, and the analytics layer underneath. Editorial-grade, performance-tuned.</p>
+          <div class="pmc-service-tags">
+            <span class="pmc-service-tag">Webflow</span>
+            <span class="pmc-service-tag">React</span>
+            <span class="pmc-service-tag">GA4 + GTM</span>
+          </div>
+        </div>
+        <div class="pmc-service-card">
+          <h3 class="h4">AI-assisted production</h3>
+          <p class="body-sm">Custom Claude and GPT pipelines for content, video, briefs, and reporting. AI does the volume, I keep the judgment.</p>
+          <div class="pmc-service-tags">
+            <span class="pmc-service-tag">Content</span>
+            <span class="pmc-service-tag">Video</span>
+            <span class="pmc-service-tag">Reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="/services" class="pmc-link-arrow">
+        See the full breakdown
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- AUDIT BANNER -->
+  <section class="pmc-section-tight">
+    <div class="pmc-container">
+      <div class="pmc-audit-banner">
+        <div class="pmc-audit-banner-left">
+          <div class="pmc-audit-banner-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <div>
+            <div class="pmc-audit-banner-headline">Find out what's costing you leads.</div>
+            <div class="pmc-audit-banner-sub">Complimentary audit - SEO, paid spend, attribution, conversion, messaging. No strings.</div>
+          </div>
+        </div>
+        <a href="#contact" class="pmc-audit-banner-btn">
+          Get my audit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY -->
+  <section class="pmc-section pmc-opportunity" id="opportunity">
+    <div class="pmc-container">
+      <div class="pmc-opportunity-head editorial">
+        <span class="eyebrow">The opportunity</span>
+        <h2 class="display h2" style="margin-top:14px">Most marketing setups break before they launch.</h2>
+        <p class="body" style="margin-top:20px">
+          A scan of 250 mid-market service business websites in 2025. Four common failure modes that show up in nearly every audit I run.
+        </p>
+      </div>
+      <div class="pmc-gauges">
+        <div class="pmc-gauge" data-target="70">
+          <div class="pmc-gauge-ring">
+            <svg viewBox="0 0 130 130" width="130" height="130" aria-hidden="true">
+              <circle class="track" cx="65" cy="65" r="56"/>
+              <circle class="progress" cx="65" cy="65" r="56" stroke-dasharray="351.86" stroke-dashoffset="351.86"/>
+            </svg>
+            <span class="pmc-gauge-num">0%</span>
+          </div>
+          <span class="pmc-gauge-label">No call to action above the fold</span>
+        </div>
+        <div class="pmc-gauge" data-target="53">
+          <div class="pmc-gauge-ring">
+            <svg viewBox="0 0 130 130" width="130" height="130" aria-hidden="true">
+              <circle class="track" cx="65" cy="65" r="56"/>
+              <circle class="progress" cx="65" cy="65" r="56" stroke-dasharray="351.86" stroke-dashoffset="351.86"/>
+            </svg>
+            <span class="pmc-gauge-num">0%</span>
+          </div>
+          <span class="pmc-gauge-label">CTAs misaligned with the funnel</span>
+        </div>
+        <div class="pmc-gauge" data-target="72">
+          <div class="pmc-gauge-ring">
+            <svg viewBox="0 0 130 130" width="130" height="130" aria-hidden="true">
+              <circle class="track" cx="65" cy="65" r="56"/>
+              <circle class="progress" cx="65" cy="65" r="56" stroke-dasharray="351.86" stroke-dashoffset="351.86"/>
+            </svg>
+            <span class="pmc-gauge-num">0%</span>
+          </div>
+          <span class="pmc-gauge-label">No CTAs on interior pages</span>
+        </div>
+        <div class="pmc-gauge" data-target="68">
+          <div class="pmc-gauge-ring">
+            <svg viewBox="0 0 130 130" width="130" height="130" aria-hidden="true">
+              <circle class="track" cx="65" cy="65" r="56"/>
+              <circle class="progress" cx="65" cy="65" r="56" stroke-dasharray="351.86" stroke-dashoffset="351.86"/>
+            </svg>
+            <span class="pmc-gauge-num">0%</span>
+          </div>
+          <span class="pmc-gauge-label">No analytics or attribution wired</span>
+        </div>
+      </div>
+      <div class="pmc-opportunity-foot">
+        <span>Sound like your setup?</span>
+        <a href="#contact">Get an audit &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="pmc-section">
+    <div class="pmc-container">
+      <div class="pmc-process-head editorial">
+        <span class="eyebrow">How it works</span>
+        <h2 class="display h2" style="margin-top:14px">Four phases. No black boxes.</h2>
+      </div>
+      <div class="pmc-process-grid">
+        <div class="pmc-step">
+          <span class="pmc-step-num">01</span>
+          <div class="pmc-step-title">Discover</div>
+          <p class="pmc-step-body">Two-week dig into your analytics, campaigns, content, and stack. Find what's broken, what's leaking, and where the leverage is.</p>
+        </div>
+        <div class="pmc-step">
+          <span class="pmc-step-num">02</span>
+          <div class="pmc-step-title">Strategize</div>
+          <p class="pmc-step-body">A prioritized 90-day plan with real milestones. Not a 40-page deck. A working document we execute against.</p>
+        </div>
+        <div class="pmc-step">
+          <span class="pmc-step-num">03</span>
+          <div class="pmc-step-title">Execute</div>
+          <p class="pmc-step-body">Hands-on implementation across SEO, paid, content, web, and tracking. AI does the volume, I keep the judgment. No junior handoffs.</p>
+        </div>
+        <div class="pmc-step">
+          <span class="pmc-step-num">04</span>
+          <div class="pmc-step-title">Iterate</div>
+          <p class="pmc-step-body">Weekly check-ins, monthly readouts. Attribution, performance, and pipeline data drive the next cycle. The system gets sharper every quarter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PFENDER -->
+  <section class="pmc-section" id="about">
+    <div class="pmc-container">
+      <div class="pmc-why-grid">
+        <div class="pmc-why-aside">
+          <span class="eyebrow">Why Pfender</span>
+          <h2 class="display h2" style="margin-top:14px">Ten years in the trenches.</h2>
+          <p class="body">Now I work for you.</p>
+        </div>
+        <div class="pmc-why-prose editorial">
+          <p class="body">
+            I spent a decade inside agency life - managing campaigns, building websites, and learning digital marketing alongside the people who actually moved the industry forward. SEO, paid media, analytics, web. I didn't specialize in one and outsource the rest. I learned all of it.
+          </p>
+          <p class="body">
+            The bar for calling yourself a "digital marketer" has never been lower. Anyone with a Canva account and a ChatGPT login is an agency owner now. Very few of us have spent ten years deep in the work, across every channel, every platform, with a real passion for helping founders grow.
+          </p>
+          <p class="pull">
+            That's what you're getting. Not a team of juniors. Not a salesperson who disappears after the contract is signed. One senior operator who does the work, owns the results, and actually gives a damn.
+          </p>
+          <p class="body">
+            I'm based in Manayunk, Philadelphia. I work with founders nationwide. AI sits inside every part of my workflow - briefs, content, video, reporting - but every recommendation, every pitch, every line of strategy is mine.
+          </p>
+          <a href="/about" class="pmc-link-arrow" style="margin-top:24px">
+            More about how I work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="pmc-section pmc-work" id="work">
+    <div class="pmc-container">
+      <div class="pmc-work-head">
+        <div class="editorial">
+          <span class="eyebrow">Recent work</span>
+          <h2 class="display h2" style="margin-top:14px">Founder-led businesses, real numbers.</h2>
+        </div>
+        <a href="/case-studies" class="pmc-link-arrow">
+          All case studies
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="pmc-work-grid">
+        <!-- HORSEGRID -->
+        <div class="pmc-work-card">
+          <div class="pmc-work-meta">
+            <span>HorseGrid Designer</span>
+            <span class="pill">Live retainer</span>
+          </div>
+          <h3 class="pmc-work-title">An equestrian iOS app, patent pending, launching version 1.1.</h3>
+          <p class="pmc-work-blurb">
+            Full marketing stack for a founder-led iOS company. Brand identity, website, App Store positioning, attribution, paid acquisition strategy, and content engine - all built and run by Joe.
+          </p>
+          <div class="pmc-metrics">
+            <div>
+              <div class="pmc-metric-label">Engagement</div>
+              <div class="pmc-metric-num">$2k</div>
+              <div class="pmc-metric-context">Monthly retainer</div>
+            </div>
+            <div>
+              <div class="pmc-metric-label">Patent</div>
+              <div class="pmc-metric-num">Pending</div>
+              <div class="pmc-metric-context">USPTO filed</div>
+            </div>
+            <div>
+              <div class="pmc-metric-label">App version</div>
+              <div class="pmc-metric-num">1.1</div>
+              <div class="pmc-metric-context">Q2 2026 launch</div>
+            </div>
+          </div>
+          <div class="pmc-work-quote">
+            <p class="pmc-work-quote-text">"Joe built the entire marketing system around the app. Every dollar I spend has a number attached now."</p>
+            <p class="pmc-work-quote-author">- Tessa Vosika, Founder of HorseGrid Designer</p>
+          </div>
+          <a href="/case-studies/horsegrid" class="pmc-work-link">
+            Read the case study
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- VITALITY -->
+        <div class="pmc-work-card coming-soon">
+          <div class="pmc-work-meta">
+            <span>Vitality Wellness Collective</span>
+            <span class="pill queued">Launching May 8</span>
+          </div>
+          <h3 class="pmc-work-title">A wellness coaching practice, brand-new website, end-to-end ops.</h3>
+          <p class="pmc-work-blurb">
+            Brand, website, Tree CRM workspace, and a 90-day go-to-market roadmap for Sean Calhoun's coaching practice. Designed, built, and shipped inside three weeks.
+          </p>
+          <div class="pmc-metrics">
+            <div>
+              <div class="pmc-metric-label">Scope</div>
+              <div class="pmc-metric-num">Full</div>
+              <div class="pmc-metric-context">Brand + site + CRM</div>
+            </div>
+            <div>
+              <div class="pmc-metric-label">Timeline</div>
+              <div class="pmc-metric-num">21d</div>
+              <div class="pmc-metric-context">Discovery to live</div>
+            </div>
+            <div>
+              <div class="pmc-metric-label">Roadmap</div>
+              <div class="pmc-metric-num">90d</div>
+              <div class="pmc-metric-context">Launch to scale</div>
+            </div>
+          </div>
+          <div class="pmc-work-quote">
+            <p class="pmc-work-quote-text">"Case study coming after Sean's site goes live."</p>
+            <p class="pmc-work-quote-author">- May 8, 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pmc-section" id="contact">
+    <div class="pmc-container">
+      <div class="pmc-contact-head editorial">
+        <span class="eyebrow">Let's talk</span>
+        <h2 class="display h2" style="margin-top:14px">Ready to get unstuck?</h2>
+        <p class="body" style="margin-top:14px">
+          Start with an audit. No pitch deck, no pressure. If we're a fit, we'll scope it. If we're not, you'll still walk away with a sharper view of where you're losing leads.
+        </p>
+      </div>
+      <div class="pmc-contact-grid">
+        <div>
+          <div class="pmc-contact-trust">
+            <div class="pmc-trust-row">
+              <div class="pmc-trust-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <span class="pmc-trust-text">No long-term contracts required</span>
+            </div>
+            <div class="pmc-trust-row">
+              <div class="pmc-trust-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <span class="pmc-trust-text">Working directly with the operator, not an account team</span>
+            </div>
+            <div class="pmc-trust-row">
+              <div class="pmc-trust-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <span class="pmc-trust-text">Audit returned within 5 business days</span>
+            </div>
+            <div class="pmc-trust-row">
+              <div class="pmc-trust-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <span class="pmc-trust-text">30-minute intro call, no pitch deck</span>
+            </div>
+          </div>
+        </div>
+        <div class="pmc-contact-card">
+          <div class="pmc-contact-card-row">
+            <span class="label">Email</span>
+            <span class="value"><a href="mailto:joe@pfendermarketing.com">joe@pfendermarketing.com</a></span>
+          </div>
+          <div class="pmc-contact-card-row">
+            <span class="label">Phone</span>
+            <span class="value"><a href="tel:+17173716816">(717) 371-6816</a></span>
+          </div>
+          <div class="pmc-contact-card-row">
+            <span class="label">Based</span>
+            <span class="value">Manayunk, Philadelphia</span>
+          </div>
+          <div class="pmc-contact-card-actions">
+            <a href="/start" class="pmc-btn pmc-btn-primary">Apply for an audit
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/meeting" class="pmc-btn pmc-btn-secondary">Book an intro call
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pmc-footer">
+    <div class="pmc-container">
+      <div class="pmc-footer-grid">
+        <div class="pmc-footer-brand">
+          <a href="#" class="pmc-nav-logo">
+            <span class="pmc-nav-logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 18 L9 14 L7 12 L11 8 L13 10 L17 6" stroke="#457340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="6" y="16" width="2" height="3" fill="#D7AF33"/>
+                <rect x="10" y="14" width="2" height="5" fill="#D7AF33"/>
+                <rect x="14" y="10" width="2" height="9" fill="#D7AF33"/>
+              </svg>
+            </span>
+            Pfender Marketing Co.
+          </a>
+          <p class="pmc-footer-blurb">Senior, AI-augmented marketing for founder-led businesses. Built in Philadelphia. Working nationwide.</p>
+        </div>
+        <div class="pmc-footer-col">
+          <div class="pmc-footer-col-title">Work with me</div>
+          <ul>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/case-studies">Case studies</a></li>
+            <li><a href="/start">Start a project</a></li>
+            <li><a href="/meeting">Book a call</a></li>
+          </ul>
+        </div>
+        <div class="pmc-footer-col">
+          <div class="pmc-footer-col-title">Products</div>
+          <ul>
+            <li><a href="/tree-crm">Tree CRM</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="pmc-footer-col">
+          <div class="pmc-footer-col-title">Direct</div>
+          <ul>
+            <li><a href="mailto:joe@pfendermarketing.com">joe@pfendermarketing.com</a></li>
+            <li><a href="tel:+17173716816">(717) 371-6816</a></li>
+            <li><a href="https://www.linkedin.com/in/joepfender" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pmc-footer-fine">
+        <span>&copy; 2026 Pfender Marketing Co. All rights reserved.</span>
+        <div class="pmc-footer-legal-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
