@@ -1,18 +1,17 @@
-<!-- PMC HOMEPAGE - BODY/FOOTER CUSTOM CODE (v5.0 - full replacement)
+<!-- PMC HOMEPAGE - BODY/FOOTER CUSTOM CODE (v5.1 - full replacement)
+     v5.1: Removed dead topbar dismiss block from PMC body JS (script 2).
+     Topbar element was removed from the page in an earlier sprint, so the
+     handler was silently no-oping. Cleaning to keep the file tight.
      Six self-contained <script> blocks. Each is an IIFE with idempotency guard.
      NO nested script tags. NO bare JS without wrappers.
-
      Order:
        1. Motion polish v3.5 (section reveals, hero word stagger, magnetic CTAs, card spotlight, count-up)
-       2. PMC body JS v3.1 (topbar dismiss, sticky nav, hero spotlight, smooth scroll)
+       2. PMC body JS v3.2 (sticky nav, hero spotlight, smooth scroll)
        3. Audit widget live wiring v1.0 (scan handler)
        4. Audit widget scan-state observer v3.9.1 (toggles .is-scanning class)
        5. Tree CRM OS panel scroll-in stagger reveal v4.0
        6. Audit widget capture form handler v1.1 (4s reveal, fetch /api/capture)
-
-     This block matches the v5.0 head CSS. -->
-
-
+     This block matches the v6.5 head CSS. -->
 <script>
 /* PMC HOMEPAGE - MOTION POLISH (v3.5) */
 (function () {
@@ -110,26 +109,15 @@
   else init();
 })();
 </script>
-
-
 <script>
-/* PMC HOMEPAGE - PAGE BODY JS (v3.1) - topbar dismiss, nav scroll, hero spotlight, smooth scroll */
+/* PMC HOMEPAGE - PAGE BODY JS (v3.2) - sticky nav, hero spotlight, smooth scroll
+   v3.2: Removed dead topbar dismiss handler (topbar element no longer in DOM). */
 (function () {
   if (window.__pmc_home_page) return;
   window.__pmc_home_page = true;
   try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
   document.addEventListener('DOMContentLoaded', function () {
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var topbar = document.querySelector('.pmc-topbar');
-    if (topbar) {
-      if (sessionStorage.getItem('pmc_topbar_dismissed')) topbar.classList.add('dismissed');
-      var btn = topbar.querySelector('.pmc-topbar-dismiss');
-      if (btn) btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        topbar.classList.add('dismissed');
-        sessionStorage.setItem('pmc_topbar_dismissed', 'true');
-      });
-    }
     var nav = document.querySelector('.pmc-nav');
     function navState() {
       if (!nav) return;
@@ -180,8 +168,6 @@
   });
 })();
 </script>
-
-
 <script>
 /* PMC HOMEPAGE - AUDIT WIDGET LIVE WIRING (v1.0) */
 (function () {
@@ -275,8 +261,6 @@
   else init();
 })();
 </script>
-
-
 <script>
 /* PMC AUDIT WIDGET - SCANNING STATE OBSERVER (v3.9.1) */
 (function () {
@@ -307,8 +291,6 @@
   else init();
 })();
 </script>
-
-
 <script>
 /* TREE CRM OS PANEL - SCROLL-IN STAGGER REVEAL (v4.0) */
 (function () {
@@ -342,18 +324,14 @@
   else init();
 })();
 </script>
-
-
 <script>
 /* PMC AUDIT WIDGET - CAPTURE FORM HANDLER (v1.1) */
 (function () {
   if (window.__pmc_aw_capture) return;
   window.__pmc_aw_capture = true;
-
   var CAPTURE_URL = 'https://audit.pfendermarketing.com/api/capture';
   var REVEAL_DELAY_MS = 4000;
   var lastScan = { url: null, scanned_at: null };
-
   function uuid() {
     if (window.crypto && typeof window.crypto.randomUUID === 'function') {
       return window.crypto.randomUUID();
@@ -364,14 +342,12 @@
       return v.toString(16);
     });
   }
-
   function setState(captureRoot, state) {
     var nodes = captureRoot.querySelectorAll('[data-pmc-aw-capture-state]');
     nodes.forEach(function (el) {
       el.style.display = el.getAttribute('data-pmc-aw-capture-state') === state ? '' : 'none';
     });
   }
-
   function parseFindings(streamEl) {
     if (!streamEl) return [];
     var titles = streamEl.querySelectorAll('[data-pmc-aw-row-title]');
@@ -391,7 +367,6 @@
     });
     return findings;
   }
-
   function revealForm(capture) {
     if (capture.dataset.pmcRevealed === '1') return;
     capture.style.display = '';
@@ -404,7 +379,6 @@
       capture.style.transform = 'translateY(0)';
     });
   }
-
   function init() {
     var widget = document.querySelector('[data-pmc-aw]');
     if (!widget) return;
@@ -419,7 +393,6 @@
     var honeypotInput = capture.querySelector('[data-pmc-aw-capture-honeypot]');
     var retryBtn = capture.querySelector('[data-pmc-aw-capture-retry]');
     if (!statusEl || !form || !emailInput || !honeypotInput) return;
-
     var revealTimer = null;
     function checkScanComplete() {
       var text = (statusEl.textContent || '').trim().toLowerCase();
@@ -443,7 +416,6 @@
       observer.observe(statusEl, { childList: true, characterData: true, subtree: true });
     } catch (e) {}
     checkScanComplete();
-
     function submit(e) {
       if (e) e.preventDefault();
       var email = (emailInput.value || '').trim();
@@ -504,7 +476,6 @@
           setState(capture, 'error');
         });
     }
-
     form.addEventListener('submit', submit);
     if (retryBtn) {
       retryBtn.addEventListener('click', function (e) {
@@ -513,7 +484,6 @@
       });
     }
   }
-
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
