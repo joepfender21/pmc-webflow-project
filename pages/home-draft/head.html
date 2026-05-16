@@ -2,11 +2,18 @@
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,400i,500i,700i&display=swap" rel="stylesheet">
 
 <style>
-/* PMC HOMEPAGE HEAD CSS v6.5 - full replacement.
-   v6.4 base + (1) hero cred strip 2-col after third card removal,
-   (2) Why Pfender single-column after small figure removal, large img
-   constrained to 620px max for editorial left-alignment,
-   (3) #pmc-contact-avatar 64px circle styling. */
+/* PMC HOMEPAGE HEAD CSS v6.6 - full replacement.
+   v6.5 base + v6.6 design pass:
+   - portrait sized down and right-aligned in Why Pfender
+   - trust row checkmarks swapped to PMC tree icon
+   - redundant stat row and self-quote hidden
+   - hero stat numbers given more presence
+   - All case studies link upgraded to pill button
+   - product composite collapsed to single column with bigger tiles
+   - How I Work header margins normalized
+   - Tree CRM hero image styling (companion to Designer DOM insertion)
+   - Engine pull-quote bar + em italic treatment (Phase B)
+   - Tree CRM bullets tablet rhythm tightening for 5-item count */
 
 
 /* ===== TOKENS ===== */
@@ -708,6 +715,46 @@ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-i
 
 @media (prefers-reduced-motion: reduce) {
   .pmc-home .pmc-how-loop:hover, .pmc-home .pmc-product-tile:hover .pmc-product-tile-img { transform: none !important; }
+}
+
+
+/* ============================================================
+   ===== V6.6 PATCHES =====
+   Design pass + Phase B pullquote support.
+   ============================================================ */
+.pmc-home .pmc-why-grid-images { max-width: 320px !important; margin-left: auto !important; margin-right: 0 !important; }
+.pmc-home .pmc-why-img-large img { max-height: 380px !important; }
+.pmc-home .pmc-trust-check { background-color: transparent !important; }
+.pmc-home .pmc-trust-check::before { background-image: url("https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e8b686f7573e1b0f6dc_PMC_Icon_32x32.png") !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; }
+.pmc-home .pmc-why-stats { display: none !important; }
+.pmc-home .pmc-why-pullquote { display: none !important; }
+.pmc-home .pmc-hero-creds { max-width: 720px; gap: 64px; }
+.pmc-home .pmc-cred-num { font-size: 56px; letter-spacing: -0.025em; }
+.pmc-home .pmc-cred-label { font-size: 14px; }
+.pmc-home .pmc-work-head .pmc-link-arrow { font-size: 14px; padding: 12px 20px; border: 1px solid var(--gold-line); border-radius: 999px; background: rgba(215,175,51,0.04); transition: background 220ms var(--ease-out-expo), border-color 220ms var(--ease-out-expo), transform 220ms var(--ease-out-expo); }
+.pmc-home .pmc-work-head .pmc-link-arrow:hover { background: var(--gold-soft); border-color: var(--gold); transform: translateY(-1px); }
+.pmc-home .pmc-product-grid { grid-template-columns: 1fr !important; gap: 48px !important; max-width: 1040px; margin-left: auto; margin-right: auto; }
+.pmc-home .pmc-product-tile-img { aspect-ratio: 16 / 9 !important; }
+.pmc-home .pmc-product-tile-img img { object-fit: cover !important; object-position: center top !important; }
+.pmc-home .pmc-product-tile-eyebrow { font-size: 13px; }
+.pmc-home .pmc-how-head { margin: 0 0 64px 0 !important; max-width: 960px; }
+.pmc-home .pmc-tree-hero-img { width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(245, 240, 232, 0.10); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6); display: block; }
+
+
+/* ===== ENGINE PULL-QUOTE BAR ===== */
+.pmc-home .pmc-pullquote { max-width: 1280px; margin: 56px auto 0; padding: 36px 40px; background: rgba(215, 175, 51, 0.04); border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; font-family: 'Clash Display', sans-serif; font-weight: 600; font-size: 22px; line-height: 1.5; color: var(--ink); letter-spacing: -0.01em; }
+@media (max-width: 768px) {
+  .pmc-home .pmc-pullquote { margin: 40px 28px 0; padding: 28px 24px; font-size: 18px; }
+}
+
+
+/* ===== ENGINE PULL-QUOTE EM TREATMENT ===== */
+.pmc-home .pmc-pullquote em { font-style: italic; font-weight: 500; color: var(--ink-90); }
+
+
+/* ===== TREE CRM BULLETS - tablet rhythm tightening for 5-item count ===== */
+@media (max-width: 1080px) and (min-width: 901px) {
+  .pmc-home .pmc-tree-bullet { padding-top: 8px; padding-bottom: 8px; }
 }
 
 
