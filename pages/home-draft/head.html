@@ -2,18 +2,15 @@
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,400i,500i,700i&display=swap" rel="stylesheet">
 
 <style>
-/* PMC HOMEPAGE HEAD CSS v6.6 - full replacement.
-   v6.5 base + v6.6 design pass:
-   - portrait sized down and right-aligned in Why Pfender
-   - trust row checkmarks swapped to PMC tree icon
-   - redundant stat row and self-quote hidden
-   - hero stat numbers given more presence
-   - All case studies link upgraded to pill button
-   - product composite collapsed to single column with bigger tiles
-   - How I Work header margins normalized
-   - Tree CRM hero image styling (companion to Designer DOM insertion)
+/* PMC HOMEPAGE HEAD CSS v6.8 - full replacement.
+   v6.7 base (trimmed dead .pmc-tree-os + .pmc-why-stats/pullquote base styling) plus:
+   - Capability Clusters CSS (Phase C2 - .pmc-clusters / .pmc-cluster grid)
+   - Fork dual-path close CSS (Phase C3 - .pmc-fork-* card pattern)
+   - Work grid single-child :has() fix (Phase C4 - centers single card)
    - Engine pull-quote bar + em italic treatment (Phase B)
-   - Tree CRM bullets tablet rhythm tightening for 5-item count */
+   - v6.6 design pass: portrait sized down, trust row icon swap, hidden
+     stats/self-quote, hero stat presence, case studies pill, single-col
+     product composite, How I Work header alignment, Tree CRM hero image. */
 
 
 /* ===== TOKENS ===== */
@@ -756,6 +753,49 @@ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-i
 @media (max-width: 1080px) and (min-width: 901px) {
   .pmc-home .pmc-tree-bullet { padding-top: 8px; padding-bottom: 8px; }
 }
+
+
+/* ===== CAPABILITY CLUSTERS (Phase C2) ===== */
+.pmc-home .pmc-clusters { position: relative; }
+.pmc-home .pmc-clusters-head { max-width: 720px; margin: 0 0 64px 0; display: flex; flex-direction: column; gap: 16px; }
+.pmc-home .pmc-clusters-head .pmc-h2 { font-size: clamp(36px, 5vw, 60px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: var(--ink); margin: 4px 0 0; max-width: 22ch; }
+.pmc-home .pmc-clusters-lead { font-size: 18px; line-height: 1.65; color: var(--ink-80); max-width: 56ch; margin: 12px 0 0; }
+.pmc-home .pmc-clusters-list { display: flex; flex-direction: column; }
+.pmc-home .pmc-cluster { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; padding: 40px 0; border-top: 1px solid var(--hairline); align-items: start; }
+.pmc-home .pmc-cluster:first-child { border-top: 0; padding-top: 0; }
+.pmc-home .pmc-cluster:last-child { padding-bottom: 0; }
+.pmc-home .pmc-cluster-side { display: flex; flex-direction: column; gap: 14px; }
+.pmc-home .pmc-cluster-name { font-family: 'Satoshi', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.15; color: var(--ink); letter-spacing: -0.015em; margin: 0; }
+.pmc-home .pmc-cluster-audience { font-size: 13px; font-style: italic; color: var(--ink-60); line-height: 1.5; margin: 0; }
+.pmc-home .pmc-cluster-leak { font-size: 15px; line-height: 1.55; color: var(--ink-80); margin: 0; }
+.pmc-home .pmc-cluster-leak strong, .pmc-home .pmc-cluster-install strong { color: var(--ink); font-weight: 600; }
+.pmc-home .pmc-cluster-install { font-size: 15px; line-height: 1.65; color: var(--ink-90); margin: 0; }
+@media (max-width: 900px) {
+  .pmc-home .pmc-cluster { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+}
+
+
+/* ===== FORK dual-path close (Phase C3) ===== */
+.pmc-home .pmc-fork-head { max-width: 720px; margin: 0 auto 56px; text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+.pmc-home .pmc-fork-head .pmc-eyebrow { justify-content: center; }
+.pmc-home .pmc-fork-head .pmc-h2 { font-size: clamp(36px, 5vw, 60px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: var(--ink); margin: 0; }
+.pmc-home .pmc-fork-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1040px; margin: 0 auto; }
+.pmc-home .pmc-fork-card { background-color: var(--paper); border: 1px solid var(--hairline); border-radius: 20px; padding: 40px 36px; display: flex; flex-direction: column; gap: 20px; transition: border-color 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo); }
+.pmc-home .pmc-fork-card:hover { border-color: rgba(215,175,51,0.3); transform: translateY(-2px); }
+.pmc-home .pmc-fork-card-label { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.pmc-home .pmc-fork-card-title { font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; margin: 0; }
+.pmc-home .pmc-fork-card-sub { font-size: 15px; line-height: 1.55; color: var(--ink-80); font-style: italic; margin: 0; }
+.pmc-home .pmc-fork-card-body { font-size: 15px; line-height: 1.65; color: var(--ink-90); margin: 0; }
+.pmc-home .pmc-fork-card-button { margin-top: auto; align-self: flex-start; }
+.pmc-home .pmc-fork-note { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: 13px; color: var(--ink-50); }
+@media (max-width: 768px) {
+  .pmc-home .pmc-fork-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pmc-home .pmc-fork-card { padding: 32px 24px; }
+}
+
+
+/* ===== WORK GRID single-child fix (Phase C4) ===== */
+.pmc-home .pmc-work-grid:has(> :only-child) { grid-template-columns: 1fr; max-width: 720px; }
 
 
 </style>
