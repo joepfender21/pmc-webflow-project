@@ -1,0 +1,95 @@
+<!-- /services - THE ENGAGEMENT - v1.1 ICONS
+     4 phases (Audit -> Diagnose -> Install -> Run) on a horizontal scroll-snap track (desktop).
+     Each card carries a PMC inline icon (i-scan / i-radar / i-web / i-cast) that animates on
+     scroll-in and replays on hover. SVG defs live in body.html.
+     SVG hairlines between cards still draw on intersection (handled in body.html).
+     Keyboard navigation via ArrowLeft / ArrowRight.
+     HTML ONLY. No <style>, no <script>. -->
+<div class="pmc-engage" aria-label="How an engagement runs">
+  <div class="pmc-engage-track" role="list">
+
+    <article class="pmc-engage-card" role="listitem">
+      <svg class="pmc-ico i-scan" viewBox="0 0 64 64" aria-hidden="true">
+        <rect class="s2" x="14" y="14" width="28" height="34" rx="4" opacity=".3"/>
+        <line class="row" x1="20" y1="22" x2="36" y2="22" stroke="#5FA354" stroke-width="1.6" opacity=".45"/>
+        <line class="flag" x1="20" y1="29" x2="34" y2="29" stroke-width="1.6"/>
+        <line class="row" x1="20" y1="36" x2="30" y2="36" stroke="#5FA354" stroke-width="1.6" opacity=".45"/>
+        <line class="row" x1="20" y1="43" x2="33" y2="43" stroke="#5FA354" stroke-width="1.6" opacity=".45"/>
+        <g class="lens">
+          <circle class="s" cx="31" cy="30" r="13" style="stroke-width:2"/>
+          <path class="hl" d="M25 24.5 A8 8 0 0 1 33.5 23.2"/>
+          <line class="s" x1="40.5" y1="39.5" x2="49" y2="48" style="stroke-width:2.6"/>
+          <g class="beam transient"><line class="sg bloomg" x1="22" y1="30" x2="40" y2="30" style="stroke-width:1.4"/></g>
+          <circle class="ping transient sg" cx="31" cy="30" r="3" stroke-width="1.4" fill="none"/>
+        </g>
+      </svg>
+      <span class="pmc-engage-step">Step 01 / Audit</span>
+      <h3 class="pmc-engage-title">Audit</h3>
+      <p class="pmc-engage-body">Two weeks. I look at every channel, every tool, every dashboard. You get a written read of what is leaking and where the budget is hiding.</p>
+      <svg class="pmc-engage-line" aria-hidden="true" viewBox="0 0 56 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="56" y2="0.5"></line></svg>
+    </article>
+
+    <article class="pmc-engage-card" role="listitem">
+      <svg class="pmc-ico i-cal" viewBox="0 0 64 64" aria-hidden="true">
+        <rect class="s" x="14" y="18" width="36" height="31" rx="4.5"/>
+        <path class="hl" d="M17 18.6 H47"/>
+        <line class="s2" x1="14" y1="26" x2="50" y2="26"/>
+        <line class="sg" x1="23" y1="13" x2="23" y2="20" style="stroke-width:2"/>
+        <line class="sg" x1="41" y1="13" x2="41" y2="20" style="stroke-width:2"/>
+        <rect class="chip c1" x="19" y="30" width="6" height="4.5" rx="1.4" fill="#5FA354"/>
+        <rect class="chip c2" x="29" y="30" width="6" height="4.5" rx="1.4" fill="#5FA354"/>
+        <rect class="chip c3" x="19" y="38" width="6" height="4.5" rx="1.4" fill="#5FA354"/>
+        <rect class="chip c4" x="29" y="38" width="6" height="4.5" rx="1.4" fill="url(#gGold)"/>
+        <circle class="focus transient sg" cx="32" cy="40.2" r="6.4" stroke-width="1.4" fill="none"/>
+        <polyline class="check sg bloomg" points="38,40 40.5,42.5 45,37" fill="none" stroke-width="2" stroke-dasharray="11"/>
+      </svg>
+      <span class="pmc-engage-step">Step 02 / Diagnose</span>
+      <h3 class="pmc-engage-title">Diagnose</h3>
+      <p class="pmc-engage-body">We sit on the audit together. I walk you through the read, the install plan, and the trade-offs. You decide what gets installed first.</p>
+      <svg class="pmc-engage-line" aria-hidden="true" viewBox="0 0 56 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="56" y2="0.5"></line></svg>
+    </article>
+
+    <article class="pmc-engage-card" role="listitem">
+      <svg class="pmc-ico i-web" viewBox="0 0 64 64" aria-hidden="true">
+        <rect class="s2" x="21" y="11" width="31" height="25" rx="4" opacity=".3"/>
+        <rect class="s" x="13" y="17" width="34" height="29" rx="4.5"/>
+        <path class="hl" d="M16 17.6 H44"/>
+        <line class="s2" x1="13" y1="25" x2="47" y2="25"/>
+        <circle class="fl" cx="18" cy="21" r="1.3"/>
+        <circle class="fl" cx="22.4" cy="21" r="1.3"/>
+        <rect class="fg" x="33" y="19.4" width="11" height="3.2" rx="1.6" opacity="0.45"/>
+        <rect class="deploy fg bloomg" x="13.6" y="16.2" width="32.8" height="1.8" rx="1"/>
+        <rect class="b1 fl" x="18" y="29" width="16" height="2.6" rx="1.3"/>
+        <rect class="b2 fl" x="18" y="34" width="11" height="2.2" rx="1.1" opacity="0.82"/>
+        <rect class="b3 fl" x="18" y="38.4" width="13" height="2.2" rx="1.1" opacity="0.82"/>
+        <rect class="b4 sg" x="36" y="29" width="8" height="11.6" rx="2"/>
+      </svg>
+      <span class="pmc-engage-step">Step 03 / Install</span>
+      <h3 class="pmc-engage-title">Install</h3>
+      <p class="pmc-engage-body">90 days. Site, instrumentation, messaging, the first paid layer, the first content layer. You watch it ship, you own everything that gets installed.</p>
+      <svg class="pmc-engage-line" aria-hidden="true" viewBox="0 0 56 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="56" y2="0.5"></line></svg>
+    </article>
+
+    <article class="pmc-engage-card" role="listitem">
+      <svg class="pmc-ico i-cast" viewBox="0 0 64 64" aria-hidden="true">
+        <line class="s2" x1="32" y1="32" x2="18" y2="18"/>
+        <line class="s2" x1="32" y1="32" x2="46" y2="18"/>
+        <line class="s2" x1="32" y1="32" x2="18" y2="46"/>
+        <line class="s2" x1="32" y1="32" x2="46" y2="46"/>
+        <circle class="wave v1 transient" cx="32" cy="32" r="11" stroke="url(#gLeaf)" stroke-width="1.6" fill="none"/>
+        <circle class="wave v2 transient" cx="32" cy="32" r="16" stroke="url(#gLeaf)" stroke-width="1.6" fill="none"/>
+        <circle class="wave v3 transient" cx="32" cy="32" r="21" stroke="url(#gGold)" stroke-width="1.6" fill="none"/>
+        <circle class="ep e1" cx="18" cy="18" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+        <circle class="ep e2" cx="46" cy="18" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+        <circle class="ep e3" cx="18" cy="46" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+        <circle class="ep e4" cx="46" cy="46" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+        <circle class="core fg bloomg" cx="32" cy="32" r="4.3"/>
+      </svg>
+      <span class="pmc-engage-step">Step 04 / Run</span>
+      <h3 class="pmc-engage-title">Run</h3>
+      <p class="pmc-engage-body">Optional retainer. I keep operating the engine for you, or I hand it off to your team with a runbook. Either way it keeps running because you own it.</p>
+    </article>
+
+  </div>
+  <p class="pmc-engage-hint" aria-hidden="true">&larr; &rarr; to navigate</p>
+</div>

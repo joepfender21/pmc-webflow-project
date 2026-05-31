@@ -1,0 +1,89 @@
+<!-- /services - THE LEAK (services-side reframe) - v1.1 ICONS
+     4 diagnosis cards: overlapping SaaS, attribution blindness, ASO neglect, channel mis-spend.
+     Each card carries a PMC inline icon (i-cast / i-radar / i-pin / i-ads) that animates on
+     scroll-in and replays on hover. SVG defs (gradients + bloom) are injected once via body.html.
+     HTML ONLY. No <style>, no <script>. -->
+<div class="pmc-leak-grid" role="list">
+
+  <article class="pmc-leak-card" role="listitem">
+    <svg class="pmc-ico i-cast" viewBox="0 0 64 64" aria-hidden="true">
+      <line class="s2" x1="32" y1="32" x2="18" y2="18"/>
+      <line class="s2" x1="32" y1="32" x2="46" y2="18"/>
+      <line class="s2" x1="32" y1="32" x2="18" y2="46"/>
+      <line class="s2" x1="32" y1="32" x2="46" y2="46"/>
+      <circle class="wave v1 transient" cx="32" cy="32" r="11" stroke="url(#gLeaf)" stroke-width="1.6" fill="none"/>
+      <circle class="wave v2 transient" cx="32" cy="32" r="16" stroke="url(#gLeaf)" stroke-width="1.6" fill="none"/>
+      <circle class="wave v3 transient" cx="32" cy="32" r="21" stroke="url(#gGold)" stroke-width="1.6" fill="none"/>
+      <circle class="ep e1" cx="18" cy="18" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+      <circle class="ep e2" cx="46" cy="18" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+      <circle class="ep e3" cx="18" cy="46" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+      <circle class="ep e4" cx="46" cy="46" r="3.4" fill="#071312" stroke="url(#gLeaf)" stroke-width="1.6"/>
+      <circle class="core fg bloomg" cx="32" cy="32" r="4.3"/>
+    </svg>
+    <span class="pmc-leak-label">LEAK 01</span>
+    <h3 class="pmc-leak-title">Overlapping software</h3>
+    <p class="pmc-leak-body">You are paying three tools to do one job. Your last audit was your accountant noticing the renewals, not your team noticing the waste.</p>
+  </article>
+
+  <article class="pmc-leak-card" role="listitem">
+    <svg class="pmc-ico i-radar" viewBox="0 0 64 64" aria-hidden="true">
+      <circle class="field" cx="32" cy="32" r="22.5" stroke-dasharray="1.5 6"/>
+      <circle class="s" cx="32" cy="32" r="17"/>
+      <circle class="s2" cx="32" cy="32" r="10.5"/>
+      <circle class="s2" cx="32" cy="32" r="4"/>
+      <g class="sweep">
+        <path d="M32 32 L32 15 A17 17 0 0 1 46 23 Z" fill="url(#gGold)" opacity="0.18"/>
+        <line class="sg" x1="32" y1="32" x2="32" y2="15" stroke-width="1.5"/>
+      </g>
+      <circle class="ring transient sg" cx="43" cy="24" r="5" stroke-width="1.4"/>
+      <circle class="blip fg bloomg" cx="43" cy="24" r="2.7"/>
+      <g class="lock">
+        <path class="sg" d="M43 18 L43 21" stroke-width="1.4"/>
+        <path class="sg" d="M43 27 L43 30" stroke-width="1.4"/>
+        <path class="sg" d="M37 24 L40 24" stroke-width="1.4"/>
+        <path class="sg" d="M46 24 L49 24" stroke-width="1.4"/>
+      </g>
+    </svg>
+    <span class="pmc-leak-label">LEAK 02</span>
+    <h3 class="pmc-leak-title">Attribution blindness</h3>
+    <p class="pmc-leak-body">You can tell me revenue is up. You cannot tell me which channel earned it. So you keep funding what you always funded.</p>
+  </article>
+
+  <article class="pmc-leak-card" role="listitem">
+    <svg class="pmc-ico i-pin" viewBox="0 0 64 64" aria-hidden="true">
+      <path class="field" d="M10 20 L26 14 L40 20 L54 14 M22 12 L22 50 M40 18 L40 52"/>
+      <path class="route" d="M14 48 Q24 42 32 44 Q42 46 44 38" fill="none" stroke="url(#gGold)" stroke-width="1.6" stroke-dasharray="3 3.4" opacity=".6" stroke-dashoffset="44"/>
+      <ellipse class="ripple transient" cx="32" cy="51" rx="11" ry="3.4" stroke="url(#gGold)" fill="none"/>
+      <ellipse class="ripple r2 transient" cx="32" cy="51" rx="11" ry="3.4" stroke="url(#gGold)" fill="none"/>
+      <g class="pin">
+        <path class="s" d="M32 13 C24 13 18 19 18 27 C18 37 32 49 32 49 C32 49 46 37 46 27 C46 19 40 13 32 13 Z" style="stroke-width:2"/>
+        <path class="hl" d="M24 18 A10 10 0 0 1 32 15.5"/>
+        <circle class="fg bloomg" cx="32" cy="27" r="4"/>
+      </g>
+    </svg>
+    <span class="pmc-leak-label">LEAK 03</span>
+    <h3 class="pmc-leak-title">ASO neglect</h3>
+    <p class="pmc-leak-body">Your app is downloaded by people who already knew about you. The App Store is a search engine you do not show up in.</p>
+  </article>
+
+  <article class="pmc-leak-card" role="listitem">
+    <svg class="pmc-ico i-ads" viewBox="0 0 64 64" aria-hidden="true">
+      <line class="field" x1="17" y1="22" x2="49" y2="22"/>
+      <line class="field" x1="17" y1="31" x2="49" y2="31"/>
+      <line class="field" x1="17" y1="40" x2="49" y2="40"/>
+      <line class="s2" x1="16" y1="16" x2="16" y2="47"/>
+      <line class="s2" x1="16" y1="47" x2="49" y2="47"/>
+      <rect class="bar r1 fl" x="20" y="35" width="5.4" height="12" rx="1.6"/>
+      <rect class="bar r2 fl" x="28.5" y="30" width="5.4" height="17" rx="1.6"/>
+      <rect class="bar r3 fl" x="37" y="25" width="5.4" height="22" rx="1.6"/>
+      <rect class="bar r4 fg" x="45.5" y="18" width="5.4" height="29" rx="1.6"/>
+      <polyline class="trend sg" points="20,33 51,10" stroke-dasharray="40"/>
+      <g class="head"><path class="sg" d="M45 11.3 L51 10 L48 15.4" stroke-width="1.6"/></g>
+      <circle class="burst transient fg bloomg" cx="51" cy="10" r="2.4"/>
+    </svg>
+    <span class="pmc-leak-label">LEAK 04</span>
+    <h3 class="pmc-leak-title">Channel mis-spend</h3>
+    <p class="pmc-leak-body">You spend the most where the conversion is the slowest. The dashboards do not tell you because they were not built to.</p>
+  </article>
+
+</div>

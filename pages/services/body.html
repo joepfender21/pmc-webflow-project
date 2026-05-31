@@ -1,0 +1,735 @@
+<!-- PMC /services - BODY/FOOTER CUSTOM CODE (v1.0 - full file)
+     Base: full Home body.html v5.1 (six self-contained IIFE blocks).
+     Services is .pmc-home + .pmc-services combo class, so every Home IIFE works
+     identically (section reveal, sticky nav, hero spotlight, magnetic CTAs,
+     count-up, audit widget wiring, scan observer, capture form, Tree CRM phone show).
+     Net-new: 7th block - SERVICES (__pmc_services_page) for Stack toggles,
+     scroll-spy, hash deep-link auto-open, Engagement line-draw + keyboard nav. -->
+
+
+<!-- ==== Block 1: Motion polish v3.5 (inherited from Home) ==== -->
+<script>
+/* PMC HOMEPAGE - MOTION POLISH (v3.5) */
+(function () {
+  if (window.__pmc_motion) return;
+  window.__pmc_motion = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  function init() {
+    var ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
+    var sections = document.querySelectorAll('.pmc-home > section, .pmc-home > footer');
+    sections.forEach(function (el) { el.classList.add('pmc-reveal'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      sections.forEach(function (el) { io.observe(el); });
+    }
+    var heroSection = document.querySelector('.pmc-hero');
+    if (heroSection && 'IntersectionObserver' in window) {
+      var animated = false;
+      var heroIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            document.querySelectorAll('.pmc-cred-num').forEach(function (el) {
+              var raw = el.textContent.trim();
+              var num = parseInt(raw, 10);
+              if (isNaN(num) || num === 0) return;
+              var suffix = raw.replace(String(num), '');
+              var duration = 1400;
+              var start = null;
+              function step(ts) {
+                if (!start) start = ts;
+                var p = Math.min((ts - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(num * eased) + suffix;
+                if (p < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+            heroIO.unobserve(heroSection);
+          }
+        });
+      }, { threshold: 0.5 });
+      heroIO.observe(heroSection);
+    }
+    document.querySelectorAll('.pmc-btn-primary, .pmc-nav-cta').forEach(function (btn) {
+      btn.addEventListener('mouseenter', function () { btn.style.transition = 'transform 80ms ' + ease; });
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var dx = (e.clientX - rect.left - rect.width / 2) * 0.18;
+        var dy = (e.clientY - rect.top - rect.height / 2) * 0.18 - 1.5;
+        btn.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transition = 'transform 280ms ' + ease;
+        btn.style.transform = '';
+      });
+    });
+    var heroH1 = document.querySelector('.pmc-hero-h1');
+    if (heroH1) {
+      var html = heroH1.innerHTML;
+      var newHtml = html.replace(/(>|^)([^<]+?)(<|$)/g, function (_, before, text, after) {
+        var parts = text.split(/(\s+)/);
+        var wrapped = parts.map(function (p) {
+          if (!p.trim()) return p;
+          return '<span class="pmc-word">' + p + '</span>';
+        }).join('');
+        return before + wrapped + after;
+      });
+      heroH1.innerHTML = newHtml;
+      requestAnimationFrame(function () {
+        var words = heroH1.querySelectorAll('.pmc-word');
+        words.forEach(function (w, i) { w.style.transitionDelay = (50 + i * 70) + 'ms'; });
+        heroH1.classList.add('is-loaded');
+      });
+    }
+    document.querySelectorAll('.pmc-service-card, .pmc-work-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width) * 100;
+        var y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--pmc-card-x', x + '%');
+        card.style.setProperty('--pmc-card-y', y + '%');
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<!-- ==== Block 2: PMC body JS v3.2 - sticky nav, hero spotlight, smooth scroll (inherited) ==== -->
+<script>
+(function () {
+  if (window.__pmc_home_page) return;
+  window.__pmc_home_page = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  document.addEventListener('DOMContentLoaded', function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nav = document.querySelector('.pmc-nav');
+    function navState() {
+      if (!nav) return;
+      if (window.scrollY > 8) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', navState, { passive: true });
+    navState();
+    if (!reduce) {
+      var hero = document.querySelector('.pmc-hero');
+      if (hero) {
+        var heroRect = hero.getBoundingClientRect();
+        var pendingMove = false, pendingScroll = false;
+        var mouse = { x: 0, y: 0 };
+        function refresh() { heroRect = hero.getBoundingClientRect(); }
+        window.addEventListener('resize', refresh, { passive: true });
+        window.addEventListener('scroll', refresh, { passive: true });
+        hero.addEventListener('mousemove', function (e) {
+          mouse.x = e.clientX; mouse.y = e.clientY;
+          if (pendingMove) return;
+          pendingMove = true;
+          requestAnimationFrame(function () {
+            pendingMove = false;
+            hero.style.setProperty('--pmc-x', ((mouse.x - heroRect.left) / heroRect.width * 100) + '%');
+            hero.style.setProperty('--pmc-y', ((mouse.y - heroRect.top) / heroRect.height * 100) + '%');
+          });
+        });
+        window.addEventListener('scroll', function () {
+          if (pendingScroll) return;
+          pendingScroll = true;
+          requestAnimationFrame(function () {
+            pendingScroll = false;
+            hero.style.setProperty('--pmc-s', (window.scrollY * 0.15) + 'px');
+          });
+        }, { passive: true });
+      }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        var t = document.querySelector(href);
+        if (!t) return;
+        e.preventDefault();
+        t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
+  });
+})();
+</script>
+
+
+<!-- ==== Block 3: Audit widget live wiring v1.0 (inherited - no-ops if widget not on page) ==== -->
+<script>
+(function () {
+  if (window.__pmc_audit) return;
+  window.__pmc_audit = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  var API_URL = 'https://audit.pfendermarketing.com/api/scan';
+  var ICONS = {
+    warn: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>',
+    error: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>',
+    ok: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>'
+  };
+  var COLORS = {
+    warn: { bg: 'rgba(215,175,51,0.10)', text: '#D7AF33' },
+    error: { bg: 'rgba(217,82,82,0.10)', text: '#d95252' },
+    ok: { bg: 'rgba(69,115,64,0.15)', text: '#5A9E54' }
+  };
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function buildRow(finding, isLast) {
+    var sev = finding.severity in COLORS ? finding.severity : 'warn';
+    var c = COLORS[sev];
+    var ic = ICONS[sev];
+    var border = isLast ? '' : 'border-bottom:1px solid rgba(245,240,232,0.04);';
+    return '<div style="display:flex;align-items:center;gap:14px;padding:14px 0;' + border + '">' +
+      '<div style="width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:' + c.bg + ';color:' + c.text + '">' + ic + '</div>' +
+      '<div style="flex:1;min-width:0">' +
+        '<div data-pmc-aw-row-title style="font-size:14px;color:#F5F0E8;font-weight:500;line-height:1.35;margin-bottom:2px">' + escapeHtml(finding.title) + '</div>' +
+        '<div data-pmc-aw-row-meta style="font-size:12px;color:rgba(245,240,232,0.5)">' + escapeHtml(finding.meta) + '</div>' +
+      '</div>' +
+      '<div data-pmc-aw-row-metric data-pmc-aw-row-severity="' + sev + '" style="font-weight:700;font-size:18px;color:' + c.text + ';flex-shrink:0">' + escapeHtml(finding.metric) + '</div>' +
+    '</div>';
+  }
+  function init() {
+    var widget = document.querySelector('[data-pmc-aw]');
+    if (!widget) return;
+    var input = widget.querySelector('[data-pmc-aw-input]');
+    var submit = widget.querySelector('[data-pmc-aw-submit]');
+    var status = widget.querySelector('[data-pmc-aw-status]');
+    var stream = widget.querySelector('[data-pmc-aw-stream]');
+    var titleEl = widget.querySelector('[data-pmc-aw-title]');
+    function setLoading(on) {
+      if (on) {
+        widget.style.opacity = '0.85';
+        if (status) { status.textContent = 'Scanning'; status.style.color = '#D7AF33'; }
+        if (input) input.disabled = true;
+        if (submit) { submit.disabled = true; submit.textContent = 'Scanning'; submit.style.opacity = '0.7'; }
+      } else {
+        widget.style.opacity = '1';
+        if (input) input.disabled = false;
+        if (submit) { submit.disabled = false; submit.textContent = 'Scan'; submit.style.opacity = '1'; }
+      }
+    }
+    function showError(msg) {
+      if (status) { status.textContent = 'Error'; status.style.color = '#d95252'; }
+      if (stream) stream.innerHTML = '<div style="padding:32px 0;text-align:center;font-size:13px;color:rgba(245,240,232,0.7)">' + escapeHtml(msg) + '</div>';
+    }
+    function renderFindings(findings, scannedUrl) {
+      if (stream && Array.isArray(findings)) {
+        stream.innerHTML = findings.map(function (f, i) { return buildRow(f, i === findings.length - 1); }).join('');
+      }
+      if (titleEl) {
+        try { titleEl.textContent = new URL(scannedUrl).hostname; } catch (e) { titleEl.textContent = scannedUrl; }
+      }
+      if (status) { status.textContent = 'Result'; status.style.color = '#5A9E54'; }
+    }
+    async function scan(rawUrl) {
+      var url = rawUrl.trim();
+      if (!url) return;
+      if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+      setLoading(true);
+      try {
+        var res = await fetch(API_URL + '?url=' + encodeURIComponent(url));
+        var data = await res.json();
+        if (data && data.error) showError(data.error);
+        else if (data && Array.isArray(data.findings)) renderFindings(data.findings, data.url || url);
+        else showError('Unexpected response. Try again.');
+      } catch (e) {
+        showError('Could not reach the audit service. Try again.');
+      } finally {
+        setLoading(false);
+      }
+    }
+    if (submit) submit.addEventListener('click', function (e) { e.preventDefault(); if (input) scan(input.value); });
+    if (input) input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); scan(input.value); } });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<!-- ==== Block 4: Audit widget scan-state observer v3.9.1 (inherited) ==== -->
+<script>
+(function () {
+  if (window.__pmc_aw_scan_observer) return;
+  window.__pmc_aw_scan_observer = true;
+  function init() {
+    var widgets = document.querySelectorAll('[data-pmc-aw]');
+    if (!widgets.length) return;
+    widgets.forEach(function (widget) {
+      var statusEl = widget.querySelector('[data-pmc-aw-status]');
+      if (!statusEl) return;
+      function syncState() {
+        var text = (statusEl.textContent || '').trim().toLowerCase();
+        if (text.indexOf('scan') !== -1 || text.indexOf('analyz') !== -1 || text.indexOf('audit') !== -1) {
+          widget.classList.add('is-scanning');
+        } else {
+          widget.classList.remove('is-scanning');
+        }
+      }
+      try {
+        var observer = new MutationObserver(syncState);
+        observer.observe(statusEl, { childList: true, characterData: true, subtree: true });
+      } catch (e) {}
+      syncState();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<!-- ==== Block 5: Audit widget capture form handler v1.1 (inherited) ==== -->
+<script>
+(function () {
+  if (window.__pmc_aw_capture) return;
+  window.__pmc_aw_capture = true;
+  var CAPTURE_URL = 'https://audit.pfendermarketing.com/api/capture';
+  var REVEAL_DELAY_MS = 4000;
+  var lastScan = { url: null, scanned_at: null };
+  function uuid() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (Math.random() * 16) | 0;
+      var v = c === 'x' ? r : ((r & 0x3) | 0x8);
+      return v.toString(16);
+    });
+  }
+  function setState(captureRoot, state) {
+    var nodes = captureRoot.querySelectorAll('[data-pmc-aw-capture-state]');
+    nodes.forEach(function (el) {
+      el.style.display = el.getAttribute('data-pmc-aw-capture-state') === state ? '' : 'none';
+    });
+  }
+  function parseFindings(streamEl) {
+    if (!streamEl) return [];
+    var titles = streamEl.querySelectorAll('[data-pmc-aw-row-title]');
+    var findings = [];
+    titles.forEach(function (titleEl) {
+      var rowParent = titleEl.parentElement && titleEl.parentElement.parentElement;
+      if (!rowParent) return;
+      var meta = rowParent.querySelector('[data-pmc-aw-row-meta]');
+      var metric = rowParent.querySelector('[data-pmc-aw-row-metric]');
+      var severity = metric ? (metric.getAttribute('data-pmc-aw-row-severity') || 'warn') : 'warn';
+      findings.push({
+        title: (titleEl.textContent || '').trim(),
+        meta: meta ? (meta.textContent || '').trim() : '',
+        severity: severity,
+        metric: metric ? (metric.textContent || '').trim() : '',
+      });
+    });
+    return findings;
+  }
+  function revealForm(capture) {
+    if (capture.dataset.pmcRevealed === '1') return;
+    capture.style.display = '';
+    capture.style.opacity = '0';
+    capture.style.transform = 'translateY(8px)';
+    capture.dataset.pmcRevealed = '1';
+    requestAnimationFrame(function () {
+      capture.style.transition = 'opacity 400ms cubic-bezier(0.16,1,0.3,1), transform 400ms cubic-bezier(0.16,1,0.3,1)';
+      capture.style.opacity = '1';
+      capture.style.transform = 'translateY(0)';
+    });
+  }
+  function init() {
+    var widget = document.querySelector('[data-pmc-aw]');
+    if (!widget) return;
+    var capture = widget.querySelector('[data-pmc-aw-capture]');
+    if (!capture) return;
+    var statusEl = widget.querySelector('[data-pmc-aw-status]');
+    var titleEl = widget.querySelector('[data-pmc-aw-title]');
+    var streamEl = widget.querySelector('[data-pmc-aw-stream]');
+    var inputEl = widget.querySelector('[data-pmc-aw-input]');
+    var form = capture.querySelector('[data-pmc-aw-capture-form]');
+    var emailInput = capture.querySelector('[data-pmc-aw-capture-email]');
+    var honeypotInput = capture.querySelector('[data-pmc-aw-capture-honeypot]');
+    var retryBtn = capture.querySelector('[data-pmc-aw-capture-retry]');
+    if (!statusEl || !form || !emailInput || !honeypotInput) return;
+    var revealTimer = null;
+    function checkScanComplete() {
+      var text = (statusEl.textContent || '').trim().toLowerCase();
+      if (text === 'result') {
+        var resolvedUrl = null;
+        if (inputEl && inputEl.value) {
+          var raw = inputEl.value.trim();
+          resolvedUrl = /^https?:\/\//i.test(raw) ? raw : 'https://' + raw;
+        } else if (titleEl) {
+          var host = (titleEl.textContent || '').trim();
+          resolvedUrl = host ? 'https://' + host : null;
+        }
+        lastScan.url = resolvedUrl;
+        lastScan.scanned_at = new Date().toISOString();
+        if (revealTimer) clearTimeout(revealTimer);
+        revealTimer = setTimeout(function () { revealForm(capture); }, REVEAL_DELAY_MS);
+      }
+    }
+    try {
+      var observer = new MutationObserver(checkScanComplete);
+      observer.observe(statusEl, { childList: true, characterData: true, subtree: true });
+    } catch (e) {}
+    checkScanComplete();
+    function submit(e) {
+      if (e) e.preventDefault();
+      var email = (emailInput.value || '').trim();
+      var honeypot = honeypotInput.value || '';
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailInput.style.borderBottomColor = '#d95252';
+        emailInput.focus();
+        setTimeout(function () { emailInput.style.borderBottomColor = ''; }, 2400);
+        return;
+      }
+      setState(capture, 'submitting');
+      var findings = parseFindings(streamEl);
+      var payload = {
+        email: email,
+        url: lastScan.url || (inputEl && inputEl.value) || window.location.href,
+        scanned_at: lastScan.scanned_at || new Date().toISOString(),
+        version: '1.0.0',
+        source: 'services_widget',
+        findings: findings,
+        signals: {},
+        honeypot: honeypot,
+        request_id: uuid()
+      };
+      fetch(CAPTURE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            return { ok: res.status >= 200 && res.status < 300, status: res.status, data: data };
+          });
+        })
+        .then(function (result) {
+          if (result.ok) {
+            setState(capture, 'success');
+          } else {
+            var errMsgEl = capture.querySelector('[data-pmc-aw-capture-error-msg]');
+            if (errMsgEl) {
+              var raw = result.data && result.data.error;
+              var msg = 'Something went wrong. Please try again.';
+              if (typeof raw === 'string') {
+                msg = raw;
+              } else if (raw && typeof raw === 'object') {
+                if (typeof raw.message === 'string') msg = raw.message;
+                else if (typeof raw.error === 'string') msg = raw.error;
+              }
+              errMsgEl.textContent = msg;
+            }
+            setState(capture, 'error');
+          }
+        })
+        .catch(function () {
+          var errMsgEl = capture.querySelector('[data-pmc-aw-capture-error-msg]');
+          if (errMsgEl) errMsgEl.textContent = 'Could not reach the service. Try again.';
+          setState(capture, 'error');
+        });
+    }
+    form.addEventListener('submit', submit);
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        setState(capture, 'idle');
+      });
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<!-- ==== Block 6: Tree CRM 3-phone force-show v1.0 (inherited) ==== -->
+<script>
+(function () {
+  if (window.__pmc_tree_phone_show) return;
+  window.__pmc_tree_phone_show = true;
+  function showPhones() {
+    var phones = document.querySelectorAll('.pmc-tree-phone');
+    if (!phones.length) return;
+    var positions = ['rotate(-3deg)', 'scale(1.08)', 'rotate(3deg)'];
+    phones.forEach(function (p, i) {
+      p.style.transition = 'opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1)';
+      p.style.opacity = '1';
+      p.style.transform = positions[i] || 'none';
+    });
+  }
+  if (document.readyState === 'complete') showPhones();
+  else window.addEventListener('load', showPhones);
+  setTimeout(showPhones, 800);
+})();
+</script>
+
+
+<!-- ==== Block 7: SERVICES - Stack + Engagement (NEW, page-specific) ==== -->
+<script>
+/* PMC /services - STACK + ENGAGEMENT (v1.0)
+   Page-scoped IIFE. Run-once guarded by __pmc_services_page.
+   - Stack row expand/collapse via aria-expanded + data-open attr
+   - Pairs-with deep links open the target row
+   - Sticky left-rail scroll spy by data-layer
+   - Engagement card line-draw on IntersectionObserver
+   - Engagement keyboard nav (ArrowLeft / ArrowRight)
+   - Hash deep link (location.hash) auto-opens the matching service row */
+(function () {
+  if (window.__pmc_services_page) return;
+  window.__pmc_services_page = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function openRow(row) {
+    if (!row) return;
+    var btn = row.querySelector('.pmc-stack-toggle');
+    if (!btn) return;
+    row.setAttribute('data-open', '');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function closeRow(row) {
+    var btn = row.querySelector('.pmc-stack-toggle');
+    if (!btn) return;
+    row.removeAttribute('data-open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function init() {
+    /* ===== STACK: row toggles ===== */
+    var rows = document.querySelectorAll('.pmc-services .pmc-stack-row');
+    rows.forEach(function (row) {
+      var btn = row.querySelector('.pmc-stack-toggle');
+      if (!btn) return;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        if (row.hasAttribute('data-open')) closeRow(row);
+        else openRow(row);
+      });
+    });
+
+    /* ===== STACK: pairs-with deep links open the target row ===== */
+    document.querySelectorAll('.pmc-services .pmc-stack-pair').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href');
+        if (!href || href.charAt(0) !== '#') return;
+        var target = document.querySelector(href);
+        if (!target) return;
+        if (!target.hasAttribute('data-open')) openRow(target);
+      });
+    });
+
+    /* ===== STACK: hash deep link on load ===== */
+    if (location.hash && location.hash.indexOf('#svc-') === 0) {
+      var deepTarget = document.querySelector(location.hash);
+      if (deepTarget) {
+        openRow(deepTarget);
+        setTimeout(function () {
+          deepTarget.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        }, 120);
+      }
+    }
+
+    /* ===== STACK: left-rail scroll spy ===== */
+    if (!reduce && 'IntersectionObserver' in window) {
+      var rail = document.querySelector('.pmc-services .pmc-stack-rail');
+      if (rail) {
+        var layerEls = rail.querySelectorAll('[data-layer]');
+        var byLayer = {};
+        layerEls.forEach(function (el) { byLayer[el.dataset.layer] = el; });
+        var spyIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            var layer = e.target.dataset.layer;
+            layerEls.forEach(function (el) { el.classList.remove('is-active'); });
+            if (byLayer[layer]) byLayer[layer].classList.add('is-active');
+          });
+        }, { threshold: 0, rootMargin: '-40% 0px -55% 0px' });
+        document.querySelectorAll('.pmc-services .pmc-stack-row').forEach(function (r) { spyIO.observe(r); });
+      }
+    }
+
+    /* ===== ENGAGEMENT: line draw + keyboard nav ===== */
+    var track = document.querySelector('.pmc-services .pmc-engage-track');
+    if (track) {
+      if (!reduce && 'IntersectionObserver' in window) {
+        var drawIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-drawn');
+              drawIO.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        track.querySelectorAll('.pmc-engage-card').forEach(function (c) { drawIO.observe(c); });
+      } else {
+        track.querySelectorAll('.pmc-engage-card').forEach(function (c) { c.classList.add('is-drawn'); });
+      }
+      track.setAttribute('tabindex', '0');
+      track.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        var cards = Array.prototype.slice.call(track.querySelectorAll('.pmc-engage-card'));
+        if (!cards.length) return;
+        var rect = track.getBoundingClientRect();
+        var center = rect.left + rect.width / 2;
+        var active = cards.reduce(function (best, c) {
+          var r = c.getBoundingClientRect();
+          var d = Math.abs((r.left + r.width / 2) - center);
+          return (best == null || d < best.d) ? { el: c, d: d } : best;
+        }, null);
+        if (!active) return;
+        var idx = cards.indexOf(active.el);
+        var nextIdx = e.key === 'ArrowLeft' ? Math.max(0, idx - 1) : Math.min(cards.length - 1, idx + 1);
+        cards[nextIdx].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', inline: 'center', block: 'nearest' });
+        e.preventDefault();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<!-- ==== Block 7.5: SERVICES HERO INDEX STRIP - template-defining navigation ====
+     Injects a 6-item section index below the hero-grid. Each item is a slash-style
+     mono chip with the section number in gold and title in cream. Click jumps to
+     the section via smooth scroll (Home's #-link handler in Block 2 catches it). -->
+<script>
+(function () {
+  if (window.__pmc_hero_index) return;
+  window.__pmc_hero_index = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+
+  var ITEMS = [
+    { href: '#leak',     num: '01', name: 'The leak' },
+    { href: '#services', num: '02', name: 'The Stack' },
+    { href: '#system',   num: '03', name: 'The Blueprint' },
+    { href: '#plan',     num: '04', name: 'The engagement' },
+    { href: '#tree',     num: '05', name: 'The engine' },
+    { href: '#paths',    num: '06', name: 'Pick the door' }
+  ];
+
+  function injectCorners(heroEl) {
+    if (!heroEl || heroEl.querySelector('.pmc-hero-corner')) return;
+    ['tl', 'tr', 'bl', 'br'].forEach(function (pos) {
+      var s = document.createElement('span');
+      s.className = 'pmc-hero-corner pmc-hero-corner-' + pos;
+      s.setAttribute('aria-hidden', 'true');
+      heroEl.appendChild(s);
+    });
+  }
+
+  function init() {
+    var heroEl = document.querySelector('.hero');
+    injectCorners(heroEl);
+
+    if (document.querySelector('.pmc-hero-index')) return;
+    var heroWrap = document.querySelector('.hero .hero-wrap') || document.querySelector('.hero');
+    if (!heroWrap) return;
+    var nav = document.createElement('nav');
+    nav.className = 'pmc-hero-index';
+    nav.setAttribute('aria-label', 'Page sections');
+    ITEMS.forEach(function (it) {
+      var a = document.createElement('a');
+      a.className = 'pmc-hero-index-item';
+      a.href = it.href;
+      a.innerHTML = '<span class="pmc-hero-index-num">' + it.num + '</span><span class="pmc-hero-index-name">' + it.name + '</span>';
+      nav.appendChild(a);
+    });
+    var grid = heroWrap.querySelector('.hero-grid');
+    if (grid && grid.parentNode === heroWrap) heroWrap.insertBefore(nav, grid.nextSibling);
+    else heroWrap.appendChild(nav);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+<!-- ==== Block 8: PMC ICON SYSTEM - defs injection + IntersectionObserver ==== -->
+<script>
+/* PMC /services - ICON SYSTEM (v1.0)
+   Injects the gLeaf / gGold gradients + bloomG filter into the DOM once
+   (so embed HTML stays style/script-free per repo rule). Then sets up
+   the IntersectionObserver that adds .go to each .pmc-ico on scroll-in,
+   and hover-replay on the icon's nearest card. Reduced-motion short-circuits. */
+(function () {
+  if (window.__pmc_icons) return;
+  window.__pmc_icons = true;
+  try { if (window.Webflow && Webflow.env && Webflow.env('design')) return; } catch (e) {}
+
+  function injectDefs() {
+    if (document.getElementById('pmc-icon-defs')) return;
+    var defs = '<svg id="pmc-icon-defs" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">'
+      + '<defs>'
+      + '<linearGradient id="gLeaf" x1="0" y1="0" x2="0.9" y2="1">'
+        + '<stop offset="0" stop-color="#3A6536"/>'
+        + '<stop offset="0.5" stop-color="#5FA354"/>'
+        + '<stop offset="1" stop-color="#7FD972"/>'
+      + '</linearGradient>'
+      + '<linearGradient id="gGold" x1="0" y1="0" x2="0.9" y2="1">'
+        + '<stop offset="0" stop-color="#BE9426"/>'
+        + '<stop offset="0.5" stop-color="#D7AF33"/>'
+        + '<stop offset="1" stop-color="#E6C765"/>'
+      + '</linearGradient>'
+      + '<filter id="bloomG" x="-120%" y="-120%" width="340%" height="340%">'
+        + '<feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>'
+        + '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+      + '</filter>'
+      + '</defs>'
+      + '</svg>';
+    var wrap = document.createElement('div');
+    wrap.innerHTML = defs;
+    document.body.insertBefore(wrap.firstChild, document.body.firstChild);
+  }
+
+  function init() {
+    injectDefs();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var icos = Array.prototype.slice.call(document.querySelectorAll('.pmc-ico'));
+    if (!icos.length) return;
+    function play(el) { el.classList.add('go'); }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { play(e.target); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.4 });
+      icos.forEach(function (el) { io.observe(el); });
+    } else {
+      icos.forEach(play);
+    }
+    icos.forEach(function (el) {
+      var host = el.closest('.pmc-leak-card, .pmc-engage-card, .pmc-stack-row, [data-pmc-aw]') || el.parentElement;
+      if (!host) return;
+      host.addEventListener('mouseenter', function () {
+        el.classList.remove('go');
+        void el.offsetWidth;
+        el.classList.add('go');
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>

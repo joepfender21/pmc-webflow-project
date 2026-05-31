@@ -1,0 +1,300 @@
+<!-- /services - THE STACK
+     10 service rows in 6 install layers (Diagnose / Capture / Instrument / Build / Distribute / Brand).
+     Sticky left-rail layer labels (rail aria-hidden because each row carries its own layer label).
+     Each row is a <button> toggle with aria-expanded; detail panel reveals via CSS grid-template-rows trick.
+     HTML ONLY. No <style>, no <script>. CSS lives in pages/services/head.html. JS lives in pages/services/body.html. -->
+<div class="pmc-stack" role="list" aria-label="The Stack: services grouped by install layer">
+
+  <div class="pmc-stack-rail" aria-hidden="true">
+    <div data-layer="diagnose">Diagnose</div>
+    <div data-layer="capture">Capture</div>
+    <div data-layer="instrument">Instrument</div>
+    <div data-layer="build">Build</div>
+    <div data-layer="distribute">Distribute</div>
+    <div data-layer="brand">Brand</div>
+  </div>
+
+  <div class="pmc-stack-rows">
+
+    <!-- 01 - Full-funnel marketing audit (DIAGNOSE) -->
+    <article id="svc-audit" class="pmc-stack-row" data-layer="diagnose" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-audit-detail">
+        <span class="pmc-stack-num">01 / DIAGNOSE</span>
+        <span class="pmc-stack-name">
+          Full-funnel marketing audit
+          <span class="pmc-stack-stance">What your stack is actually doing, line by line.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-audit-detail">
+        <div>
+          <p class="pmc-stack-install">I read your full funnel end to end - software bill, analytics, channel mix, messaging, brand surfaces - and write a one-document diagnosis you can act on without me.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Stack inventory + overlap map</li>
+            <li class="pmc-stack-deliverable">Channel-by-channel waste read</li>
+            <li class="pmc-stack-deliverable">90-day install plan with sequencing</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this you keep paying for tools that quietly cancel each other out.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-ga4">GA4 + attribution</a>
+            <a class="pmc-stack-pair" href="#svc-messaging">Messaging</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 - Social audit (DIAGNOSE) -->
+    <article id="svc-social" class="pmc-stack-row" data-layer="diagnose" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-social-detail">
+        <span class="pmc-stack-num">02 / DIAGNOSE</span>
+        <span class="pmc-stack-name">
+          Social audit
+          <span class="pmc-stack-stance">Where attention is going, and why it is not converting.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-social-detail">
+        <div>
+          <p class="pmc-stack-install">I look at every channel you actually run - organic, paid, owned - and tell you what is working, what is wasted, and which surfaces are eating budget without earning it.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Channel-by-channel diagnosis</li>
+            <li class="pmc-stack-deliverable">Content audit + tone read</li>
+            <li class="pmc-stack-deliverable">Re-allocation plan</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this you keep boosting posts that have nothing to convert into.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-paid">Paid media</a>
+            <a class="pmc-stack-pair" href="#svc-messaging">Messaging</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 - SEO (CAPTURE) -->
+    <article id="svc-seo" class="pmc-stack-row" data-layer="capture" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-seo-detail">
+        <span class="pmc-stack-num">03 / CAPTURE</span>
+        <span class="pmc-stack-name">
+          SEO
+          <span class="pmc-stack-stance">Show up where intent already exists.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-seo-detail">
+        <div>
+          <p class="pmc-stack-install">Technical audit, on-page rewrite, content scaffolding, and the schema and llms.txt layer most sites still skip. Built around the keywords your customers actually use, not the ones an old agency wishlisted.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Indexation + crawl repair</li>
+            <li class="pmc-stack-deliverable">On-page rewrites + schema</li>
+            <li class="pmc-stack-deliverable">Content priority map</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this your paid spend is paying for traffic Google would send you at no cost.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-website">Web design + build</a>
+            <a class="pmc-stack-pair" href="#svc-ga4">GA4 + attribution</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 - ASO (CAPTURE) -->
+    <article id="svc-aso" class="pmc-stack-row" data-layer="capture" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-aso-detail">
+        <span class="pmc-stack-num">04 / CAPTURE</span>
+        <span class="pmc-stack-name">
+          ASO
+          <span class="pmc-stack-stance">App Store search is its own funnel. I rebuild yours.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-aso-detail">
+        <div>
+          <p class="pmc-stack-install">Keyword research, screenshot strategy, metadata rewrite, and the Apple Search Ads layer that compounds with it. Built on what users actually search for, not what an engineer guessed.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">ASO keyword strategy</li>
+            <li class="pmc-stack-deliverable">Listing + screenshot rebuild</li>
+            <li class="pmc-stack-deliverable">Apple Search Ads runway</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this your app sits on a shelf no one walks down.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-paid">Paid media</a>
+            <a class="pmc-stack-pair" href="#svc-brand">Brand identity</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 - Paid media (CAPTURE) -->
+    <article id="svc-paid" class="pmc-stack-row" data-layer="capture" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-paid-detail">
+        <span class="pmc-stack-num">05 / CAPTURE</span>
+        <span class="pmc-stack-name">
+          Paid media (Apple Search Ads, Meta)
+          <span class="pmc-stack-stance">Paid media that knows it is paid media.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-paid-detail">
+        <div>
+          <p class="pmc-stack-install">Account architecture, campaign build, creative direction, and the measurement layer that proves the spend is working. I run Apple Search Ads, Meta, and Google directly. No agency middleman.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Account audit + restructure</li>
+            <li class="pmc-stack-deliverable">Campaign build + creative direction</li>
+            <li class="pmc-stack-deliverable">Weekly read with action items</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this you are paying agencies to mark their own homework.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-ga4">GA4 + attribution</a>
+            <a class="pmc-stack-pair" href="#svc-messaging">Messaging</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 - GA4 + attribution (INSTRUMENT) -->
+    <article id="svc-ga4" class="pmc-stack-row" data-layer="instrument" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-ga4-detail">
+        <span class="pmc-stack-num">06 / INSTRUMENT</span>
+        <span class="pmc-stack-name">
+          GA4 + attribution
+          <span class="pmc-stack-stance">Numbers that survive a Monday meeting.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-ga4-detail">
+        <div>
+          <p class="pmc-stack-install">I rebuild your GA4, your GTM container, your server-side tracking, and your dashboards so the numbers you report are the numbers that actually drove the result. No more "growth is up but I cannot tell you from where."</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">GA4 + GTM rebuild</li>
+            <li class="pmc-stack-deliverable">Conversion + attribution model</li>
+            <li class="pmc-stack-deliverable">Dashboards your CEO can read</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this you cannot tell which channel made the quarter.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-audit">Full-funnel audit</a>
+            <a class="pmc-stack-pair" href="#svc-paid">Paid media</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 - Website design + build (BUILD) -->
+    <article id="svc-website" class="pmc-stack-row" data-layer="build" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-website-detail">
+        <span class="pmc-stack-num">07 / BUILD</span>
+        <span class="pmc-stack-name">
+          Website design and build (Webflow + React)
+          <span class="pmc-stack-stance">Sites that read, rank, and run.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-website-detail">
+        <div>
+          <p class="pmc-stack-install">I design and build the site. Webflow if marketing-led, React if you need a product surface. Either way it ships with the messaging, schema, motion, and instrumentation baked in.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Design + build</li>
+            <li class="pmc-stack-deliverable">On-page SEO + schema</li>
+            <li class="pmc-stack-deliverable">Analytics + CRM wiring on day one</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this your site is the slowest part of your funnel.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-seo">SEO</a>
+            <a class="pmc-stack-pair" href="#svc-ga4">GA4 + attribution</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 - Messaging frameworks (DISTRIBUTE) -->
+    <article id="svc-messaging" class="pmc-stack-row" data-layer="distribute" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-messaging-detail">
+        <span class="pmc-stack-num">08 / DISTRIBUTE</span>
+        <span class="pmc-stack-name">
+          Messaging frameworks
+          <span class="pmc-stack-stance">What you actually say to a person who lands on your page.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-messaging-detail">
+        <div>
+          <p class="pmc-stack-install">Positioning, value props, page hierarchy, and the line-by-line copy that goes everywhere your brand shows up. Built around the words your customers already use.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Positioning + value-prop map</li>
+            <li class="pmc-stack-deliverable">Page hierarchy</li>
+            <li class="pmc-stack-deliverable">Channel-by-channel copy library</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this your channels are arguing with each other.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-seo">SEO</a>
+            <a class="pmc-stack-pair" href="#svc-brand">Brand identity</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 - AI-assisted video (DISTRIBUTE) -->
+    <article id="svc-video" class="pmc-stack-row" data-layer="distribute" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-video-detail">
+        <span class="pmc-stack-num">09 / DISTRIBUTE</span>
+        <span class="pmc-stack-name">
+          AI-assisted video
+          <span class="pmc-stack-stance">Video at the volume your channels actually need.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-video-detail">
+        <div>
+          <p class="pmc-stack-install">Script, edit, motion, and the AI-assisted pipeline that makes weekly video sustainable for a team your size. No vanity production budgets.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Channel + format plan</li>
+            <li class="pmc-stack-deliverable">Script + edit pipeline</li>
+            <li class="pmc-stack-deliverable">Distribution layer</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this your competitors are showing up daily while you are showing up quarterly.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-messaging">Messaging</a>
+            <a class="pmc-stack-pair" href="#svc-paid">Paid media</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 - Brand identity (BRAND) -->
+    <article id="svc-brand" class="pmc-stack-row" data-layer="brand" role="listitem">
+      <button class="pmc-stack-toggle" type="button" aria-controls="svc-brand-detail">
+        <span class="pmc-stack-num">10 / BRAND</span>
+        <span class="pmc-stack-name">
+          Brand identity
+          <span class="pmc-stack-stance">A brand system that survives the next quarter.</span>
+        </span>
+        <span class="pmc-stack-glyph" aria-hidden="true">+</span>
+      </button>
+      <div class="pmc-stack-detail" id="svc-brand-detail">
+        <div>
+          <p class="pmc-stack-install">Marks, type, color, voice, and the design system that lets every page, post, and ad feel like the same company. Built to scale, not to win an award and then break.</p>
+          <ul class="pmc-stack-deliverables">
+            <li class="pmc-stack-deliverable">Identity system</li>
+            <li class="pmc-stack-deliverable">Type + color tokens</li>
+            <li class="pmc-stack-deliverable">Voice guidelines + applications</li>
+          </ul>
+          <p class="pmc-stack-cost">Without this you spend forever reinventing what should already be decided.</p>
+          <div class="pmc-stack-pairs">
+            <span class="pmc-stack-pairs-label">Pairs with</span>
+            <a class="pmc-stack-pair" href="#svc-messaging">Messaging</a>
+            <a class="pmc-stack-pair" href="#svc-website">Web design + build</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>

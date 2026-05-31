@@ -1,0 +1,1104 @@
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,400i,500i,700i&f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* PMC /services HEAD CSS v1.0 - full file.
+   Base: full Home head CSS v6.8 (Services is .pmc-home + .pmc-services combo class
+   so it inherits every Home token, reset, hero, marquee, statbar, sec-pad, paths,
+   motion-reveal hook verbatim).
+   Net-new: SERVICES SCOPE block at the bottom defining .pmc-services The Stack +
+   The Engagement, plus the locked Clash Display + JetBrains Mono fonts the typography
+   system requires (Home historically loaded only Satoshi; corrected here). */
+
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #040D0D; --bg-deep: #02080A;
+  --paper: #0A1A18; --paper-elevated: #0F2220;
+  --ink: #F5F0E8;
+  --ink-90: rgba(245,240,232,0.90); --ink-80: rgba(245,240,232,0.80);
+  --ink-70: rgba(245,240,232,0.70); --ink-60: rgba(245,240,232,0.60);
+  --ink-50: rgba(245,240,232,0.50); --ink-40: rgba(245,240,232,0.40);
+  --gold: #D7AF33; --gold-bright: #E5C044;
+  --gold-soft: rgba(215,175,51,0.12); --gold-line: rgba(215,175,51,0.20);
+  --leaf: #457340; --leaf-bright: #5A9E54; --leaf-soft: rgba(69,115,64,0.15);
+  --hairline: rgba(245,240,232,0.08); --hairline-soft: rgba(245,240,232,0.04);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --pmc-icon-url: url('https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e8ed2a9fcf8841af248_PMC_Icon_512x512.png');
+  --pmc-logo-white: url('https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e7aad43cb489b68ec98_PMC_Horizontal_WhiteText.png');
+  --pmc-logo-gold-knockout: url('https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e90114688fe3e8f467c_PMC_Wordmark_WhiteText.avif');
+}
+
+
+/* ===== RESET ===== */
+.pmc-home, .pmc-home * { box-sizing: border-box; }
+.pmc-home { font-family: 'Satoshi', system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--bg); position: relative; }
+.pmc-home a { color: inherit; text-decoration: none; }
+.pmc-home img { max-width: 100%; display: block; }
+.pmc-home p { margin: 0; }
+.pmc-home h1, .pmc-home h2, .pmc-home h3, .pmc-home h4 { margin: 0; }
+.pmc-home ul { list-style: none; padding: 0; margin: 0; }
+
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+.pmc-home ::selection { background: var(--gold); color: var(--bg); }
+.pmc-home ::-moz-selection { background: var(--gold); color: var(--bg); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: rgba(215,175,51,0.3); border-radius: 5px; border: 2px solid var(--bg-deep); }
+::-webkit-scrollbar-thumb:hover { background: rgba(215,175,51,0.55); }
+.pmc-home a:focus-visible, .pmc-home button:focus-visible, .pmc-home input:focus-visible, .pmc-home textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
+
+
+/* ===== LAYOUT ===== */
+.pmc-home .pmc-container { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 28px; padding-right: 28px; }
+.pmc-home .pmc-section { padding-top: 100px; padding-bottom: 100px; }
+.pmc-home .pmc-section + .pmc-section, .pmc-home .pmc-section + .pmc-footer, .pmc-home .pmc-hero + .pmc-section { border-top: 1px solid var(--hairline-soft); }
+
+
+/* ===== NAV (logo as image) ===== */
+.pmc-home .pmc-nav-logo {
+  display: inline-block !important;
+  width: 132px;
+  height: 32px;
+  background-image: var(--pmc-logo-white);
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  font-size: 0 !important;
+  text-indent: -9999px;
+  overflow: hidden;
+  transition: opacity 200ms var(--ease-out-expo);
+}
+.pmc-home .pmc-nav-logo:hover { opacity: 0.85; }
+.pmc-home .pmc-nav-logo > * { display: none !important; }
+
+
+/* ===== HERO ===== */
+.pmc-hero { position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 100px; }
+.pmc-hero::before, .pmc-hero::after { content: ""; position: absolute; inset: -2px; pointer-events: none; z-index: 0; transition: opacity 500ms ease; }
+.pmc-hero::before { opacity: 0.55; background: radial-gradient(420px circle at var(--pmc-x, 30%) var(--pmc-y, 30%), rgba(215,175,51,0.10), rgba(69,115,64,0.07) 35%, rgba(0,0,0,0) 70%); mix-blend-mode: screen; }
+.pmc-hero::after { opacity: 0.65; background: radial-gradient(700px circle at 12% calc(20% + var(--pmc-s, 0px)), rgba(69,115,64,0.10), rgba(0,0,0,0) 60%), radial-gradient(760px circle at 88% calc(40% + var(--pmc-s, 0px)), rgba(215,175,51,0.08), rgba(0,0,0,0) 65%); filter: blur(10px); mix-blend-mode: screen; }
+.pmc-hero > * { position: relative; z-index: 1; }
+.pmc-home .pmc-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+.pmc-home .pmc-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-70); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; margin-bottom: 20px; }
+@keyframes pmc-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(90,158,84,0.40); } 50% { box-shadow: 0 0 0 6px rgba(90,158,84,0.0); } }
+.pmc-home .pmc-hero-eyebrow-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--leaf-bright); box-shadow: 0 0 0 3px rgba(90,158,84,0.18); animation: pmc-pulse 2.4s var(--ease) infinite; }
+.pmc-home .pmc-hero-h1 { font-family: 'Satoshi', sans-serif; font-size: clamp(56px, 9vw, 110px); line-height: 0.98; font-weight: 700; letter-spacing: -0.04em; color: var(--ink); margin: 0 0 28px; }
+.pmc-home .pmc-hero-h1 em { color: var(--gold) !important; font-style: italic !important; font-weight: inherit !important; }
+.pmc-home .pmc-hero-sub { font-size: 19px; line-height: 1.55; color: var(--ink-80); max-width: 520px; margin: 0 0 36px; }
+.pmc-home .pmc-hero-ctas { display: flex; gap: 14px; margin-bottom: 60px; flex-wrap: wrap; align-items: center; }
+.pmc-home .pmc-hero-creds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; padding-top: 32px; border-top: 1px solid var(--hairline); max-width: 480px; }
+.pmc-home .pmc-cred-num { font-size: 38px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.pmc-home .pmc-cred-label { font-size: 13px; color: var(--ink-60); line-height: 1.4; }
+
+
+/* ===== BUTTONS ===== */
+.pmc-home .pmc-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; font-size: 15px; font-weight: 600; border-radius: 999px; text-decoration: none; transition: all 220ms var(--ease-out-expo); cursor: pointer; }
+.pmc-home .pmc-btn-primary { background-color: var(--gold); color: var(--bg); }
+.pmc-home .pmc-btn-primary:hover { background-color: var(--gold-bright); transform: translateY(-1px); box-shadow: 0 8px 24px -8px rgba(215,175,51,0.5); }
+.pmc-home .pmc-btn-secondary { background-color: transparent; color: var(--ink); border: 1px solid rgba(245,240,232,0.2); }
+.pmc-home .pmc-btn-secondary:hover { border-color: rgba(245,240,232,0.5); color: var(--ink); }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary { background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; height: auto !important; min-width: 0 !important; color: var(--ink-70) !important; font-size: 14px !important; font-weight: 500 !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important; gap: 6px !important; letter-spacing: normal !important; transition: color 200ms var(--ease) !important; box-shadow: none !important; }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary::after { content: '\2192'; display: inline-block; color: var(--gold); font-size: 16px; transition: transform 200ms var(--ease); }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary:hover { color: var(--ink) !important; }
+.pmc-home .pmc-hero-ctas .pmc-btn-secondary:hover::after { transform: translateX(3px); }
+
+
+/* ===== TYPE HEADERS ===== */
+.pmc-home .pmc-h2 {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+.pmc-home .pmc-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ink-70); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.pmc-home .pmc-eyebrow::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf-bright); }
+
+
+/* ===== SERVICES OVERVIEW (Home's pattern - kept for fall-through; Services page replaces #services embed with The Stack) ===== */
+.pmc-home .pmc-services-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 64px; }
+.pmc-home .pmc-services-sub { font-size: 17px; line-height: 1.6; color: var(--ink-70); max-width: 480px; margin: 0; }
+
+
+/* ===== MOTION POLISH (inherited) ===== */
+.pmc-home .pmc-reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease-out-expo), transform 800ms var(--ease-out-expo); will-change: opacity, transform; }
+.pmc-home .pmc-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.pmc-home .pmc-hero-h1 .pmc-word { display: inline-block; opacity: 0; transform: translateY(40px); transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+.pmc-home .pmc-hero-h1.is-loaded .pmc-word { opacity: 1; transform: translateY(0); }
+
+
+/* ===== RESPONSIVE (inherited base) ===== */
+@media (max-width: 900px) {
+  .pmc-home .pmc-section { padding-top: 60px; padding-bottom: 60px; }
+  .pmc-home .pmc-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .pmc-home .pmc-hero-creds { grid-template-columns: 1fr; gap: 18px; }
+  .pmc-home .pmc-services-head { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 768px) {
+  .pmc-home .pmc-nav-links { display: none !important; }
+  .pmc-home .pmc-nav-cta { display: none !important; }
+  .pmc-home .pmc-nav { padding-left: 18px !important; padding-right: 18px !important; }
+}
+
+
+/* ===== REDUCED MOTION (inherited base) ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pmc-hero::before, .pmc-hero::after { transition: none !important; }
+  .pmc-home .pmc-hero-eyebrow-dot { animation: none !important; }
+  body::before { animation: none !important; }
+  .pmc-home .pmc-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .pmc-home .pmc-hero-h1 .pmc-word { opacity: 1 !important; transform: none !important; transition: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+
+/* =====================================================================
+   ===== SERVICES SCOPE - net-new for /services =======================
+   ===================================================================== */
+.pmc-services { --layer-label-w: 220px; --stack-row-pad-y: 28px; }
+
+
+/* ===== THE LEAK (services-side reframe) - inherits Home leak card pattern ===== */
+.pmc-services .pmc-leak-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.pmc-services .pmc-leak-card {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo), background 280ms var(--ease-out-expo);
+}
+.pmc-services .pmc-leak-card:hover { border-color: rgba(215,175,51,0.30); transform: translateY(-2px); background: var(--paper-elevated); }
+.pmc-services .pmc-leak-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.pmc-services .pmc-leak-title { font-family: 'Clash Display', sans-serif; font-weight: 500; font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); }
+.pmc-services .pmc-leak-body { font-size: 14.5px; line-height: 1.6; color: var(--ink-70); }
+
+
+/* ===== THE STACK ===== */
+.pmc-services .pmc-stack {
+  display: grid;
+  grid-template-columns: var(--layer-label-w) 1fr;
+  gap: 0 56px;
+  border-top: 1px solid var(--hairline);
+}
+.pmc-services .pmc-stack-rail {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.pmc-services .pmc-stack-rail [data-layer] {
+  position: relative;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-50);
+  padding-left: 16px;
+  transition: color 320ms var(--ease-out-expo);
+}
+.pmc-services .pmc-stack-rail [data-layer]::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  width: 8px; height: 1px;
+  background: var(--gold);
+  transform: scaleX(0.4);
+  transform-origin: left center;
+  transition: transform 480ms var(--ease-out-expo);
+}
+.pmc-services .pmc-stack-rail [data-layer].is-active { color: var(--ink); }
+.pmc-services .pmc-stack-rail [data-layer].is-active::before { transform: scaleX(1); }
+
+.pmc-services .pmc-stack-rows { display: flex; flex-direction: column; }
+
+.pmc-services .pmc-stack-row {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  border-bottom: 1px solid var(--hairline);
+  transition: background 320ms var(--ease-out-expo);
+}
+.pmc-services .pmc-stack-row[data-open] { grid-template-rows: auto 1fr; }
+.pmc-services .pmc-stack-row:hover { background: rgba(215,175,51,0.025); }
+
+.pmc-services .pmc-stack-toggle {
+  all: unset;
+  display: grid;
+  grid-template-columns: 88px 1fr 32px;
+  align-items: baseline;
+  gap: 24px;
+  padding: var(--stack-row-pad-y) 0;
+  cursor: pointer;
+}
+.pmc-services .pmc-stack-toggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.pmc-services .pmc-stack-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-50);
+  letter-spacing: 0.1em;
+}
+.pmc-services .pmc-stack-name {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.pmc-services .pmc-stack-stance {
+  display: block;
+  margin-top: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-60);
+  letter-spacing: 0.02em;
+}
+.pmc-services .pmc-stack-glyph {
+  width: 28px; height: 28px;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--ink-60);
+  transition: transform 320ms var(--ease-out-expo), border-color 320ms var(--ease-out-expo), color 320ms var(--ease-out-expo);
+  align-self: center;
+}
+.pmc-services .pmc-stack-row[data-open] .pmc-stack-glyph {
+  transform: rotate(45deg);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.pmc-services .pmc-stack-detail {
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+}
+.pmc-services .pmc-stack-detail > div {
+  padding: 0 0 var(--stack-row-pad-y) 112px;
+  display: grid;
+  gap: 18px;
+  max-width: 720px;
+}
+.pmc-services .pmc-stack-install { font-size: 15px; line-height: 1.65; color: var(--ink-80); margin: 0; }
+.pmc-services .pmc-stack-deliverables { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pmc-services .pmc-stack-deliverable {
+  font-size: 12.5px;
+  color: var(--ink-80);
+  padding: 8px 14px 8px 32px;
+  background: rgba(69,115,64,0.10);
+  border: 1px solid rgba(90,158,84,0.20);
+  border-radius: 999px;
+  position: relative;
+  letter-spacing: 0.01em;
+}
+.pmc-services .pmc-stack-deliverable::before {
+  content: "";
+  position: absolute;
+  left: 12px; top: 50%;
+  width: 14px; height: 14px;
+  margin-top: -7px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A9E54' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.pmc-services .pmc-stack-cost {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gold);
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.4;
+  max-width: 56ch;
+  margin: 0;
+}
+.pmc-services .pmc-stack-pairs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pmc-services .pmc-stack-pairs-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-50);
+  margin-right: 4px;
+}
+.pmc-services .pmc-stack-pair {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-70);
+  padding: 6px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  transition: border-color 280ms var(--ease-out-expo), color 280ms var(--ease-out-expo);
+  cursor: pointer;
+}
+.pmc-services .pmc-stack-pair:hover { border-color: var(--gold); color: var(--gold); }
+
+
+/* ===== THE ENGAGEMENT ===== */
+.pmc-services .pmc-engage { position: relative; }
+.pmc-services .pmc-engage-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, 1fr);
+  gap: 56px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 12px 4px 24px;
+}
+.pmc-services .pmc-engage-track::-webkit-scrollbar { display: none; }
+.pmc-services .pmc-engage-card {
+  scroll-snap-align: center;
+  background: var(--paper-elevated);
+  border: 1px solid var(--hairline);
+  padding: 32px 28px;
+  display: grid;
+  gap: 18px;
+  position: relative;
+}
+.pmc-services .pmc-engage-step {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.pmc-services .pmc-engage-title {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 500;
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+.pmc-services .pmc-engage-body { font-size: 14.5px; line-height: 1.6; color: var(--ink-70); margin: 0; }
+.pmc-services .pmc-engage-line {
+  position: absolute;
+  left: 100%; top: 50%;
+  width: 56px; height: 1px;
+  overflow: visible;
+  pointer-events: none;
+}
+.pmc-services .pmc-engage-line line {
+  stroke: var(--gold);
+  stroke-width: 1;
+  stroke-dasharray: 56;
+  stroke-dashoffset: 56;
+  transition: stroke-dashoffset 900ms var(--ease-out-expo);
+}
+.pmc-services .pmc-engage-card.is-drawn .pmc-engage-line line { stroke-dashoffset: 0; }
+.pmc-services .pmc-engage-hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+
+/* ===== SERVICES RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .pmc-services .pmc-leak-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .pmc-services .pmc-stack { grid-template-columns: 1fr; gap: 32px; }
+  .pmc-services .pmc-stack-rail {
+    position: relative;
+    top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 0;
+  }
+  .pmc-services .pmc-stack-rail [data-layer] { padding-left: 14px; font-size: 10px; }
+  .pmc-services .pmc-stack-rail [data-layer]::before { width: 6px; }
+  .pmc-services .pmc-stack-toggle { grid-template-columns: 56px 1fr 28px; gap: 12px; }
+  .pmc-services .pmc-stack-detail > div { padding-left: 56px; }
+  .pmc-services .pmc-engage-track {
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    scroll-snap-type: none;
+    gap: 24px;
+    padding: 0;
+    overflow-x: visible;
+  }
+  .pmc-services .pmc-engage-line { display: none; }
+  .pmc-services .pmc-engage-hint { display: none; }
+}
+@media (max-width: 480px) {
+  .pmc-services .pmc-leak-grid { grid-template-columns: 1fr; }
+  .pmc-services .pmc-stack-toggle { grid-template-columns: 1fr 28px; gap: 12px; }
+  .pmc-services .pmc-stack-num { display: none; }
+  .pmc-services .pmc-stack-detail > div { padding-left: 0; }
+}
+
+
+/* ===== SERVICES REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pmc-services .pmc-stack-row,
+  .pmc-services .pmc-stack-glyph,
+  .pmc-services .pmc-stack-rail [data-layer],
+  .pmc-services .pmc-stack-rail [data-layer]::before,
+  .pmc-services .pmc-engage-line line,
+  .pmc-services .pmc-stack-pair,
+  .pmc-services .pmc-leak-card { transition: none !important; }
+  .pmc-services .pmc-engage-card.is-drawn .pmc-engage-line line { stroke-dashoffset: 0 !important; }
+}
+
+
+/* =====================================================================
+   ===== PMC ICON SYSTEM (Services-scoped) =============================
+   Shared layer from pmc-icons-shared-layer. Gradients + bloom defs are
+   injected once into the DOM via body.html so embeds stay HTML-only.
+   Each icon is a self-contained inline SVG with class .pmc-ico i-XXX.
+   Animation fires on scroll-in (.go class added by IntersectionObserver),
+   replays on hover of the parent card.
+   ===================================================================== */
+svg.pmc-ico { display: block; width: 40px; height: 40px; max-width: 100%; overflow: visible; }
+.pmc-ico .s { fill: none; stroke: url(#gLeaf); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pmc-ico .s2 { fill: none; stroke: #457340; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; opacity: .36; }
+.pmc-ico .sg { fill: none; stroke: url(#gGold); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pmc-ico .hl { fill: none; stroke: rgba(245,240,232,0.5); stroke-width: 0.8; stroke-linecap: round; opacity: .4; }
+.pmc-ico .fg { fill: url(#gGold); }
+.pmc-ico .fl { fill: url(#gLeaf); }
+.pmc-ico .field { stroke: #457340; opacity: .14; fill: none; stroke-width: 1.1; }
+.pmc-ico .bloomg { filter: url(#bloomG); }
+.pmc-ico .transient { opacity: 0; }
+
+/* i-radar (Attribution blindness leak, Diagnose engagement) */
+.pmc-ico.i-radar .sweep { transform-box: view-box; transform-origin: 32px 32px; }
+.pmc-ico.i-radar .blip, .pmc-ico.i-radar .ring, .pmc-ico.i-radar .lock { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-radar.go .sweep { animation: pmcRadSweep 1.5s var(--ease-out-expo) both; }
+.pmc-ico.i-radar.go .ring { animation: pmcRadRing 1.5s var(--ease-out-expo) .5s both; }
+.pmc-ico.i-radar.go .blip { animation: pmcRadBlip 1.5s var(--ease-out-expo) .5s both; }
+.pmc-ico.i-radar.go .lock { animation: pmcRadLock 1.4s cubic-bezier(.34,1.4,.5,1) .7s both; }
+@keyframes pmcRadSweep { 0% { transform: rotate(-30deg); } 100% { transform: rotate(330deg); } }
+@keyframes pmcRadRing { 0%, 40% { opacity: 0; transform: scale(.3); } 60% { opacity: .7; } 100% { opacity: 0; transform: scale(2.6); } }
+@keyframes pmcRadBlip { 0%, 40% { opacity: 0; transform: scale(.3); } 60% { opacity: 1; transform: scale(1); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes pmcRadLock { 0% { opacity: 0; transform: scale(.6); } 70% { opacity: 1; transform: scale(1); } 100% { opacity: 1; transform: scale(1); } }
+
+/* i-ads (Channel mis-spend leak) */
+.pmc-ico.i-ads .bar { transform-box: fill-box; transform-origin: bottom; }
+.pmc-ico.i-ads .burst { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-ads.go .r1 { animation: pmcAdBar .7s cubic-bezier(.34,1.4,.5,1) .1s both; }
+.pmc-ico.i-ads.go .r2 { animation: pmcAdBar .7s cubic-bezier(.34,1.4,.5,1) .24s both; }
+.pmc-ico.i-ads.go .r3 { animation: pmcAdBar .7s cubic-bezier(.34,1.4,.5,1) .38s both; }
+.pmc-ico.i-ads.go .r4 { animation: pmcAdBar .7s cubic-bezier(.34,1.4,.5,1) .52s both; }
+.pmc-ico.i-ads.go .trend { animation: pmcAdTrend .9s var(--ease-out-expo) .55s both; }
+.pmc-ico.i-ads.go .head { animation: pmcAdFade .4s var(--ease-out-expo) 1.25s both; }
+.pmc-ico.i-ads.go .burst { animation: pmcAdBurst .7s var(--ease-out-expo) 1.2s both; }
+@keyframes pmcAdBar { 0% { transform: scaleY(0); } 100% { transform: scaleY(1); } }
+@keyframes pmcAdTrend { 0% { stroke-dashoffset: 40; } 100% { stroke-dashoffset: 0; } }
+@keyframes pmcAdFade { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes pmcAdBurst { 0% { opacity: 0; transform: scale(.2); } 55% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0; transform: scale(2); } }
+
+/* i-scan (Audit engagement) */
+.pmc-ico.i-scan .lens { transform-box: view-box; transform-origin: 31px 30px; }
+.pmc-ico.i-scan .beam { transform-box: view-box; }
+.pmc-ico.i-scan .ping { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-scan .flag { stroke: url(#gGold); opacity: 1; }
+.pmc-ico.i-scan.go .lens { animation: pmcSBob 1.6s var(--ease-out-expo) both; }
+.pmc-ico.i-scan.go .beam { animation: pmcSBeam 1.6s var(--ease-out-expo) both; }
+.pmc-ico.i-scan.go .ping { animation: pmcSPing 1.6s var(--ease-out-expo) .7s both; }
+.pmc-ico.i-scan.go .flag { animation: pmcSFlag 1.6s var(--ease-out-expo) both; }
+@keyframes pmcSBob { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(1.5px,-1.5px); } }
+@keyframes pmcSBeam { 0% { transform: translateY(-7px); opacity: 0; } 18% { opacity: .85; } 50% { transform: translateY(7px); opacity: .85; } 78% { opacity: 0; } 100% { transform: translateY(7px); opacity: 0; } }
+@keyframes pmcSPing { 0%, 45% { opacity: 0; transform: scale(.3); } 60% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(2.2); } }
+@keyframes pmcSFlag { 0%, 45% { stroke: #5FA354; opacity: .5; } 65% { stroke: #D7AF33; opacity: 1; } 100% { stroke: #D7AF33; opacity: 1; } }
+
+/* i-pin (ASO neglect leak) */
+.pmc-ico.i-pin .pin { transform-box: view-box; transform-origin: 32px 30px; }
+.pmc-ico.i-pin .ripple { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-pin.go .route { animation: pmcPRoute 1s var(--ease-out-expo) .2s both; }
+.pmc-ico.i-pin.go .pin { animation: pmcPDrop 1s cubic-bezier(.34,1.4,.5,1) both; }
+.pmc-ico.i-pin.go .ripple { animation: pmcPRipple 1.2s ease-out 1s both; }
+.pmc-ico.i-pin.go .ripple.r2 { animation-delay: 1.35s; }
+@keyframes pmcPRoute { 0% { stroke-dashoffset: 44; } 100% { stroke-dashoffset: 0; } }
+@keyframes pmcPDrop { 0% { opacity: 0; transform: translateY(-6px); } 45% { opacity: 1; } 65% { transform: translateY(0); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes pmcPRipple { 0%, 25% { opacity: 0; transform: scale(.3); } 45% { opacity: .7; } 100% { opacity: 0; transform: scale(1); } }
+
+/* i-cast (Overlapping software leak, Run engagement) */
+.pmc-ico.i-cast .wave, .pmc-ico.i-cast .ep, .pmc-ico.i-cast .core { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-cast.go .core { animation: pmcCaCore 1s var(--ease-out-expo) both; }
+.pmc-ico.i-cast.go .v1 { animation: pmcCaWave 1.3s ease-out .25s both; }
+.pmc-ico.i-cast.go .v2 { animation: pmcCaWave 1.3s ease-out .5s both; }
+.pmc-ico.i-cast.go .v3 { animation: pmcCaWave 1.3s ease-out .75s both; }
+.pmc-ico.i-cast.go .e1 { animation: pmcCaEp 1s var(--ease-out-expo) .55s both; }
+.pmc-ico.i-cast.go .e2 { animation: pmcCaEp 1s var(--ease-out-expo) .7s both; }
+.pmc-ico.i-cast.go .e3 { animation: pmcCaEp 1s var(--ease-out-expo) .85s both; }
+.pmc-ico.i-cast.go .e4 { animation: pmcCaEp 1s var(--ease-out-expo) 1s both; }
+@keyframes pmcCaCore { 0% { opacity: .7; transform: scale(.82); } 55% { opacity: 1; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes pmcCaWave { 0% { opacity: 0; transform: scale(.3); } 28% { opacity: .85; } 100% { opacity: 0; transform: scale(1); } }
+@keyframes pmcCaEp { 0%, 35% { fill: #071312; transform: scale(1); } 55% { fill: #D7AF33; transform: scale(1.35); } 100% { fill: #071312; transform: scale(1); } }
+
+/* i-web (Install engagement) */
+.pmc-ico.i-web .b1, .pmc-ico.i-web .b2, .pmc-ico.i-web .b3 { transform-box: fill-box; transform-origin: left center; }
+.pmc-ico.i-web .b4 { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-web .deploy { transform-box: fill-box; transform-origin: left center; opacity: .5; }
+.pmc-ico.i-web.go .b1 { animation: pmcWebWipe .55s cubic-bezier(.34,1.4,.5,1) .15s both; }
+.pmc-ico.i-web.go .b2 { animation: pmcWebWipe .55s cubic-bezier(.34,1.4,.5,1) .28s both; }
+.pmc-ico.i-web.go .b3 { animation: pmcWebWipe .55s cubic-bezier(.34,1.4,.5,1) .41s both; }
+.pmc-ico.i-web.go .b4 { animation: pmcWebPop .6s cubic-bezier(.34,1.4,.5,1) .5s both; }
+.pmc-ico.i-web.go .deploy { animation: pmcWebDeploy 1.2s var(--ease-out-expo) .05s both; }
+@keyframes pmcWebWipe { 0% { opacity: 0; transform: scaleX(.12); } 100% { opacity: 1; transform: scaleX(1); } }
+@keyframes pmcWebPop { 0% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes pmcWebDeploy { 0% { transform: scaleX(0); opacity: 1; } 66% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: .5; } }
+
+/* i-cal (Diagnose engagement - the scheduled diagnosis call) */
+.pmc-ico.i-cal .chip { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-cal .focus { transform-box: fill-box; transform-origin: center; }
+.pmc-ico.i-cal.go .c1 { animation: pmcCChip .55s cubic-bezier(.34,1.4,.5,1) .15s both; }
+.pmc-ico.i-cal.go .c2 { animation: pmcCChip .55s cubic-bezier(.34,1.4,.5,1) .3s both; }
+.pmc-ico.i-cal.go .c3 { animation: pmcCChip .55s cubic-bezier(.34,1.4,.5,1) .45s both; }
+.pmc-ico.i-cal.go .c4 { animation: pmcCChip .55s cubic-bezier(.34,1.4,.5,1) .6s both; }
+.pmc-ico.i-cal.go .focus { animation: pmcCFocus 1.1s var(--ease-out-expo) .8s both; }
+.pmc-ico.i-cal.go .check { animation: pmcCCheck .7s var(--ease-out-expo) 1s both; }
+@keyframes pmcCChip { 0% { opacity: 0; transform: scale(.15); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes pmcCFocus { 0%, 30% { opacity: 0; transform: scale(.5); } 55% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.1); } }
+@keyframes pmcCCheck { 0% { stroke-dashoffset: 11; } 100% { stroke-dashoffset: 0; } }
+
+/* Continuous float - matches Home's .svc .pmc-ico pmcFloat animation so icons feel "alive" */
+.pmc-services .pmc-ico { animation: pmcFloat 3.6s ease-in-out infinite; }
+@keyframes pmcFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+/* Per-context icon sizing on Services (bumped to 56px to match Home's .svc .pmc-ico size) */
+.pmc-services .pmc-leak-card .pmc-ico { width: 56px; height: 56px; margin-bottom: 12px; }
+.pmc-services .pmc-engage-card .pmc-ico { width: 56px; height: 56px; margin-bottom: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pmc-ico * { animation: none !important; }
+  .pmc-ico { animation: none !important; }
+  .pmc-ico .transient { opacity: 0 !important; }
+  .pmc-ico .trend, .pmc-ico .check { stroke-dashoffset: 0 !important; }
+}
+
+
+/* =====================================================================
+   ===== HOME-MATCH FIXES =============================================
+   Sec-head subtext stacks BELOW the heading (not in the right rail),
+   matching Home's standardized treatment. Per memory: Home's rule is
+   .sec-head{flex-wrap:wrap} + .sec-p{flex-basis:100%}.
+   ===================================================================== */
+.sec-head { flex-wrap: wrap; }
+.sec-p { flex-basis: 100%; }
+
+
+/* =====================================================================
+   ===== SERVICES HERO TEMPLATE LAYER ==================================
+   Differentiates the hero from Home without removing any functionality.
+   - Tree canopy bg replaced with engineering grid + atmospheric leaf/gold
+   - 4 gold crop-mark corners injected via body.html
+   - Eyebrow gets a 1px gold hairline that draws in on load
+   - Section-index strip (injected by body.html) appears below the
+     hero-grid as a navigational table of contents
+   These selectors live only in Services page head.html so they do not
+   leak to other pages.
+   ===================================================================== */
+
+/* Schematic hero background - replaces Home's tree canopy with the
+   same engineering grid + atmosphere as FIG. 02 Blueprint. !important
+   overrides Webflow's Designer-set background on .hero-img. */
+.hero { background: var(--bg-deep) !important; position: relative !important; }
+
+.hero-img {
+  background-color: var(--bg-deep) !important;
+  background-image: radial-gradient(circle at 1px 1px, rgba(245,240,232,0.05) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  background-position: 0 0 !important;
+  background-repeat: repeat !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.hero-veil {
+  background:
+    radial-gradient(900px 700px at 25% 30%, rgba(69,115,64,0.12), transparent 62%),
+    radial-gradient(1000px 800px at 78% 70%, rgba(215,175,51,0.07), transparent 58%),
+    linear-gradient(180deg, transparent 0%, rgba(2,8,10,0.35) 100%) !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Crop-mark corners - same engineering-drawing convention as the Blueprint */
+.pmc-hero-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--gold);
+  z-index: 3;
+  pointer-events: none;
+}
+.pmc-hero-corner-tl { top: 20px; left: 20px; border-top: 1px solid; border-left: 1px solid; }
+.pmc-hero-corner-tr { top: 20px; right: 20px; border-top: 1px solid; border-right: 1px solid; }
+.pmc-hero-corner-bl { bottom: 20px; left: 20px; border-bottom: 1px solid; border-left: 1px solid; }
+.pmc-hero-corner-br { bottom: 20px; right: 20px; border-bottom: 1px solid; border-right: 1px solid; }
+
+@media (max-width: 768px) {
+  .pmc-hero-corner { width: 16px; height: 16px; }
+  .pmc-hero-corner-tl, .pmc-hero-corner-tr { top: 12px; }
+  .pmc-hero-corner-bl, .pmc-hero-corner-br { bottom: 12px; }
+  .pmc-hero-corner-tl, .pmc-hero-corner-bl { left: 12px; }
+  .pmc-hero-corner-tr, .pmc-hero-corner-br { right: 12px; }
+}
+
+/* Hairline gold rule under the eyebrow - the "install map starts here" mark */
+.hero .eyebrow {
+  position: relative;
+  padding-bottom: 10px;
+}
+.hero .eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  animation: pmcEyebrowRule 720ms var(--ease-out-expo) 320ms forwards;
+}
+@keyframes pmcEyebrowRule { 0% { width: 0; } 100% { width: 56px; } }
+
+/* Section-index strip - the table-of-contents that defines the template */
+.pmc-hero-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--hairline);
+  list-style: none;
+}
+.pmc-hero-index-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 18px 10px 0;
+  margin-right: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  text-decoration: none;
+  border-right: 1px solid var(--hairline-soft);
+  transition: color 280ms var(--ease-out-expo);
+  position: relative;
+}
+.pmc-hero-index-item:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+.pmc-hero-index-num {
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.10em;
+}
+.pmc-hero-index-name {
+  color: var(--ink-70);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+}
+.pmc-hero-index-item:hover .pmc-hero-index-name { color: var(--ink); }
+.pmc-hero-index-item:hover .pmc-hero-index-num { color: var(--gold-bright); }
+.pmc-hero-index-item:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .pmc-hero-index { margin-top: 40px; padding-top: 24px; gap: 0; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 12px; }
+  .pmc-hero-index::-webkit-scrollbar { display: none; }
+  .pmc-hero-index-item { flex-shrink: 0; padding: 8px 14px 8px 0; margin-right: 14px; font-size: 10.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .eyebrow::after { animation: none !important; width: 56px; }
+  .pmc-hero-index-item, .pmc-hero-index-name, .pmc-hero-index-num { transition: none !important; }
+}
+
+
+/* =====================================================================
+   ===== FIG. 02 / THE BLUEPRINT (Services #system embed) ==============
+   Stylized schematic of the installed marketing OS. 6 layer rails
+   matching the Stack, components with mono numbering, continuous gold
+   signal packets, crop-mark corners, title block, legend, footer.
+   ===================================================================== */
+.pmc-blueprint {
+  position: relative;
+  padding: clamp(28px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(245,240,232,0.04) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(180deg, rgba(215,175,51,0.018) 0%, transparent 50%, rgba(69,115,64,0.018) 100%),
+    var(--bg-deep);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 32px;
+  isolation: isolate;
+}
+
+/* Crop-mark corners (engineering-drawing look) */
+.pmc-bp-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--gold);
+  z-index: 4;
+  pointer-events: none;
+}
+.pmc-bp-corner-tl { top: 12px; left: 12px; border-top: 1px solid; border-left: 1px solid; }
+.pmc-bp-corner-tr { top: 12px; right: 12px; border-top: 1px solid; border-right: 1px solid; }
+.pmc-bp-corner-bl { bottom: 12px; left: 12px; border-bottom: 1px solid; border-left: 1px solid; }
+.pmc-bp-corner-br { bottom: 12px; right: 12px; border-bottom: 1px solid; border-right: 1px solid; }
+
+/* Title block - top-left, architect's signature block */
+.pmc-bp-titleblock {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px dashed rgba(215,175,51,0.18);
+  position: relative;
+  z-index: 2;
+}
+.pmc-bp-fig {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  padding: 6px 12px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  align-self: start;
+  font-weight: 500;
+}
+.pmc-bp-title {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  grid-row: 1 / 2;
+}
+.pmc-bp-meta {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 8px;
+  row-gap: 2px;
+  margin: 8px 0 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pmc-bp-meta dt { color: var(--ink-50); }
+.pmc-bp-meta dd { color: var(--ink-80); margin: 0; }
+
+/* Legend - top-right */
+.pmc-bp-legend {
+  position: absolute;
+  top: clamp(36px, 4vw, 64px);
+  right: clamp(36px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-60);
+  text-transform: uppercase;
+  z-index: 3;
+}
+.pmc-bp-legend-row { display: inline-flex; align-items: center; gap: 8px; }
+.pmc-bp-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pmc-bp-dot.leaf { background: var(--leaf-bright); box-shadow: 0 0 0 2px rgba(90,158,84,0.20); }
+.pmc-bp-dot.gold { background: var(--gold); box-shadow: 0 0 6px rgba(215,175,51,0.6); }
+.pmc-bp-dot.dim { background: transparent; border: 1px dashed rgba(245,240,232,0.30); }
+
+/* Schematic - the layered drawing surface */
+.pmc-bp-schematic {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 24px 0;
+  z-index: 1;
+}
+
+/* Signal packets - continuous gold dots traveling up the spine */
+.pmc-bp-signal {
+  position: absolute;
+  left: clamp(60px, 7vw, 96px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(215,175,51,0.10) 8%, rgba(215,175,51,0.18) 50%, rgba(215,175,51,0.10) 92%, transparent 100%);
+  z-index: 0;
+}
+.pmc-bp-packet {
+  position: absolute;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold-bright);
+  bottom: -10px;
+  animation: pmcBpPacket 6s linear infinite;
+}
+.pmc-bp-packet:nth-child(2) { animation-delay: 2s; }
+.pmc-bp-packet:nth-child(3) { animation-delay: 4s; }
+@keyframes pmcBpPacket {
+  0% { bottom: -10px; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { bottom: calc(100% + 10px); opacity: 0; }
+}
+
+/* Layer rail */
+.pmc-bp-layer {
+  display: grid;
+  grid-template-columns: clamp(80px, 8vw, 120px) 1fr;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px dashed rgba(245,240,232,0.06);
+  position: relative;
+  z-index: 1;
+  transition: opacity 240ms var(--ease-out-expo);
+}
+.pmc-bp-layer:last-child { border-bottom: 0; }
+.pmc-bp-layer-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-70);
+}
+.pmc-bp-layer-mark {
+  color: var(--gold);
+  font-weight: 500;
+  padding: 3px 6px;
+  border: 1px solid var(--gold-line);
+  border-radius: 2px;
+  font-size: 10px;
+}
+
+/* Components inside a layer */
+.pmc-bp-components { display: flex; flex-wrap: wrap; gap: 12px; }
+.pmc-bp-component {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(10,26,24,0.65);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  text-decoration: none;
+  position: relative;
+  transition: border-color 280ms var(--ease-out-expo), background 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo);
+  cursor: pointer;
+}
+.pmc-bp-component::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 6px;
+  height: 1px;
+  background: rgba(215,175,51,0.30);
+  transform: translateY(-50%);
+}
+.pmc-bp-comp-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--ink-50);
+}
+.pmc-bp-comp-name {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  color: var(--ink-90);
+}
+.pmc-bp-component:hover {
+  border-color: var(--gold);
+  background: rgba(215,175,51,0.05);
+  transform: translateY(-1px);
+}
+.pmc-bp-component:hover .pmc-bp-comp-num { color: var(--gold); }
+
+/* Hover focus: dim siblings, brighten the active row */
+.pmc-blueprint:has(.pmc-bp-component:hover) .pmc-bp-layer:not(:has(.pmc-bp-component:hover)) { opacity: 0.42; }
+
+/* Footer */
+.pmc-bp-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px dashed rgba(215,175,51,0.18);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.pmc-bp-foot-row { display: inline-flex; align-items: baseline; gap: 8px; }
+.pmc-bp-foot-label { color: var(--ink-50); }
+.pmc-bp-foot-val { color: var(--ink-90); }
+.pmc-bp-foot-live { color: var(--leaf-bright); position: relative; padding-left: 12px; }
+.pmc-bp-foot-live::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--leaf-bright);
+  box-shadow: 0 0 0 2px rgba(90,158,84,0.22);
+  animation: pmcBpLivePulse 2.4s ease-in-out infinite;
+}
+@keyframes pmcBpLivePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(90,158,84,0.50); }
+  50% { box-shadow: 0 0 0 6px rgba(90,158,84,0); }
+}
+.pmc-bp-foot-sep { color: var(--ink-40); }
+
+/* Mobile collapse */
+@media (max-width: 768px) {
+  .pmc-blueprint { padding: 24px 18px; }
+  .pmc-bp-titleblock { grid-template-columns: 1fr; gap: 8px; padding-bottom: 16px; margin-bottom: 20px; }
+  .pmc-bp-meta { grid-column: 1; }
+  .pmc-bp-legend { position: static; flex-direction: row; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+  .pmc-bp-layer { grid-template-columns: 1fr; gap: 8px; padding: 10px 0; }
+  .pmc-bp-signal { left: 0; }
+  .pmc-bp-packet { left: -3px; }
+  .pmc-bp-component { padding: 10px 12px; }
+  .pmc-bp-comp-name { font-size: 14px; }
+  .pmc-bp-corner { width: 12px; height: 12px; }
+  .pmc-bp-footer { gap: 8px; font-size: 9.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pmc-bp-packet { animation: none !important; opacity: 0 !important; }
+  .pmc-bp-foot-live::before { animation: none !important; }
+  .pmc-bp-component, .pmc-bp-layer { transition: none !important; }
+}
+</style>
+
+
+<!-- ===== OPEN GRAPH ===== -->
+<meta property="og:title" content="Marketing services run by the operator | Pfender Marketing Co.">
+<meta property="og:description" content="Full-funnel marketing services from Joe Pfender: audits, ASO, SEO, GA4 and attribution, web design and build, paid media, messaging, brand. AI-augmented, run directly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pfendermarketing.com/services">
+<meta property="og:image" content="https://pfendermarketing.com/og/pmc-services-1200x630.jpg">
+<meta property="og:site_name" content="Pfender Marketing Co.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marketing services run by the operator | Pfender Marketing Co.">
+<meta name="twitter:description" content="Full-funnel marketing services from Joe Pfender: audits, ASO, SEO, GA4 and attribution, web design and build, paid media, messaging, brand. AI-augmented, run directly.">
+<meta name="twitter:image" content="https://pfendermarketing.com/og/pmc-services-1200x630.jpg">
+<link rel="canonical" href="https://pfendermarketing.com/services">
+
+
+<!-- ===== JSON-LD ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pfendermarketing.com/#org",
+      "name": "Pfender Marketing Co.",
+      "url": "https://pfendermarketing.com",
+      "logo": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b7e8ed2a9fcf8841af248_PMC_Icon_512x512.png",
+      "founder": { "@type": "Person", "name": "Joe Pfender" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Philadelphia",
+        "addressRegion": "PA",
+        "addressCountry": "US"
+      },
+      "email": "joe@pfendermarketing.com",
+      "telephone": "+1-717-371-6816"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://pfendermarketing.com/services#service",
+      "name": "Full-funnel marketing services",
+      "provider": { "@id": "https://pfendermarketing.com/#org" },
+      "areaServed": "United States",
+      "serviceType": "Full-funnel marketing",
+      "url": "https://pfendermarketing.com/services",
+      "description": "Full-funnel marketing services run directly by Joe Pfender. Audits, ASO, SEO, GA4 and attribution, website design and build, paid media, messaging frameworks, AI-assisted video, brand identity.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "PMC Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full-funnel marketing audit" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social audit" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ASO (App Store Optimization)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paid media (Apple Search Ads, Meta)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GA4 and attribution" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design and build (Webflow + React)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Messaging frameworks" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI-assisted video" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand identity" } }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pfendermarketing.com" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://pfendermarketing.com/services" }
+      ]
+    }
+  ]
+}
+</script>
