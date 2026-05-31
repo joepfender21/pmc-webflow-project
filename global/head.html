@@ -1,4 +1,166 @@
 <style>
   html { scroll-behavior: smooth; }
   .w-password-page input::placeholder { color: rgba(245,240,232,0.35); }
+
+
+  /* =====================================================================
+     PMC MOBILE HAMBURGER MENU - global, runs on every page that has a
+     .pmc-nav / .nav-in / nav.site-nav element. JS in global/footer.html
+     injects the burger button + drawer; CSS here styles both.
+     ===================================================================== */
+
+  .pmc-burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid rgba(245, 240, 232, 0.20);
+    border-radius: 999px;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transition: border-color 200ms cubic-bezier(0.16, 1, 0.3, 1), background 200ms ease;
+  }
+  .pmc-burger:hover, .pmc-burger:focus-visible {
+    border-color: #D7AF33;
+    background: rgba(215, 175, 51, 0.05);
+    outline: none;
+  }
+  .pmc-burger-bars {
+    width: 18px;
+    height: 12px;
+    position: relative;
+  }
+  .pmc-burger-bars > span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: #F5F0E8;
+    border-radius: 2px;
+    transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
+  }
+  .pmc-burger-bars > span:nth-child(1) { top: 0; }
+  .pmc-burger-bars > span:nth-child(2) { top: 5px; }
+  .pmc-burger-bars > span:nth-child(3) { top: 10px; }
+  .pmc-burger[aria-expanded="true"] .pmc-burger-bars > span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .pmc-burger[aria-expanded="true"] .pmc-burger-bars > span:nth-child(2) {
+    opacity: 0;
+  }
+  .pmc-burger[aria-expanded="true"] .pmc-burger-bars > span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .pmc-mobile-drawer {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 13, 13, 0.94);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 320ms;
+    padding: 96px 28px 56px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pmc-mobile-drawer[data-open] {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0s;
+  }
+  .pmc-mobile-drawer-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .pmc-mobile-drawer-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #D7AF33;
+    margin: 0 0 24px;
+    display: block;
+  }
+  .pmc-mobile-drawer a {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #F5F0E8;
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: color 200ms ease, transform 320ms cubic-bezier(0.16, 1, 0.3, 1), opacity 320ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateX(-12px);
+    display: block;
+  }
+  .pmc-mobile-drawer[data-open] a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .pmc-mobile-drawer[data-open] a:nth-child(1) { transition-delay: 80ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(2) { transition-delay: 130ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(3) { transition-delay: 180ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(4) { transition-delay: 230ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(5) { transition-delay: 280ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(6) { transition-delay: 330ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(7) { transition-delay: 380ms; }
+  .pmc-mobile-drawer[data-open] a:nth-child(8) { transition-delay: 430ms; }
+  .pmc-mobile-drawer a:hover { color: #D7AF33; }
+  .pmc-mobile-drawer-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 28px;
+    padding: 16px 24px !important;
+    background: #D7AF33;
+    color: #040D0D !important;
+    border-radius: 999px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-bottom: 0 !important;
+    line-height: 1 !important;
+  }
+  .pmc-mobile-drawer-cta:hover {
+    background: #E5C044;
+    color: #040D0D !important;
+  }
+  .pmc-mobile-drawer-meta {
+    display: block !important;
+    margin-top: 32px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 11px !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.5) !important;
+    border-bottom: 0 !important;
+    padding: 0 !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+  }
+  .pmc-mobile-drawer-meta:hover { color: #F5F0E8 !important; }
+
+  @media (max-width: 768px) {
+    .pmc-burger { display: inline-flex; }
+  }
+
+  body[data-burger-open] { overflow: hidden; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pmc-burger-bars > span,
+    .pmc-mobile-drawer,
+    .pmc-mobile-drawer a { transition: none !important; }
+  }
 </style>
