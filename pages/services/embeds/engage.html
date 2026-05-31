@@ -1,14 +1,16 @@
-<!-- /services - THE ENGAGEMENT - v1.1 ICONS
-     4 phases (Audit -> Diagnose -> Install -> Run) on a horizontal scroll-snap track (desktop).
-     Each card carries a PMC inline icon (i-scan / i-radar / i-web / i-cast) that animates on
-     scroll-in and replays on hover. SVG defs live in body.html.
-     SVG hairlines between cards still draw on intersection (handled in body.html).
-     Keyboard navigation via ArrowLeft / ArrowRight.
-     HTML ONLY. No <style>, no <script>. -->
+<!-- /services - THE ENGAGEMENT - v2.0 POLISH
+     Polished variation of the home leak pattern. Distinct visual metaphor:
+     animated top edge flows LEFT-TO-RIGHT across each card (install progress,
+     not leak drain), with a running gold spark riding the edge. Same level
+     of polish as leak: time-window pills, status tag, scroll-in stagger,
+     hover lift, bottom summary line. Icons (i-scan / i-cal / i-web / i-cast)
+     animate continuously via pmcFloat. HTML ONLY. -->
 <div class="pmc-engage" aria-label="How an engagement runs">
   <div class="pmc-engage-track" role="list">
 
     <article class="pmc-engage-card" role="listitem">
+      <span class="pmc-engage-edge" aria-hidden="true"></span>
+      <span class="pmc-engage-spark" aria-hidden="true"></span>
       <svg class="pmc-ico i-scan" viewBox="0 0 64 64" aria-hidden="true">
         <rect class="s2" x="14" y="14" width="28" height="34" rx="4" opacity=".3"/>
         <line class="row" x1="20" y1="22" x2="36" y2="22" stroke="#5FA354" stroke-width="1.6" opacity=".45"/>
@@ -25,11 +27,18 @@
       </svg>
       <span class="pmc-engage-step">Step 01 / Audit</span>
       <h3 class="pmc-engage-title">Audit</h3>
+      <div class="pmc-engage-pills">
+        <span class="pmc-engage-pill">Week 1-2</span>
+        <span class="pmc-engage-pill">Read</span>
+        <span class="pmc-engage-pill">Owned</span>
+      </div>
       <p class="pmc-engage-body">Two weeks. I look at every channel, every tool, every dashboard. You get a written read of what is leaking and where the budget is hiding.</p>
-      <svg class="pmc-engage-line" aria-hidden="true" viewBox="0 0 56 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="56" y2="0.5"></line></svg>
+      <span class="pmc-engage-status">Reading the funnel</span>
     </article>
 
     <article class="pmc-engage-card" role="listitem">
+      <span class="pmc-engage-edge" aria-hidden="true"></span>
+      <span class="pmc-engage-spark" aria-hidden="true"></span>
       <svg class="pmc-ico i-cal" viewBox="0 0 64 64" aria-hidden="true">
         <rect class="s" x="14" y="18" width="36" height="31" rx="4.5"/>
         <path class="hl" d="M17 18.6 H47"/>
@@ -45,11 +54,18 @@
       </svg>
       <span class="pmc-engage-step">Step 02 / Diagnose</span>
       <h3 class="pmc-engage-title">Diagnose</h3>
+      <div class="pmc-engage-pills">
+        <span class="pmc-engage-pill">Day 14</span>
+        <span class="pmc-engage-pill">Sync</span>
+        <span class="pmc-engage-pill">Plan</span>
+      </div>
       <p class="pmc-engage-body">We sit on the audit together. I walk you through the read, the install plan, and the trade-offs. You decide what gets installed first.</p>
-      <svg class="pmc-engage-line" aria-hidden="true" viewBox="0 0 56 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="56" y2="0.5"></line></svg>
+      <span class="pmc-engage-status">Aligning the plan</span>
     </article>
 
     <article class="pmc-engage-card" role="listitem">
+      <span class="pmc-engage-edge" aria-hidden="true"></span>
+      <span class="pmc-engage-spark" aria-hidden="true"></span>
       <svg class="pmc-ico i-web" viewBox="0 0 64 64" aria-hidden="true">
         <rect class="s2" x="21" y="11" width="31" height="25" rx="4" opacity=".3"/>
         <rect class="s" x="13" y="17" width="34" height="29" rx="4.5"/>
@@ -66,11 +82,18 @@
       </svg>
       <span class="pmc-engage-step">Step 03 / Install</span>
       <h3 class="pmc-engage-title">Install</h3>
+      <div class="pmc-engage-pills">
+        <span class="pmc-engage-pill">Week 3-12</span>
+        <span class="pmc-engage-pill">Build</span>
+        <span class="pmc-engage-pill">Wire</span>
+      </div>
       <p class="pmc-engage-body">90 days. Site, instrumentation, messaging, the first paid layer, the first content layer. You watch it ship, you own everything that gets installed.</p>
-      <svg class="pmc-engage-line" aria-hidden="true" viewBox="0 0 56 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="56" y2="0.5"></line></svg>
+      <span class="pmc-engage-status">Shipping the engine</span>
     </article>
 
     <article class="pmc-engage-card" role="listitem">
+      <span class="pmc-engage-edge" aria-hidden="true"></span>
+      <span class="pmc-engage-spark" aria-hidden="true"></span>
       <svg class="pmc-ico i-cast" viewBox="0 0 64 64" aria-hidden="true">
         <line class="s2" x1="32" y1="32" x2="18" y2="18"/>
         <line class="s2" x1="32" y1="32" x2="46" y2="18"/>
@@ -87,9 +110,18 @@
       </svg>
       <span class="pmc-engage-step">Step 04 / Run</span>
       <h3 class="pmc-engage-title">Run</h3>
+      <div class="pmc-engage-pills">
+        <span class="pmc-engage-pill">Day 90+</span>
+        <span class="pmc-engage-pill">Operate</span>
+        <span class="pmc-engage-pill">Yours</span>
+      </div>
       <p class="pmc-engage-body">Optional retainer. I keep operating the engine for you, or I hand it off to your team with a runbook. Either way it keeps running because you own it.</p>
+      <span class="pmc-engage-status">Yours to operate</span>
     </article>
 
   </div>
-  <p class="pmc-engage-hint" aria-hidden="true">&larr; &rarr; to navigate</p>
+  <div class="pmc-engage-foot" aria-hidden="true">
+    <span>Each phase compounds into the next - by Day 90 the engine is yours</span>
+    <span class="pmc-engage-foot-line"></span>
+  </div>
 </div>
