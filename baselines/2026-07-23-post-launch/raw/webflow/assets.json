@@ -1,0 +1,9 @@
+{
+  "redacted": true,
+  "reason": "The raw Webflow asset inventory is withheld from this public repository because original filenames and metadata may expose client or customer naming.",
+  "original_sha256": "c12dd5abaff95be9f437066530f08557062881e2499cab42b6fcb3ae6107dd61",
+  "asset_count": 123,
+  "variant_count": 343,
+  "preserved_public_evidence": "Production HTML and CSS retain the asset references observed at capture time.",
+  "live_system_impact": "None. This repository-only redaction did not modify Webflow or the live Website."
+}

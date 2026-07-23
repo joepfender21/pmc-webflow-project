@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"label\":\"llms-tree\",\"action\":\"get_all_elements\",\"result\":[{\"status\":\"success\",\"message\":\"Elements tree loaded\",\"data\":{\"id\":{\"component\":\"6a1c7986ba03ba59ac8f6ecf\",\"element\":\"6a1c7986ba03ba59ac8f6ed5\"},\"type\":\"Body\"}}]}"
+    }
+  ],
+  "isError": false
+}

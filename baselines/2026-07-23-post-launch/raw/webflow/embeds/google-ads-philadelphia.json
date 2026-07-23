@@ -1,0 +1,16 @@
+{
+  "page": {
+    "name": "google-ads-philadelphia",
+    "id": "6a315d5990059ff3fdd7c033"
+  },
+  "query": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"label\":\"html-embeds\",\"action\":\"query_elements\",\"result\":[{\"status\":\"success\",\"message\":\"Query results\",\"data\":[{\"label\":\"html-embeds\",\"total_matches\":0,\"matches\":[]}]}]}"
+      }
+    ],
+    "isError": false
+  },
+  "settings": null
+}

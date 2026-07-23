@@ -1,0 +1,99 @@
+[
+  {
+    "label": "List page sitemap statuses",
+    "action": "list_pages_sitemap_status",
+    "result": {
+      "pages": [
+        {
+          "id": "6a3160509b1f11100bfebd01",
+          "title": "Digital Marketing Consultant Philadelphia",
+          "slug": "marketing-consultant-philadelphia",
+          "includeInSitemap": false
+        },
+        {
+          "id": "6a315d97ff419319f915bbcf",
+          "title": "Web Design Philadelphia",
+          "slug": "web-design-philadelphia",
+          "includeInSitemap": false
+        },
+        {
+          "id": "6a315d5990059ff3fdd7c033",
+          "title": "Google Ads Management Philadelphia",
+          "slug": "google-ads-management-philadelphia",
+          "includeInSitemap": false
+        },
+        {
+          "id": "6a315cc4b5c143538f52ae26",
+          "title": "SEO Consultant Philadelphia",
+          "slug": "seo-consultant-philadelphia",
+          "includeInSitemap": false
+        },
+        {
+          "id": "6a315b2a10e5e9e109686923",
+          "title": "Webflow Developer Philadelphia",
+          "slug": "webflow-developer-philadelphia",
+          "includeInSitemap": false
+        },
+        {
+          "id": "6a1c7986ba03ba59ac8f6ecf",
+          "title": "llms.txt",
+          "slug": "llms",
+          "includeInSitemap": false
+        },
+        {
+          "id": "6a1b02d9321baeb989db64e1",
+          "title": "Services",
+          "slug": "services",
+          "includeInSitemap": true
+        },
+        {
+          "id": "6a18dbf1d503d973ad17bb7a",
+          "title": "Blog",
+          "slug": "blog",
+          "includeInSitemap": true
+        },
+        {
+          "id": "69a5ab2cc2b1c5591234b9ce",
+          "title": "Case Studies",
+          "slug": "case-studies",
+          "includeInSitemap": false
+        },
+        {
+          "id": "69a1a2aabd2f2e369dc39895",
+          "title": "Book a Meeting",
+          "slug": "meeting",
+          "includeInSitemap": true
+        },
+        {
+          "id": "69a0c1e3038ae1287aa80b16",
+          "title": "Home",
+          "slug": "",
+          "includeInSitemap": true
+        },
+        {
+          "id": "69a07d65d2367c859b15e2e2",
+          "title": "Start",
+          "slug": "start",
+          "includeInSitemap": false
+        },
+        {
+          "id": "699f77d54f0c2a2cfe25bc0c",
+          "title": "Privacy Policy",
+          "slug": "privacy",
+          "includeInSitemap": true
+        },
+        {
+          "id": "699f75bc7b9c0305448d6a55",
+          "title": "Terms of Service",
+          "slug": "terms",
+          "includeInSitemap": true
+        }
+      ],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "total": 14
+      }
+    }
+  }
+]

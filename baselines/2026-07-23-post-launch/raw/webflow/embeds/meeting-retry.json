@@ -1,0 +1,26 @@
+{
+  "page": {
+    "name": "meeting",
+    "id": "69a1a2aabd2f2e369dc39895"
+  },
+  "query": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"label\":\"html-embeds\",\"action\":\"query_elements\",\"result\":[{\"status\":\"success\",\"message\":\"Query results\",\"data\":[{\"label\":\"html-embeds\",\"total_matches\":1,\"matches\":[{\"id\":{\"component\":\"69a1a2aabd2f2e369dc39895\",\"element\":\"de08d16b-2423-cf77-1389-3ccc29d22f25\"},\"type\":\"HtmlEmbed\",\"styleNames\":[\"Code Embed 5\",\"pmc-scheduler-card\"],\"settings\":{\"visibility\":true}}]}]}]}"
+      }
+    ],
+    "isError": false
+  },
+  "settings": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"label\":\"embed-1\",\"action\":\"get_settings\",\"result\":[{\"status\":\"success\",\"message\":\"Settings retrieved\",\"data\":{\"type\":\"all_raw_settings\",\"total_matches\":4,\"matches\":[{\"key\":\"domId\",\"value\":\"\"},{\"key\":\"visibility\",\"value\":true},{\"key\":\"code\",\"value\":\"<iframe\\n  src=\\\"https://app.treecrm.co/book/discovery-call?embed=1\\\"\\n  allowtransparency=\\\"true\\\"\\n  style=\\\"width: 100%; height: clamp(560px, 80vh, 760px); border: 0; display: block; margin: 0 auto; background: transparent; touch-action: manipulation;\\\"\\n  loading=\\\"lazy\\\"\\n  referrerpolicy=\\\"no-referrer-when-downgrade\\\"\\n  title=\\\"Pfender Marketing Co. - Booking Calendar\\\"\\n></iframe>\\n<p style=\\\"text-align: center; margin-top: 16px; font-size: 14px; color: rgba(245,240,232,0.5);\\\">\\n  If the embedded scheduler does not load,\\n  <a href=\\\"https://app.treecrm.co/book/discovery-call\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\" style=\\\"color: #D7AF33;\\\">book here</a>.\\n</p>\"},{\"key\":\"attributes\",\"value\":[]}]}}]}"
+        }
+      ],
+      "isError": false
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+[
+  {
+    "label": "List custom fonts",
+    "action": "list_fonts",
+    "result": {
+      "customFonts": [
+        {
+          "id": "6a15dd58bef87e41b6274a93",
+          "fontFamily": "Clashdisplay",
+          "weight": 300,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd025ac7b34903697b81_ClashDisplay-Light.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd025ac7b34903697b81_ClashDisplay-Light.woff2",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5d0d3cebe820447d3c",
+          "fontFamily": "Clashdisplay",
+          "weight": 700,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd0236fa7c42e4ec1bd3_ClashDisplay-Bold.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd0236fa7c42e4ec1bd3_ClashDisplay-Bold.woff2",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5f2505405de921c31a",
+          "fontFamily": "Clashdisplay",
+          "weight": 500,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd02ccfe332604d7f575_ClashDisplay-Medium.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02ccfe332604d7f575_ClashDisplay-Medium.woff2",
+          "axes": []
+        },
+        {
+          "id": "6a15dd61dbe35986006cdf62",
+          "fontFamily": "Clashdisplay",
+          "weight": 600,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd02e6d775452497a9e9_ClashDisplay-Semibold.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02e6d775452497a9e9_ClashDisplay-Semibold.woff2",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6882b1ab4f93f9c678",
+          "fontFamily": "Clashdisplay Variable",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd020d3cebe820447a9b_ClashDisplay-Variable.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd020d3cebe820447a9b_ClashDisplay-Variable.woff2",
+          "axes": [
+            {
+              "tag": "wght",
+              "min": 200,
+              "max": 700,
+              "defaultValue": 700,
+              "name": "Weight"
+            }
+          ]
+        },
+        {
+          "id": "6a15dd69623d88fc5d9dbc47",
+          "fontFamily": "Clashdisplay",
+          "weight": 200,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd02f32b54eae15f93f2_ClashDisplay-Extralight.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02f32b54eae15f93f2_ClashDisplay-Extralight.woff2",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6a4ffb008b3ec53cd7",
+          "fontFamily": "Clashdisplay",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff2",
+          "fileName": "6a15dd02ccf49aa15eb58d8b_ClashDisplay-Regular.woff2",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02ccf49aa15eb58d8b_ClashDisplay-Regular.woff2",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5e7f53393686ff3075",
+          "fontFamily": "Clashdisplay",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd0281b6a77790fd6227_ClashDisplay-Regular.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd0281b6a77790fd6227_ClashDisplay-Regular.eot",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5fafad955fe0cd39cd",
+          "fontFamily": "Clashdisplay Variable",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd02ccf49aa15eb58d7b_ClashDisplay-Variable.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02ccf49aa15eb58d7b_ClashDisplay-Variable.eot",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6179b8f45d9b04ce66",
+          "fontFamily": "Clashdisplay",
+          "weight": 500,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd0285ca5a12123464eb_ClashDisplay-Medium.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd0285ca5a12123464eb_ClashDisplay-Medium.eot",
+          "axes": []
+        },
+        {
+          "id": "6a15dd63e117e1ae13bb3f60",
+          "fontFamily": "Clashdisplay",
+          "weight": 200,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd020312a21507312458_ClashDisplay-Extralight.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd020312a21507312458_ClashDisplay-Extralight.eot",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6440d4ec8189d96528",
+          "fontFamily": "Clashdisplay",
+          "weight": 700,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd02fa961a1dd9c68396_ClashDisplay-Bold.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02fa961a1dd9c68396_ClashDisplay-Bold.eot",
+          "axes": []
+        },
+        {
+          "id": "6a15dd65604ce1feaf9ff2c9",
+          "fontFamily": "Clashdisplay",
+          "weight": 300,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd02b38e6cf15b18f628_ClashDisplay-Light.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02b38e6cf15b18f628_ClashDisplay-Light.eot",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6bf26c63393aed7a2d",
+          "fontFamily": "Clashdisplay",
+          "weight": 600,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "embedded-opentype",
+          "fileName": "6a15dd0b0313b4961560677d_ClashDisplay-Semibold.eot",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd0b0313b4961560677d_ClashDisplay-Semibold.eot",
+          "axes": []
+        },
+        {
+          "id": "699b8cb32ecbd0ecfbb4a52a",
+          "fontFamily": "Satoshi Regular",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "699b8caaf10d9dff509fd213_Satoshi-Regular.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b8caaf10d9dff509fd213_Satoshi-Regular.woff",
+          "axes": []
+        },
+        {
+          "id": "699b8cc249317009548a0372",
+          "fontFamily": "Satoshi Medium",
+          "weight": 500,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "699b8cbb048aa010324a13d5_Satoshi-Medium.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b8cbb048aa010324a13d5_Satoshi-Medium.woff",
+          "axes": []
+        },
+        {
+          "id": "699b8cd1c1cbf6f35274c2cb",
+          "fontFamily": "Satoshi Bold",
+          "weight": 700,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "699b8cca429e5a36955f81bc_Satoshi-Bold.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b8cca429e5a36955f81bc_Satoshi-Bold.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5985182608208b4ea1",
+          "fontFamily": "Clashdisplay",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "6a15dd027845d0853d0334ba_ClashDisplay-Regular.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd027845d0853d0334ba_ClashDisplay-Regular.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5a63c526d06e0c6b69",
+          "fontFamily": "Clashdisplay Variable",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "6a15dd027f6b44bd646cf7f0_ClashDisplay-Variable.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd027f6b44bd646cf7f0_ClashDisplay-Variable.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5b42bf76f40330ef59",
+          "fontFamily": "Clashdisplay",
+          "weight": 500,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "699b8c18c5276533a061bf8f_ClashDisplay-Medium.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b8c18c5276533a061bf8f_ClashDisplay-Medium.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5cc29676c546d22d2c",
+          "fontFamily": "Clashdisplay",
+          "weight": 300,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "6a15dd0229036f884895bd03_ClashDisplay-Light.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd0229036f884895bd03_ClashDisplay-Light.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd651cedb517bb0db91c",
+          "fontFamily": "Clashdisplay",
+          "weight": 200,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "6a15dd02bef87e41b6274767_ClashDisplay-Extralight.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02bef87e41b6274767_ClashDisplay-Extralight.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6711505235f04d1f0c",
+          "fontFamily": "Clashdisplay",
+          "weight": 700,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "699b8bb855bf31c8753bed8b_ClashDisplay-Bold (1).woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b8bb855bf31c8753bed8b_ClashDisplay-Bold%20(1).woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6967b78380daf7e577",
+          "fontFamily": "Clashdisplay",
+          "weight": 600,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "woff",
+          "fileName": "699b8c4140dc2562ab61304a_ClashDisplay-Semibold.woff",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/699b8c4140dc2562ab61304a_ClashDisplay-Semibold.woff",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5b1e835b66900a6c46",
+          "fontFamily": "Clashdisplay",
+          "weight": 200,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd02c8cb3c248100ff50_ClashDisplay-Extralight.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02c8cb3c248100ff50_ClashDisplay-Extralight.ttf",
+          "axes": []
+        },
+        {
+          "id": "6a15dd5caa5769620d110aa4",
+          "fontFamily": "Clashdisplay",
+          "weight": 500,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd02ac309bda5a1d8cc6_ClashDisplay-Medium.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02ac309bda5a1d8cc6_ClashDisplay-Medium.ttf",
+          "axes": []
+        },
+        {
+          "id": "6a15dd60ac35a2aacbdd8fee",
+          "fontFamily": "Clashdisplay Variable",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd02ce52cdf836f71860_ClashDisplay-Variable.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02ce52cdf836f71860_ClashDisplay-Variable.ttf",
+          "axes": [
+            {
+              "tag": "wght",
+              "min": 200,
+              "max": 700,
+              "defaultValue": 700,
+              "name": "Weight"
+            }
+          ]
+        },
+        {
+          "id": "6a15dd62b039ad8165e41b97",
+          "fontFamily": "Clashdisplay",
+          "weight": 400,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd024d6d668b1df9af2f_ClashDisplay-Regular.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd024d6d668b1df9af2f_ClashDisplay-Regular.ttf",
+          "axes": []
+        },
+        {
+          "id": "6a15dd669b04c8f0836cdc3c",
+          "fontFamily": "Clashdisplay",
+          "weight": 300,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd02233f9c9d17897b91_ClashDisplay-Light.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02233f9c9d17897b91_ClashDisplay-Light.ttf",
+          "axes": []
+        },
+        {
+          "id": "6a15dd67b6ba924b4ab7b4d0",
+          "fontFamily": "Clashdisplay",
+          "weight": 600,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd029da29a725bbdc716_ClashDisplay-Semibold.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd029da29a725bbdc716_ClashDisplay-Semibold.ttf",
+          "axes": []
+        },
+        {
+          "id": "6a15dd6af447b03513ea214f",
+          "fontFamily": "Clashdisplay",
+          "weight": 700,
+          "italic": false,
+          "fontDisplay": "swap",
+          "format": "truetype",
+          "fileName": "6a15dd02b38e6cf15b18f634_ClashDisplay-Bold.ttf",
+          "hostedUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15dd02b38e6cf15b18f634_ClashDisplay-Bold.ttf",
+          "axes": []
+        }
+      ],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "total": 31
+      }
+    }
+  }
+]

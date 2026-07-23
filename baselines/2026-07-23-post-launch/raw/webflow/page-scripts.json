@@ -1,0 +1,73 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"label\":\"marketing-consultant-philadelphia\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"web-design-philadelphia\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"google-ads-philadelphia\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"seo-consultant-philadelphia\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"webflow-developer-philadelphia\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"llms\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"services\",\"action\":\"get_page_scripts\",\"result\":{\"scripts\":[{\"id\":\"pmcservicesexactdata\",\"displayName\":\"PMCServicesExactData\",\"version\":\"2.0.0\",\"location\":\"footer\",\"attributes\":{\"data-pmc-services-exact-payload\":\"2026-07-22\"}},{\"id\":\"pmcexactrunner3\",\"displayName\":\"PMCExactRunner3\",\"version\":\"1.0.0\",\"location\":\"footer\",\"attributes\":{\"data-pmc-services-exact-runner\":\"2026-07-22\"}}],\"lastUpdated\":\"2026-07-22T22:24:05.925Z\",\"createdOn\":\"2026-07-22T22:15:47.627Z\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"blog\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"blog-template\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"case-studies\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"meeting\",\"action\":\"get_page_scripts\",\"result\":{\"scripts\":[{\"id\":\"meetingredirectv2\",\"displayName\":\"MeetingRedirectV2\",\"version\":\"1.0.0\",\"location\":\"header\",\"attributes\":{}},{\"id\":\"treecrmheightfix\",\"displayName\":\"TreeCRMHeightFix\",\"version\":\"1.2.0\",\"location\":\"footer\",\"attributes\":{}}],\"lastUpdated\":\"2026-06-04T18:12:37.923Z\",\"createdOn\":\"2026-05-07T16:18:20.211Z\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"home\",\"action\":\"get_page_scripts\",\"result\":{\"scripts\":[{\"id\":\"bookpopupcssfix\",\"displayName\":\"BookPopupCSSFix\",\"version\":\"1.0.0\",\"location\":\"footer\",\"attributes\":{}},{\"id\":\"bookpopupembedpatch\",\"displayName\":\"BookPopupEmbedPatch\",\"version\":\"1.0.0\",\"location\":\"footer\",\"attributes\":{}},{\"id\":\"pmcheroaccentspacefix\",\"displayName\":\"pmcHeroAccentSpaceFix\",\"version\":\"1.0.0\",\"location\":\"header\",\"attributes\":{}}],\"lastUpdated\":\"2026-07-10T15:51:33.720Z\",\"createdOn\":\"2026-06-21T14:42:39.335Z\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"start\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"404\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"privacy\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"terms\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    },
+    {
+      "type": "text",
+      "text": "{\"label\":\"password\",\"action\":\"get_page_scripts\",\"error\":{\"name\":\"Error\",\"message\":\"NotFoundError\\nStatus code: 404\\nBody: {\\n  \\\"message\\\": \\\"Requested resource not found: Custom code block not found\\\",\\n  \\\"code\\\": \\\"resource_not_found\\\",\\n  \\\"details\\\": []\\n}\"}}"
+    }
+  ],
+  "isError": false
+}

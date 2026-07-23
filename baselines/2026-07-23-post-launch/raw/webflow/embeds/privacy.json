@@ -1,0 +1,16 @@
+{
+  "page": {
+    "name": "privacy",
+    "id": "699f77d54f0c2a2cfe25bc0c"
+  },
+  "query": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"label\":\"html-embeds\",\"action\":\"query_elements\",\"result\":[{\"status\":\"success\",\"message\":\"Query results\",\"data\":[{\"label\":\"html-embeds\",\"total_matches\":0,\"matches\":[]}]}]}"
+      }
+    ],
+    "isError": false
+  },
+  "settings": null
+}

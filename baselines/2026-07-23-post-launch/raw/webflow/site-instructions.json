@@ -1,0 +1,15 @@
+[
+  {
+    "label": "List site instructions",
+    "action": "search_instructions",
+    "result": {
+      "instructions": [],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "total": 0
+      },
+      "resourceTemplate": "webflow://sites/{siteId}/instructions/{instructionPath}"
+    }
+  }
+]

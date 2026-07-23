@@ -1,0 +1,7 @@
+{
+  "redacted": true,
+  "reason": "Internal Webflow workspace/site identifiers, staging preview details, and publication metadata are withheld from this public repository.",
+  "original_sha256": "2b679cda6af442885528bbc33a9a73d82d793f8970aef056ab601dac9f7b9f85",
+  "preserved_public_evidence": "Production responses, the production sitemap, page structures, code, schema, styles, variables, components, fonts, and breakpoints remain in the baseline.",
+  "live_system_impact": "None. This repository-only redaction did not modify Webflow or the live Website."
+}

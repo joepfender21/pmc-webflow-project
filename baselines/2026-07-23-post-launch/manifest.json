@@ -1,0 +1,65 @@
+{
+  "baseline_id": "pmc-webflow-post-launch-2026-07-23",
+  "baseline_kind": "production-runtime-plus-webflow-project-extraction",
+  "created_at": "2026-07-23T18:13:11Z",
+  "site": {
+    "internal_metadata": "withheld_from_public_repository",
+    "public_evidence": "Production responses and sitemap remain captured under raw/production/.",
+    "live_system_impact": "None"
+  },
+  "repository": {
+    "github": "joepfender21/pmc-webflow-project",
+    "historical_base_sha": "d41e5ad92115fcd5d296908e7e399c68abc1aebf",
+    "baseline_branch": "agent/webflow-post-launch-baseline-2026-07-23"
+  },
+  "tree_crm_release": {
+    "production_sha": "9d02b8a4162b0328f0e053fda491598ecaf89b39",
+    "deployment_id": "dpl_EDsJgLhqLR1oxTcKZup4S4sDbEEm",
+    "state": "READY"
+  },
+  "counts": {
+    "webflow_pages": 17,
+    "webflow_draft_pages": 5,
+    "webflow_styles": 1523,
+    "webflow_variables": 36,
+    "webflow_components": 1,
+    "webflow_cms_collections": 1,
+    "webflow_cms_items": 37,
+    "cms_items_currently_published": 32,
+    "cms_items_currently_draft": 5,
+    "production_sitemap_urls": 40,
+    "production_blog_urls": 34
+  },
+  "native_schema_paths": [
+    "/",
+    "/services",
+    "/blog",
+    "/case-studies",
+    "/meeting"
+  ],
+  "authority": {
+    "live_runtime": "raw/production",
+    "webflow_project_state": "raw/webflow",
+    "integrity_index": "SHA256SUMS",
+    "rule": "Production HTML and CSS decide what was live. Webflow API data decides current project structure. Post-publish Designer changes are not promoted to production truth without a live match."
+  },
+  "limitations": [
+    "The Webflow project was updated after the last publication, so current Designer data can include unpublished changes.",
+    "The connector does not expose a standalone native Webflow interactions graph. Motion implemented in CSS, custom code, and page structure is preserved.",
+    "Binary assets were not duplicated. The public baseline withholds the raw Webflow asset inventory because original filenames and metadata may expose client or customer naming. Production HTML and CSS preserve the public asset references observed at capture time.",
+    "Initial embed reads for Services, Meeting, Start, and Case Studies hit Webflow rate limits. Successful bounded retries are stored beside the original evidence with -retry filenames.",
+    "The production Meeting snapshot follows the redirect to the Tree CRM booking page. The redirect itself is recorded separately.",
+    "Cross-origin iframe internals are not part of the Webflow snapshot. Tree CRM owns that runtime and its deployed commit is recorded above.",
+    "Retired Make webhook endpoint values are intentionally redacted from the repository baseline. The redaction changes only the preserved capture and does not modify Webflow.",
+    "One illustrative customer-record code example is redacted in the production Blog capture and CMS export. The repository-only redaction removes contact, consent, value, and service data and does not modify Webflow or the live Website.",
+    "The Webflow asset inventory is replaced by a metadata-only public stub with aggregate counts and the original checksum. The repository-only redaction does not modify Webflow or the live Website.",
+    "The Webflow CMS export is replaced by a metadata-only public stub because it includes five unpublished drafts and private source-derived business material. Thirty-four production Blog pages remain preserved individually.",
+    "The raw Webflow site metadata response is replaced by a checksum stub so internal workspace/site identifiers, staging preview details, and publication metadata are not exposed publicly.",
+    "The hidden preserved Audit CTA source is captured because it existed in Webflow. Its repair, redesign, or reactivation is outside this baseline."
+  ],
+  "safety": {
+    "secret_scan": "passed_after_redaction",
+    "restricted_payload_scan": "passed",
+    "notes": "Retired Make webhook endpoints and one illustrative customer-record code example were replaced with nonfunctional repository-redaction markers. The raw Webflow asset inventory, CMS export, and site metadata response were replaced with metadata-only public stubs because they may expose client or customer naming, unpublished drafts, private source-derived business material, internal identifiers, staging preview details, or publication metadata. No private key, service-role key, bearer token, API secret, client secret, restricted outreach payload, identifying customer-record example, raw asset filename inventory, unpublished CMS body, internal Webflow identifier, or staging preview URL remains after remediation. The redactions affect only this repository capture."
+  }
+}

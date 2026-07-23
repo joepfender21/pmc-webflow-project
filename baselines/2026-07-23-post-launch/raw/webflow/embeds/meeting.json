@@ -1,0 +1,16 @@
+{
+  "page": {
+    "name": "meeting",
+    "id": "69a1a2aabd2f2e369dc39895"
+  },
+  "query": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"label\":\"html-embeds\",\"action\":\"query_elements\",\"error\":{\"name\":\"Error\",\"message\":\"Tool query_elements failed: GET /v2/assets returned 429\"}}"
+      }
+    ],
+    "isError": false
+  },
+  "settings": null
+}

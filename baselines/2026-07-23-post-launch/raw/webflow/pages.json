@@ -1,0 +1,420 @@
+[
+  {
+    "label": "List all pages",
+    "action": "list_pages",
+    "result": {
+      "pages": [
+        {
+          "id": "6a3160509b1f11100bfebd01",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Digital Marketing Consultant Philadelphia",
+          "slug": "marketing-consultant-philadelphia",
+          "createdOn": "2026-06-16T14:40:16.327Z",
+          "lastUpdated": "2026-07-22T23:46:31.496Z",
+          "archived": false,
+          "draft": true,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Digital Marketing Consultant in Philadelphia | Pfender Marketing Co.",
+            "description": "A senior marketing consultant in Philadelphia across strategy, web, SEO, and paid media. AI-augmented, human-led, measured by revenue. Book a discovery call."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": null,
+            "imageAssetId": null
+          },
+          "publishedPath": "/marketing-consultant-philadelphia"
+        },
+        {
+          "id": "6a315d97ff419319f915bbcf",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Web Design Philadelphia",
+          "slug": "web-design-philadelphia",
+          "createdOn": "2026-06-16T14:28:39.704Z",
+          "lastUpdated": "2026-07-22T23:46:31.498Z",
+          "archived": false,
+          "draft": true,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Web Designer in Philadelphia | Pfender Marketing Co.",
+            "description": "Modern, fast, on-brand web design in Philadelphia, built to convert. Custom design and build by one senior partner, clear pricing. Book a discovery call."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": null,
+            "imageAssetId": null
+          },
+          "publishedPath": "/web-design-philadelphia"
+        },
+        {
+          "id": "6a315d5990059ff3fdd7c033",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Google Ads Management Philadelphia",
+          "slug": "google-ads-management-philadelphia",
+          "createdOn": "2026-06-16T14:27:37.966Z",
+          "lastUpdated": "2026-07-22T23:46:31.501Z",
+          "archived": false,
+          "draft": true,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Google Ads Management in Philadelphia | Pfender Marketing Co.",
+            "description": "Profit-first Google Ads management in Philadelphia. Single keyword ad groups, ruthless negatives, and spend tracked to closed revenue. Book a discovery call."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": null,
+            "imageAssetId": null
+          },
+          "publishedPath": "/google-ads-management-philadelphia"
+        },
+        {
+          "id": "6a315cc4b5c143538f52ae26",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "SEO Consultant Philadelphia",
+          "slug": "seo-consultant-philadelphia",
+          "createdOn": "2026-06-16T14:25:08.770Z",
+          "lastUpdated": "2026-07-22T23:46:31.504Z",
+          "archived": false,
+          "draft": true,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "SEO Consultant in Philadelphia | Pfender Marketing Co.",
+            "description": "Technical SEO and content in Philadelphia that ranks for searches that drive revenue. One senior partner who ties rankings to real leads. Book a discovery call."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": null,
+            "imageAssetId": null
+          },
+          "publishedPath": "/seo-consultant-philadelphia"
+        },
+        {
+          "id": "6a315b2a10e5e9e109686923",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Webflow Developer Philadelphia",
+          "slug": "webflow-developer-philadelphia",
+          "createdOn": "2026-06-16T14:18:18.928Z",
+          "lastUpdated": "2026-07-22T23:46:31.506Z",
+          "archived": false,
+          "draft": true,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Webflow Developer in Philadelphia | Pfender Marketing Co.",
+            "description": "Fast, SEO-ready Webflow and React builds in Philadelphia, designed and developed by one senior partner. Work directly with Joe. Book a discovery call."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": null,
+            "imageAssetId": null
+          },
+          "publishedPath": "/webflow-developer-philadelphia"
+        },
+        {
+          "id": "6a1c7986ba03ba59ac8f6ecf",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "llms.txt",
+          "slug": "llms",
+          "createdOn": "2026-05-31T18:10:14.260Z",
+          "lastUpdated": "2026-07-23T03:35:57.563Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "llms.txt | Pfender Marketing Co.",
+            "description": "Machine-readable information about Pfender Marketing Co., its services, site structure, and public resources for AI systems and web crawlers."
+          },
+          "openGraph": {
+            "title": "llms.txt | Pfender Marketing Co.",
+            "titleCopied": true,
+            "description": "Machine-readable information about Pfender Marketing Co. for AI systems and web crawlers.",
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/llms"
+        },
+        {
+          "id": "6a1b02d9321baeb989db64e1",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Services",
+          "slug": "services",
+          "createdOn": "2026-05-30T15:31:37.083Z",
+          "lastUpdated": "2026-07-23T16:41:47.086Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Marketing Services for Local Businesses & Apps | PMC",
+            "description": "Focused 90-day marketing engagements for local service businesses and apps across search, messaging, websites, conversion, follow-up, and measurement."
+          },
+          "openGraph": {
+            "title": "Marketing Services for Local Businesses & Apps | PMC",
+            "titleCopied": false,
+            "description": "Focused 90-day marketing engagements shaped around making the business easier to find, understand, and choose.",
+            "descriptionCopied": false,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/services"
+        },
+        {
+          "id": "6a18dbf1d503d973ad17bb7a",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Blog",
+          "slug": "blog",
+          "createdOn": "2026-05-29T00:21:05.119Z",
+          "lastUpdated": "2026-07-23T03:40:33.724Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Marketing Insights for Local Businesses & Apps | PMC",
+            "description": "Practical marketing notes on local search, AI visibility, websites, attribution, paid media, apps, and the operating systems behind better growth."
+          },
+          "openGraph": {
+            "title": "Marketing Insights for Local Businesses & Apps | PMC",
+            "titleCopied": true,
+            "description": "Practical notes from the work across search, websites, attribution, paid media, apps, and marketing operations.",
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/blog"
+        },
+        {
+          "id": "6a18d1b8e4361d0f5fdefb54",
+          "siteId": "698f6b2d83529eb0de880884",
+          "collectionId": "6a18d1b7e4361d0f5fdefa56",
+          "title": "Blog Posts Template",
+          "slug": "detail_blog",
+          "createdOn": "2026-05-28T23:37:28.238Z",
+          "lastUpdated": "2026-07-23T03:40:01.183Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "{{wf {&quot;path&quot;:&quot;meta-title&quot;,&quot;type&quot;:&quot;PlainText&quot;\\} }}",
+            "description": "{{wf {&quot;path&quot;:&quot;meta-description&quot;,&quot;type&quot;:&quot;PlainText&quot;\\} }}"
+          },
+          "openGraph": {
+            "title": "{{wf {&quot;path&quot;:&quot;meta-title&quot;,&quot;type&quot;:&quot;PlainText&quot;\\} }}",
+            "titleCopied": false,
+            "description": "{{wf {&quot;path&quot;:&quot;meta-description&quot;,&quot;type&quot;:&quot;PlainText&quot;\\} }}",
+            "descriptionCopied": false,
+            "imageUrl": "{{wf {&quot;path&quot;:&quot;featured-image&quot;,&quot;type&quot;:&quot;ImageRef&quot;\\} }}",
+            "imageAssetId": null
+          },
+          "publishedPath": "/blog"
+        },
+        {
+          "id": "69a5ab2cc2b1c5591234b9ce",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Case Studies",
+          "slug": "case-studies",
+          "createdOn": "2026-03-02T15:22:20.840Z",
+          "lastUpdated": "2026-07-23T03:40:33.724Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Marketing Case Studies & Selected Work | Pfender Marketing Co.",
+            "description": "Selected marketing work across search, websites, positioning, measurement, and growth. Details are published only when approved for public use."
+          },
+          "openGraph": {
+            "title": "Marketing Case Studies & Selected Work | Pfender Marketing Co.",
+            "titleCopied": true,
+            "description": "Selected work across search, websites, positioning, measurement, and growth.",
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/case-studies"
+        },
+        {
+          "id": "69a1a2aabd2f2e369dc39895",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Book a Meeting",
+          "slug": "meeting",
+          "createdOn": "2026-02-27T13:56:58.591Z",
+          "lastUpdated": "2026-07-23T03:40:33.724Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Schedule a Call with Joe Pfender | Pfender Marketing Co.",
+            "description": "Book a call with Joe Pfender to discuss what is making your business harder to find, understand, or choose and whether a focused 90-day engagement fits."
+          },
+          "openGraph": {
+            "title": "Schedule a Call with Joe Pfender | Pfender Marketing Co.",
+            "titleCopied": true,
+            "description": "Talk through what feels stuck and whether a focused first 90 days is the right next move.",
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/meeting"
+        },
+        {
+          "id": "69a0c1e3038ae1287aa80b16",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Home",
+          "createdOn": "2026-02-26T21:57:55.607Z",
+          "lastUpdated": "2026-07-23T16:41:45.792Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Marketing for Local Businesses & Apps | Pfender Marketing Co.",
+            "description": "Joe Pfender helps local service businesses and app founders get found, understood, and chosen across search, websites, messaging, follow-up, and measurement."
+          },
+          "openGraph": {
+            "title": "Make your business easier to find, understand, and choose.",
+            "titleCopied": false,
+            "description": "Focused marketing for local service businesses and apps, handled directly by Joe Pfender.",
+            "descriptionCopied": false,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/"
+        },
+        {
+          "id": "69a07d65d2367c859b15e2e2",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Start",
+          "slug": "start",
+          "createdOn": "2026-02-26T17:05:41.221Z",
+          "lastUpdated": "2026-07-23T03:35:57.563Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Start Here | Pfender Marketing Co.",
+            "description": "Start with the business problem, then identify the focused marketing work most likely to make the company easier to find, understand, and choose."
+          },
+          "openGraph": {
+            "title": "Start Here | Pfender Marketing Co.",
+            "titleCopied": true,
+            "description": "Start with the business problem, then identify the focused work most likely to matter.",
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/start"
+        },
+        {
+          "id": "699f8d65d114ea1b4ced136d",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "404",
+          "slug": "404",
+          "createdOn": "2026-02-26T00:01:41.462Z",
+          "lastUpdated": "2026-02-26T00:07:40.124Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Not Found"
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": null,
+            "imageAssetId": null
+          },
+          "publishedPath": "/404"
+        },
+        {
+          "id": "699f77d54f0c2a2cfe25bc0c",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Privacy Policy",
+          "slug": "privacy",
+          "createdOn": "2026-02-25T22:29:41.652Z",
+          "lastUpdated": "2026-06-25T20:04:45.021Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Privacy Policy | Pfender Marketing Co.",
+            "description": "Privacy policy for pfendermarketing.com and Pfender Marketing Co. services. How we handle data collected through the site and client engagements."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/privacy"
+        },
+        {
+          "id": "699f75bc7b9c0305448d6a55",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Terms of Service",
+          "slug": "terms",
+          "createdOn": "2026-02-25T22:20:44.722Z",
+          "lastUpdated": "2026-05-31T17:57:24.614Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Terms of Service | Pfender Marketing Co.",
+            "description": "Terms of service governing use of pfendermarketing.com and Pfender Marketing Co. client engagements."
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_PMC_Social_Share.avif",
+            "imageAssetId": null
+          },
+          "publishedPath": "/terms"
+        },
+        {
+          "id": "699895e063ea987abbe21eb0",
+          "siteId": "698f6b2d83529eb0de880884",
+          "title": "Password",
+          "slug": "401",
+          "createdOn": "2026-02-20T17:12:00.550Z",
+          "lastUpdated": "2026-05-27T16:24:22.718Z",
+          "archived": false,
+          "draft": false,
+          "canBranch": true,
+          "isBranch": false,
+          "seo": {
+            "title": "Protected page"
+          },
+          "openGraph": {
+            "titleCopied": true,
+            "descriptionCopied": true,
+            "imageUrl": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/6a15d6fd75689f91540bd677_2402a9fabb4d1d9cd29daf95fa545a19_PMC_Social_Share.jpg",
+            "imageAssetId": null
+          },
+          "publishedPath": "/401"
+        }
+      ],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "total": 17
+      }
+    }
+  }
+]

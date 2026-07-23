@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"label\":\"404-tree\",\"action\":\"get_all_elements\",\"result\":[{\"status\":\"success\",\"message\":\"Elements tree loaded\",\"data\":{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced1370\"},\"type\":\"Body\",\"children\":[{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced1370aN\"},\"type\":\"Block\",\"styleNames\":[\"Utility Page Wrap\",\"bg-dark\"],\"settings\":{\"tag\":\"div\",\"visibility\":true,\"block\":{\"tag\":\"div\"}},\"children\":[{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced137000000000000b\"},\"type\":\"Block\",\"styleNames\":[\"Utility Page Content\"],\"settings\":{\"tag\":\"div\",\"visibility\":true,\"block\":{\"tag\":\"div\"}},\"children\":[{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced137000000000000c\"},\"type\":\"Image\",\"settings\":{\"visibility\":true,\"assetId\":\"699b7e90114688fe3e8f467c\"}},{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced137000000000000d\"},\"type\":\"Heading\",\"settings\":{\"tag\":\"h2\",\"visibility\":true,\"headingLevel\":2},\"children\":[{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced137000000000000e\"},\"type\":\"String\",\"textContent\":\"404: Page Not Found\"}]},{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced137000000000000f\"},\"type\":\"Block\",\"styleNames\":[\"text-size-regular\",\"404-page-text-regular\"],\"settings\":{\"tag\":\"div\",\"visibility\":true,\"block\":{\"tag\":\"div\"}},\"children\":[{\"id\":{\"component\":\"699f8d65d114ea1b4ced136d\",\"element\":\"699f8d65d114ea1b4ced1370000000000010\"},\"type\":\"String\",\"textContent\":\"The page you are looking for doesn't exist or has been moved.\"}]}]}]}]}}]}"
+    }
+  ],
+  "isError": false
+}

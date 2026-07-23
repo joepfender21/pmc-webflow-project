@@ -1,0 +1,23 @@
+[
+  {
+    "label": "List all components",
+    "action": "get_all_components",
+    "result": [
+      {
+        "id": "5efeb427-7e7f-5e0e-88cc-075a757b63cf",
+        "name": "PMC Global Navigation",
+        "group": "PMC Shared",
+        "description": "Reusable Home, Services, and Blog navigation. Canonical links: Services, About, Blog, Book a call. Phone retained consistently.",
+        "instanceCount": 3,
+        "props": [],
+        "variants": [
+          {
+            "id": "base",
+            "name": "Base",
+            "isSelected": true
+          }
+        ]
+      }
+    ]
+  }
+]

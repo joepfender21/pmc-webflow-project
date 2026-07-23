@@ -1,0 +1,48 @@
+[
+  {
+    "label": "List variable collections",
+    "action": "get_variable_collections",
+    "result": [
+      {
+        "id": "collection-1569a6d0-fbfd-94ce-6b7d-45ee9e318dc8",
+        "name": "Base collection",
+        "modes": [
+          {
+            "id": "base",
+            "name": "Base mode"
+          }
+        ]
+      },
+      {
+        "id": "collection-9db35177-686a-ba96-b25f-9ed36306f90d",
+        "name": "Typography",
+        "modes": [
+          {
+            "id": "base",
+            "name": "Base mode"
+          }
+        ]
+      },
+      {
+        "id": "collection-85b1f1a6-5ee2-5924-0c0e-5ba34fe8f820",
+        "name": "Spacing",
+        "modes": [
+          {
+            "id": "base",
+            "name": "Base mode"
+          }
+        ]
+      },
+      {
+        "id": "collection-7f2f7cab-3129-5104-d933-bb7d0fd23dee",
+        "name": "Colors",
+        "modes": [
+          {
+            "id": "base",
+            "name": "Base mode"
+          }
+        ]
+      }
+    ]
+  }
+]

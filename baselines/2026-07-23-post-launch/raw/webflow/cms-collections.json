@@ -1,0 +1,18 @@
+[
+  {
+    "label": "List CMS collections",
+    "action": "get_collection_list",
+    "result": {
+      "collections": [
+        {
+          "id": "6a18d1b7e4361d0f5fdefa56",
+          "displayName": "Blog Posts",
+          "singularName": "Blog Post",
+          "slug": "blog",
+          "createdOn": "2026-05-28T23:37:27.340Z",
+          "lastUpdated": "2026-05-28T23:38:05.699Z"
+        }
+      ]
+    }
+  }
+]

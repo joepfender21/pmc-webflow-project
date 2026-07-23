@@ -1,0 +1,677 @@
+[
+  {
+    "label": "List registered scripts",
+    "action": "get_registered_scripts",
+    "result": {
+      "registeredScripts": [
+        {
+          "id": "pmcservicesheadadopt",
+          "canCopy": true,
+          "displayName": "PMCServicesHeadAdopt",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6142659da92691b7a13d06%2Fpmcservicesheadadopt-1.0.0.js",
+          "createdOn": "2026-07-22T22:21:25.075Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcservicesheaddecode",
+          "canCopy": true,
+          "displayName": "PMCServicesHeadDecode",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a614264f13dee6d0bb84751%2Fpmcservicesheaddecode-1.0.0.js",
+          "createdOn": "2026-07-22T22:21:24.853Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcadoptsheetcheck",
+          "canCopy": true,
+          "displayName": "PMCAdoptSheetCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6141e810430bdc94ba6fa1%2Fpmcadoptsheetcheck-1.0.0.js",
+          "createdOn": "2026-07-22T22:19:20.029Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmccsssheetcheck",
+          "canCopy": true,
+          "displayName": "PMCCSSSheetCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6141b5c32efee60fee6833%2Fpmccsssheetcheck-1.0.0.js",
+          "createdOn": "2026-07-22T22:18:29.824Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead6",
+          "canCopy": true,
+          "displayName": "PMCServicesHead6",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc6d1615e3d49e9501d%2Fpmcserviceshead6-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:14.310Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead5",
+          "canCopy": true,
+          "displayName": "PMCServicesHead5",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc6afe2f17b201ac458%2Fpmcserviceshead5-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:14.037Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead4",
+          "canCopy": true,
+          "displayName": "PMCServicesHead4",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc54ae27a9f0c37e47c%2Fpmcserviceshead4-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:13.505Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead3",
+          "canCopy": true,
+          "displayName": "PMCServicesHead3",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc50b4ae96424c56f5b%2Fpmcserviceshead3-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:13.310Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead2",
+          "canCopy": true,
+          "displayName": "PMCServicesHead2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc510430bdc94b93097%2Fpmcserviceshead2-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:13.134Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead1",
+          "canCopy": true,
+          "displayName": "PMCServicesHead1",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc4c8c3b60cc0422502%2Fpmcserviceshead1-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:12.947Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcserviceshead0",
+          "canCopy": true,
+          "displayName": "PMCServicesHead0",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613fc40d0fc1aae85cf3bb%2Fpmcserviceshead0-1.0.0.js",
+          "createdOn": "2026-07-22T22:10:12.705Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcnavconsistencyv6",
+          "canCopy": true,
+          "displayName": "PMCNavConsistencyV6",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a61391070248226ac847417%2Fpmcnavconsistencyv6-1.6.0.js",
+          "createdOn": "2026-07-22T21:41:36.829Z",
+          "version": "1.6.0"
+        },
+        {
+          "id": "pmcnavdatav7",
+          "canCopy": true,
+          "displayName": "PMCNavDataV7",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6138576ef07284b75702f3%2Fpmcnavdatav7-1.0.0.js",
+          "createdOn": "2026-07-22T21:38:31.817Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcexactrunner3",
+          "canCopy": true,
+          "displayName": "PMCExactRunner3",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613795782d9b3dc285181f%2Fpmcexactrunner3-1.0.0.js",
+          "createdOn": "2026-07-22T21:35:17.784Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcbytearraycheck",
+          "canCopy": true,
+          "displayName": "PMCByteArrayCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a613782c32efee60febb8d4%2Fpmcbytearraycheck-1.0.0.js",
+          "createdOn": "2026-07-22T21:34:58.939Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcdsconstructcheck",
+          "canCopy": true,
+          "displayName": "PMCDSConstructCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6137400d0fc1aae859b1c6%2Fpmcdsconstructcheck-1.0.0.js",
+          "createdOn": "2026-07-22T21:33:52.874Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcmarkupcheck",
+          "canCopy": true,
+          "displayName": "PMCMarkupCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6137276dfed7aca883d6b4%2Fpmcmarkupcheck-1.0.0.js",
+          "createdOn": "2026-07-22T21:33:27.282Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcdecodecheck",
+          "canCopy": true,
+          "displayName": "PMCDecodeCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a61371a61ebde4864d64369%2Fpmcdecodecheck-1.0.0.js",
+          "createdOn": "2026-07-22T21:33:14.336Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcdecompressioncheck",
+          "canCopy": true,
+          "displayName": "PMCDecompressionCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a61370e5b93d68f6303a736%2Fpmcdecompressioncheck-1.0.0.js",
+          "createdOn": "2026-07-22T21:33:02.950Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcregistrarcheck",
+          "canCopy": true,
+          "displayName": "PMCRegistrarCheck",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a6136ff02083908a82be2a9%2Fpmcregistrarcheck-1.0.0.js",
+          "createdOn": "2026-07-22T21:32:47.582Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcservicesexactdata",
+          "canCopy": true,
+          "displayName": "PMCServicesExactData",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a61361d686f4c1f299c8c9b%2Fpmcservicesexactdata-2.0.0.js",
+          "createdOn": "2026-07-22T21:29:01.301Z",
+          "version": "2.0.0"
+        },
+        {
+          "id": "pmcnavconsistencyv6",
+          "canCopy": true,
+          "displayName": "PMCNavConsistencyV6",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60f1efa05fa63234b5f058%2Fpmcnavconsistencyv6-1.5.0.js",
+          "createdOn": "2026-07-22T16:38:07.979Z",
+          "version": "1.5.0"
+        },
+        {
+          "id": "pmcnavconsistencyv5",
+          "canCopy": true,
+          "displayName": "PMCNavConsistencyV5",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60ee798d3d4947caa3eab6%2Fpmcnavconsistencyv5-1.4.0.js",
+          "createdOn": "2026-07-22T16:23:21.753Z",
+          "version": "1.4.0"
+        },
+        {
+          "id": "pmcnavconsistencyv4",
+          "canCopy": true,
+          "displayName": "PMCNavConsistencyV4",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60eabe8069606dfa9f8477%2Fpmcnavconsistencyv4-1.3.0.js",
+          "createdOn": "2026-07-22T16:07:26.781Z",
+          "version": "1.3.0"
+        },
+        {
+          "id": "pmcmenuaccessibility",
+          "canCopy": true,
+          "displayName": "PMCMenuAccessibility",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60e9b0aa482e5193c19d3b%2Fpmcmenuaccessibility-1.0.0.js",
+          "createdOn": "2026-07-22T16:02:56.380Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcnavconsistencyv3",
+          "canCopy": true,
+          "displayName": "PMCNavConsistencyV3",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60e83a1be1a1e0fe78d34c%2Fpmcnavconsistencyv3-1.2.0.js",
+          "createdOn": "2026-07-22T15:56:42.333Z",
+          "version": "1.2.0"
+        },
+        {
+          "id": "pmcnavconsistencyv2",
+          "canCopy": true,
+          "displayName": "PMCNavConsistencyV2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60e65e19041f2c1ca47751%2Fpmcnavconsistencyv2-1.1.0.js",
+          "createdOn": "2026-07-22T15:48:46.823Z",
+          "version": "1.1.0"
+        },
+        {
+          "id": "pmcnavconsistency",
+          "canCopy": true,
+          "displayName": "PMCNavConsistency",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a60e50c771cf4e642076203%2Fpmcnavconsistency-1.0.0.js",
+          "createdOn": "2026-07-22T15:43:08.533Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcbookpopupfix",
+          "canCopy": true,
+          "displayName": "pmcBookPopupFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a525c804f3f80abb590ede3%2Fpmcbookpopupfix-1.0.0.js",
+          "createdOn": "2026-07-11T15:08:48.266Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "pmcheroaccentspacefix",
+          "canCopy": true,
+          "displayName": "pmcHeroAccentSpaceFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a5114eb178cf8af6d4cb79a%2Fpmcheroaccentspacefix-1.0.0.js",
+          "createdOn": "2026-07-10T15:51:07.987Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "bookpopupembedpatch",
+          "canCopy": true,
+          "displayName": "BookPopupEmbedPatch",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a37f84e92923b6d38454a52%2Fbookpopupembedpatch-1.0.0.js",
+          "createdOn": "2026-06-21T14:42:22.541Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "bookpopupcssfix",
+          "canCopy": true,
+          "displayName": "BookPopupCSSFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a37f84e5767d425d3dd68ea%2Fbookpopupcssfix-1.0.0.js",
+          "createdOn": "2026-06-21T14:42:22.336Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blogformeagerload",
+          "canCopy": true,
+          "displayName": "blogformeagerload",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21de0293c6e574a678a0f0%2Fblogformeagerload-1.0.0.js",
+          "createdOn": "2026-06-04T20:20:18.564Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blognavfixv4",
+          "canCopy": true,
+          "displayName": "BlogNavFixV4",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21d940a3827c42e532b3e7%2Fblognavfixv4-1.0.0.js",
+          "createdOn": "2026-06-04T20:00:00.281Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blognavfixv3",
+          "canCopy": true,
+          "displayName": "BlogNavFixV3",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21d8f9e38037d878f19212%2Fblognavfixv3-1.0.0.js",
+          "createdOn": "2026-06-04T19:58:49.554Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blognavfixv2",
+          "canCopy": true,
+          "displayName": "BlogNavFixV2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21d895f3bb37deaf0546fa%2Fblognavfixv2-1.0.0.js",
+          "createdOn": "2026-06-04T19:57:09.378Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blognavfix",
+          "canCopy": true,
+          "displayName": "BlogNavFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21d7f0d726af9f1d415c0a%2Fblognavfix-1.0.0.js",
+          "createdOn": "2026-06-04T19:54:24.890Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blognavlogoonly",
+          "canCopy": true,
+          "displayName": "BlogNavLogoOnly",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21cf3008df5601f9c606a8%2Fblognavlogoonly-1.0.0.js",
+          "createdOn": "2026-06-04T19:17:04.285Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "treecrmembednospin",
+          "canCopy": true,
+          "displayName": "TreeCRMEmbedNoSpin",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21cd8bf22f6d660de649e7%2Ftreecrmembednospin-1.0.0.js",
+          "createdOn": "2026-06-04T19:10:03.705Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "navhashlinkfix",
+          "canCopy": true,
+          "displayName": "NavHashLinkFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21c49eb8ae74c69ba3153f%2Fnavhashlinkfix-1.0.0.js",
+          "createdOn": "2026-06-04T18:31:58.593Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "meetingredirectv2",
+          "canCopy": true,
+          "displayName": "MeetingRedirectV2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21c00f57153a31ef3476ff%2Fmeetingredirectv2-1.0.0.js",
+          "createdOn": "2026-06-04T18:12:31.015Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "nav_link_color_fix",
+          "canCopy": true,
+          "displayName": "Nav Link Color Fix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21b91b57153a31ef31dcf0%2Fnav_link_color_fix-1.0.0.js",
+          "createdOn": "2026-06-04T17:42:51.853Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "newsletter_page_redirect",
+          "canCopy": true,
+          "displayName": "Newsletter Page Redirect",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21a6965a964b16621a8d81%2Fnewsletter_page_redirect-1.0.0.js",
+          "createdOn": "2026-06-04T16:23:50.379Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_data_v2_chunk_2",
+          "canCopy": true,
+          "displayName": "llms data v2 chunk 2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a2184b8de46d004f6d82fc2%2Fllms_data_v2_chunk_2-1.0.0.js",
+          "createdOn": "2026-06-04T13:59:20.220Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_data_v2_chunk_1",
+          "canCopy": true,
+          "displayName": "llms data v2 chunk 1",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a2184ac41f892a2b2a7be6c%2Fllms_data_v2_chunk_1-1.0.0.js",
+          "createdOn": "2026-06-04T13:59:08.170Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_data_v2_chunk_0",
+          "canCopy": true,
+          "displayName": "llms data v2 chunk 0",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a21849b5b955c4982a73eb5%2Fllms_data_v2_chunk_0-1.0.0.js",
+          "createdOn": "2026-06-04T13:58:51.432Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "meetingpageredirect",
+          "canCopy": true,
+          "displayName": "MeetingPageRedirect",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a2097747600dad49fc7e872%2Fmeetingpageredirect-1.0.0.js",
+          "createdOn": "2026-06-03T21:07:00.989Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "mobilebookfix",
+          "canCopy": true,
+          "displayName": "MobileBookFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1cfc89f24c50d156154039%2Fmobilebookfix-1.0.0.js",
+          "createdOn": "2026-06-01T03:29:13.396Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "bookpopupmobilefix",
+          "canCopy": true,
+          "displayName": "BookPopupMobileFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1cfb3380c32d1d12945a23%2Fbookpopupmobilefix-1.0.0.js",
+          "createdOn": "2026-06-01T03:23:31.445Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "smoothscroll",
+          "canCopy": true,
+          "displayName": "SmoothScroll",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1cf67b0e2eb858ad74ccaf%2Fsmoothscroll-1.0.0.js",
+          "createdOn": "2026-06-01T03:03:23.699Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "hidesourceattr",
+          "canCopy": true,
+          "displayName": "HideSourceAttr",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1cb6a23a854ebed5cf81de%2Fhidesourceattr-1.0.0.js",
+          "createdOn": "2026-05-31T22:30:58.913Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "navmobilefixv2",
+          "canCopy": true,
+          "displayName": "NavMobileFixV2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1caa319980c3aa19ced859%2Fnavmobilefixv2-1.1.0.js",
+          "createdOn": "2026-05-31T21:37:53.072Z",
+          "version": "1.1.0"
+        },
+        {
+          "id": "nav_mobile_fix",
+          "canCopy": true,
+          "displayName": "Nav mobile fix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1ca5be61f9122100d17c58%2Fnav_mobile_fix-1.0.0.js",
+          "createdOn": "2026-05-31T21:18:54.122Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_renderer",
+          "canCopy": true,
+          "displayName": "llms page renderer",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c7a43892e87c0a637834d%2Fllms_page_renderer-1.0.0.js",
+          "createdOn": "2026-05-31T18:13:23.141Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_data_5",
+          "canCopy": true,
+          "displayName": "llms page data 5",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c7a3a9980c3aa19bcaf18%2Fllms_page_data_5-1.0.0.js",
+          "createdOn": "2026-05-31T18:13:14.069Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_data_4",
+          "canCopy": true,
+          "displayName": "llms page data 4",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c7a2fa5d8076a4d71e628%2Fllms_page_data_4-1.0.0.js",
+          "createdOn": "2026-05-31T18:13:03.489Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_data_3",
+          "canCopy": true,
+          "displayName": "llms page data 3",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c7a24892e87c0a63776a2%2Fllms_page_data_3-1.0.0.js",
+          "createdOn": "2026-05-31T18:12:52.196Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_data_2",
+          "canCopy": true,
+          "displayName": "llms page data 2",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c7a199f7b85b4f04d3735%2Fllms_page_data_2-1.0.0.js",
+          "createdOn": "2026-05-31T18:12:41.510Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_data_1",
+          "canCopy": true,
+          "displayName": "llms page data 1",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c79fc9b737b1533b19025%2Fllms_page_data_1-1.0.0.js",
+          "createdOn": "2026-05-31T18:12:12.337Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "llms_page_data_0",
+          "canCopy": true,
+          "displayName": "llms page data 0",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c79f410a6e8afe543374f%2Fllms_page_data_0-1.0.0.js",
+          "createdOn": "2026-05-31T18:12:04.729Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "homepage_organization_schema",
+          "canCopy": true,
+          "displayName": "Homepage Organization schema",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c77dfd9c7dfeedda8af0f%2Fhomepage_organization_schema-1.0.0.js",
+          "createdOn": "2026-05-31T18:03:11.438Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blog_filter_logic",
+          "canCopy": true,
+          "displayName": "Blog filter logic",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c721913780a6a5eb6d958%2Fblog_filter_logic-1.0.0-1780605244951.js",
+          "createdOn": "2026-05-31T17:38:33.289Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "blog_filter_css",
+          "canCopy": true,
+          "displayName": "Blog filter CSS",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F6a1c721913780a6a5eb6d94a%2Fblog_filter_css-1.0.0-1780605432450.js",
+          "createdOn": "2026-05-31T17:38:33.188Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "treecrmheightfix",
+          "canCopy": false,
+          "displayName": "TreeCRMHeightFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F69fdf119df3aa3c0c7cf26ae%2Ftreecrmheightfix-1.2.0.js",
+          "createdOn": "2026-05-08T14:20:09.780Z",
+          "version": "1.2.0"
+        },
+        {
+          "id": "treecrmheightfix",
+          "canCopy": false,
+          "displayName": "TreeCRMHeightFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F69fdf07e3bb96ac12288a43b%2Ftreecrmheightfix-1.1.0.js",
+          "createdOn": "2026-05-08T14:17:34.735Z",
+          "version": "1.1.0"
+        },
+        {
+          "id": "treecrmheightfix",
+          "canCopy": false,
+          "displayName": "TreeCRMHeightFix",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F69fcbb4409ffd8187379a343%2Ftreecrmheightfix-1.0.0.js",
+          "createdOn": "2026-05-07T16:18:12.501Z",
+          "version": "1.0.0"
+        },
+        {
+          "id": "treecrmautoheight",
+          "canCopy": false,
+          "displayName": "TreeCRMAutoHeight",
+          "hostedLocation": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884%2F689e5ba67671442434f3ca35%2F69e7ff6f415684fda783a323%2Ftreecrmautoheight-1.0.0.js",
+          "createdOn": "2026-04-21T22:51:27.648Z",
+          "version": "1.0.0"
+        }
+      ],
+      "pagination": {
+        "limit": 100,
+        "offset": 0,
+        "total": 67
+      }
+    }
+  },
+  {
+    "label": "Read applied site scripts",
+    "action": "get_site_scripts",
+    "result": {
+      "scripts": [
+        {
+          "id": "blog_filter_css",
+          "displayName": "Blog filter CSS",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "llms_data_v2_chunk_0",
+          "displayName": "llms data v2 chunk 0",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "llms_data_v2_chunk_1",
+          "displayName": "llms data v2 chunk 1",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "llms_data_v2_chunk_2",
+          "displayName": "llms data v2 chunk 2",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "llms_page_renderer",
+          "displayName": "llms page renderer",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "hidesourceattr",
+          "displayName": "HideSourceAttr",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "mobilebookfix",
+          "displayName": "MobileBookFix",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "newsletter_page_redirect",
+          "displayName": "Newsletter Page Redirect",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "treecrmheightfix",
+          "displayName": "TreeCRMHeightFix",
+          "version": "1.2.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "blog_filter_logic",
+          "displayName": "Blog filter logic",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "navhashlinkfix",
+          "displayName": "NavHashLinkFix",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "blogformeagerload",
+          "displayName": "blogformeagerload",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {}
+        },
+        {
+          "id": "pmcmenuaccessibility",
+          "displayName": "PMCMenuAccessibility",
+          "version": "1.0.0",
+          "location": "footer",
+          "attributes": {
+            "data-pmc-menu-a11y": "2026-07-22"
+          }
+        },
+        {
+          "id": "pmcnavconsistencyv6",
+          "displayName": "PMCNavConsistencyV6",
+          "version": "1.6.0",
+          "location": "footer",
+          "attributes": {
+            "data-pmc-consistency": "2026-07-22-v1.6"
+          }
+        }
+      ],
+      "lastUpdated": "2026-07-23T16:41:47.528Z",
+      "createdOn": "2026-05-08T14:17:35.027Z"
+    }
+  },
+  {
+    "label": "Read site freeform code",
+    "action": "get_site_freeform_code",
+    "result": [
+      {
+        "location": "head",
+        "content": "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-M6BQBTWQ');</script>\n<!-- End Google Tag Manager -->\n<style>\nhtml{scroll-behavior:smooth;background-color:#040D0D}\nbody{background-color:#040D0D;color:#F5F0E8}\n.w-password-page input::placeholder{color:rgba(245,240,232,.35)}\n/* ===== UNIFIED BUTTON SYSTEM ===== */\n.btn,.pp-cta,.pp-aw-submit,[data-pmc-aw-submit],button.pp-aw-submit,.pmc-aw-form button{\n  font-family:'Satoshi',-apple-system,BlinkMacSystemFont,sans-serif !important;\n  font-size:15px !important;font-weight:700 !important;letter-spacing:-.005em !important;\n  border-radius:999px !important;padding:14px 24px !important;line-height:1 !important;\n  display:inline-flex !important;align-items:center !important;justify-content:center !important;\n  gap:8px;text-decoration:none;cursor:pointer;\n  transition:transform 200ms cubic-bezier(.16,1,.3,1),box-shadow 200ms cubic-bezier(.16,1,.3,1),background 200ms cubic-bezier(.16,1,.3,1),border-color 200ms cubic-bezier(.16,1,.3,1)\n}\n.btn-gold,.pp-cta-gold,.pp-aw-submit,[data-pmc-aw-submit]{\n  background:#D7AF33 !important;color:#15110A !important;border:1px solid #D7AF33 !important\n}\n.btn-gold:hover,.pp-cta-gold:hover,.pp-aw-submit:hover,[data-pmc-aw-submit]:hover{\n  background:#E5C044 !important;border-color:#E5C044 !important;\n  transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(215,175,51,.5)\n}\n.btn-ghost,.pp-cta-ghost{\n  background:rgba(245,240,232,.03) !important;color:#F5F0E8 !important;\n  border:1px solid rgba(245,240,232,.20) !important\n}\n.btn-ghost:hover,.pp-cta-ghost:hover{\n  border-color:rgba(245,240,232,.50) !important;background:rgba(245,240,232,.06) !important\n}\n.btn-sm,[data-pmc-aw-submit]{font-size:14px !important;padding:11px 20px !important}\n/* ===== PHONE ICON ===== */\n.nav-call,.pmc-mobile-drawer-meta,.foot-call,a[href^=\"tel:\"]{\n  position:relative\n}\n.nav-call::before,a[href^=\"tel:\"].nav-call::before,\n.pmc-mobile-drawer-meta::before,\n.foot-call::before,\na[href^=\"tel:\"].foot-call::before{\n  content:\"\";display:inline-block;width:14px;height:14px;margin-right:8px;vertical-align:-2px;flex-shrink:0;\n  background-color:currentColor;\n  -webkit-mask-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/></svg>\");\n  mask-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/></svg>\");\n  -webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat\n}\n/* ===== TREE CRM IFRAME SCROLL LOCK ===== */\niframe[src*=\"app.treecrm.co\"]{overflow:hidden !important}\n/* ===== MOBILE HAMBURGER MENU ===== */\n.pmc-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:transparent;border:1px solid rgba(245,240,232,.20);border-radius:999px;cursor:pointer;padding:0;position:relative;transition:border-color 200ms cubic-bezier(.16,1,.3,1),background 200ms ease}\n.pmc-burger:hover,.pmc-burger:focus-visible{border-color:#D7AF33;background:rgba(215,175,51,.05);outline:none}\n.pmc-burger-bars{width:18px;height:12px;position:relative}\n.pmc-burger-bars>span{position:absolute;left:0;right:0;height:1.5px;background:#F5F0E8;border-radius:2px;transition:transform 280ms cubic-bezier(.16,1,.3,1),opacity 200ms ease}\n.pmc-burger-bars>span:nth-child(1){top:0}\n.pmc-burger-bars>span:nth-child(2){top:5px}\n.pmc-burger-bars>span:nth-child(3){top:10px}\n.pmc-burger[aria-expanded=\"true\"] .pmc-burger-bars>span:nth-child(1){transform:translateY(5px) rotate(45deg)}\n.pmc-burger[aria-expanded=\"true\"] .pmc-burger-bars>span:nth-child(2){opacity:0}\n.pmc-burger[aria-expanded=\"true\"] .pmc-burger-bars>span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}\n.pmc-mobile-drawer{position:fixed;inset:0;background:rgba(4,13,13,.94);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);z-index:9998;opacity:0;visibility:hidden;transition:opacity 320ms cubic-bezier(.16,1,.3,1),visibility 0s linear 320ms;padding:96px 28px 56px;overflow-y:auto;-webkit-overflow-scrolling:touch}\n.pmc-mobile-drawer[data-open]{opacity:1;visibility:visible;transition:opacity 320ms cubic-bezier(.16,1,.3,1),visibility 0s linear 0s}\n.pmc-mobile-drawer-inner{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:0}\n.pmc-mobile-drawer-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#D7AF33;margin:0 0 24px;display:block}\n.pmc-mobile-drawer a{font-family:'Satoshi',sans-serif;font-size:28px;font-weight:600;color:#F5F0E8;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(245,240,232,.08);letter-spacing:-.02em;line-height:1.1;transition:color 200ms ease,transform 320ms cubic-bezier(.16,1,.3,1),opacity 320ms cubic-bezier(.16,1,.3,1);opacity:0;transform:translateX(-12px);display:block}\n.pmc-mobile-drawer[data-open] a{opacity:1;transform:translateX(0)}\n.pmc-mobile-drawer[data-open] a:nth-child(1){transition-delay:80ms}\n.pmc-mobile-drawer[data-open] a:nth-child(2){transition-delay:130ms}\n.pmc-mobile-drawer[data-open] a:nth-child(3){transition-delay:180ms}\n.pmc-mobile-drawer[data-open] a:nth-child(4){transition-delay:230ms}\n.pmc-mobile-drawer[data-open] a:nth-child(5){transition-delay:280ms}\n.pmc-mobile-drawer[data-open] a:nth-child(6){transition-delay:330ms}\n.pmc-mobile-drawer[data-open] a:nth-child(7){transition-delay:380ms}\n.pmc-mobile-drawer[data-open] a:nth-child(8){transition-delay:430ms}\n.pmc-mobile-drawer a:hover{color:#D7AF33}\n.pmc-mobile-drawer-cta{display:inline-flex !important;align-items:center;justify-content:center;align-self:flex-start;margin-top:28px;padding:16px 24px !important;background:#D7AF33;color:#040D0D !important;border-radius:999px !important;font-size:15px !important;font-weight:700 !important;border-bottom:0 !important;line-height:1 !important}\n.pmc-mobile-drawer-cta:hover{background:#E5C044;color:#040D0D !important}\n.pmc-mobile-drawer-meta{display:block !important;margin-top:32px !important;font-family:'JetBrains Mono',monospace !important;font-size:11px !important;letter-spacing:.16em !important;text-transform:uppercase;color:rgba(245,240,232,.5) !important;border-bottom:0 !important;padding:0 !important;font-weight:400 !important;line-height:1.4 !important}\n.pmc-mobile-drawer-meta:hover{color:#F5F0E8 !important}\n@media (max-width:768px){.pmc-burger{display:inline-flex}}\nbody[data-burger-open]{overflow:hidden}\n@media (prefers-reduced-motion:reduce){\n  .pmc-burger-bars>span,.pmc-mobile-drawer,.pmc-mobile-drawer a,.btn,.pp-cta,.pp-aw-submit,[data-pmc-aw-submit]{transition:none !important;transform:none !important}\n}\n/* ===== LANDING PAGES (lpw-) - homepage-matched section polish ===== */\n.lpw-card{background-color:#0A1A18 !important;border:1px solid rgba(245,240,232,0.08) !important;border-radius:16px !important;padding:32px !important;position:relative !important;overflow:hidden;transition:background-color .28s cubic-bezier(.16,1,.3,1),border-color .28s cubic-bezier(.16,1,.3,1),transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s cubic-bezier(.16,1,.3,1)}\n.lpw-card::after{content:\"\";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .32s ease;background:radial-gradient(420px circle at var(--lpw-cx,50%) var(--lpw-cy,50%),rgba(215,175,51,0.10),transparent 65%)}\n.lpw-card:hover{background-color:#0F2220 !important;border-color:rgba(215,175,51,0.30) !important;transform:translateY(-3px);box-shadow:0 24px 48px -16px rgba(0,0,0,.6)}\n.lpw-card:hover::after{opacity:1}\n.lpw-card>*{position:relative;z-index:1}\n.lpw-quote{max-width:900px !important;margin-left:0 !important;margin-right:0 !important;text-align:left !important}\n.lpw-bq{background:rgba(215,175,51,.04);border-left:4px solid #D7AF33;border-radius:0 12px 12px 0;padding:32px 40px !important;font-family:'Clash Display',sans-serif !important;font-weight:600 !important;font-size:clamp(20px,2.4vw,26px) !important;line-height:1.5 !important;letter-spacing:-.01em !important;color:#F5F0E8 !important}\n.lpw-attr{margin-top:16px !important;padding-left:44px;text-align:left !important}\n@media (max-width:767px){.lpw-card{padding:24px !important}.lpw-card::after{display:none !important}.lpw-bq{padding:24px !important}.lpw-attr{padding-left:28px}}\n@media (prefers-reduced-motion:reduce){.lpw-card{transition:none !important;transform:none !important}.lpw-card::after{display:none !important}}\n</style>\n\n<style id=\"pmc-shared-interactions-20260721\">\n/* Shared header interactions. New pages inherit these rules when they reuse site-nav, nav-links, btn, and btn-gold. */\n.site-nav .nav-links a:not(.btn):not(.btn-gold) {\n  position: relative;\n}\n.site-nav .nav-links a:not(.btn):not(.btn-gold)::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  bottom: -5px;\n  width: 0;\n  height: 1px;\n  background: #D7AF33;\n  transition: width 220ms cubic-bezier(.16, 1, .3, 1);\n}\n.site-nav .nav-links a:not(.btn):not(.btn-gold):hover::after,\n.site-nav .nav-links a:not(.btn):not(.btn-gold):focus-visible::after {\n  width: 100%;\n}\n.site-nav a.btn.btn-gold:hover,\n.site-nav a.btn.btn-gold:focus-visible,\na.btn-gold:hover,\na.btn-gold:focus-visible,\nbutton.btn-gold:hover,\nbutton.btn-gold:focus-visible,\n.pp-cta-gold:hover,\n.pp-cta-gold:focus-visible,\n.pp-aw-submit:hover,\n.pp-aw-submit:focus-visible,\n[data-pmc-aw-submit]:hover,\n[data-pmc-aw-submit]:focus-visible {\n  color: #15110A !important;\n  -webkit-text-fill-color: #15110A !important;\n}\n</style>\n\n<style id=\"pmc-hide-case-studies-20260723\">\n.site-footer a[href=\"/case-studies\"]{display:none!important}\n</style>\n"
+      },
+      {
+        "location": "footer",
+        "content": "<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M6BQBTWQ\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<script id=\"treecrmautoheight\">(function(){if(window.__treeCrmAutoHeightInstalled)return;window.__treeCrmAutoHeightInstalled=!0;window.addEventListener('message',function(e){if(!e||!e.data)return;var d=e.data;if(d.type!=='tree-crm-resize'&&d.type!=='tree-crm-form:height')return;var h=d.height;if(typeof h!=='number'||h<=0)return;document.querySelectorAll('iframe[src*=\"app.treecrm.co\"]').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=(h+20)+'px';}catch(x){}});});function n(){document.querySelectorAll('iframe[src*=\"app.treecrm.co\"]').forEach(function(f){f.setAttribute('scrolling','no');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',n);else n();})();</script>\n<script id=\"pmcfooterlegal\">(function(){function r(){var s=document.querySelectorAll('.foot-bot span');for(var i=0;i<s.length;i++){var e=s[i];if(e.querySelector('a'))continue;if(e.textContent.replace(/\\s+/g,' ').trim()==='Privacy / Terms'){e.innerHTML='<a href=\"/privacy\" class=\"foot-col-a\">Privacy</a><span style=\"opacity:.5\"> / </span><a href=\"/terms\" class=\"foot-col-a\">Terms</a>';break;}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',r);else r();})();</script>\n<style>#pmc-book-overlay{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(4,13,13,.74);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .28s cubic-bezier(.16,1,.3,1),visibility .28s}#pmc-book-overlay.open{opacity:1;visibility:visible}#pmc-book-overlay .pb-d{position:relative;width:100%;max-width:480px;max-height:90vh;display:flex;flex-direction:column;background:#071312;border:1px solid rgba(245,240,232,.12);border-radius:20px;overflow:hidden;box-shadow:0 40px 120px -30px rgba(0,0,0,.9);transform:translateY(14px) scale(.985);transition:transform .32s cubic-bezier(.16,1,.3,1)}#pmc-book-overlay.open .pb-d{transform:translateY(0) scale(1)}#pmc-book-overlay .pb-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;border-bottom:1px solid rgba(245,240,232,.08);flex-shrink:0}#pmc-book-overlay .pb-t{margin:0;font-family:'Clash Display',sans-serif;color:#F5F0E8;font-size:16px;font-weight:600}#pmc-book-overlay .pb-s{display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,.45)}#pmc-book-overlay .pb-c{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1px solid rgba(245,240,232,.18);background:transparent;color:#F5F0E8;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:border-color .2s,color .2s,transform .25s}#pmc-book-overlay .pb-c svg{width:15px;height:15px}#pmc-book-overlay .pb-c:hover{border-color:#D7AF33;color:#D7AF33;transform:rotate(90deg)}#pmc-book-overlay .pb-b{position:relative;flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}#pmc-book-overlay .pb-w{position:relative;min-height:560px}#pmc-book-overlay iframe{display:block;width:100%;height:560px;border:0;background:#071312}#pmc-book-overlay .pb-l{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.5)}#pmc-book-overlay .pb-l i{width:9px;height:9px;border-radius:50%;background:#5FA354;box-shadow:0 0 9px #5FA354;animation:pbP 1.1s ease-in-out infinite}@keyframes pbP{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}@media(max-width:560px){#pmc-book-overlay{padding:0}#pmc-book-overlay .pb-d{max-width:100%;max-height:100vh;height:100%;border-radius:0}}@media(prefers-reduced-motion:reduce){#pmc-book-overlay,#pmc-book-overlay .pb-d,#pmc-book-overlay .pb-c,#pmc-book-overlay .pb-l i{transition:none!important;animation:none!important}}</style>\n<script id=\"pmcbookpopup\">(function(){if(window.__pmc_book)return;window.__pmc_book=!0;var U='https://app.treecrm.co/book/discovery-call',O='https://app.treecrm.co',S='[data-pmc-book],a[href=\"#book\"],a[href$=\"/book/discovery-call\"]',ov,fr,cb,le,ld=!1,lf;function b(){ov=document.createElement('div');ov.id='pmc-book-overlay';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Book a discovery call');ov.setAttribute('aria-hidden','true');ov.innerHTML='<div class=\"pb-d\"><div class=\"pb-h\"><div><p class=\"pb-t\">Book a discovery call</p><span class=\"pb-s\">Pfender Marketing Co.</span></div><button class=\"pb-c\" type=\"button\" data-pmc-book-close aria-label=\"Close\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div><div class=\"pb-b\"><div class=\"pb-w\" data-pmc-book-frame><div class=\"pb-l\" data-pmc-book-load><i></i>Loading the calendar</div></div></div></div>';document.body.appendChild(ov);cb=ov.querySelector('[data-pmc-book-close]');le=ov.querySelector('[data-pmc-book-load]');cb.addEventListener('click',cl);ov.addEventListener('click',function(e){if(e.target===ov)cl();});}function mf(){if(ld)return;ld=!0;var w=ov.querySelector('[data-pmc-book-frame]');fr=document.createElement('iframe');fr.title='Book a discovery call';fr.setAttribute('allow','clipboard-write');fr.addEventListener('load',function(){if(le)le.style.display='none';});fr.src=U;w.appendChild(fr);}function op(){if(!ov)b();mf();lf=document.activeElement;ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.documentElement.style.overflow='hidden';setTimeout(function(){if(cb)cb.focus();},80);}function cl(){if(!ov)return;ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.documentElement.style.overflow='';if(lf&&typeof lf.focus==='function')lf.focus();}function rh(d){if(d==null)return 0;if(typeof d==='number')return d;if(typeof d==='string'){var m=d.match(/(\\d{2,5})/);return m?parseInt(m[1],10):0;}var h=d.height!=null?d.height:(d.payload&&d.payload.height)||(d.data&&d.data.height);return parseInt(h,10)||0;}function ir(d){if(typeof d==='string')return d.indexOf('treecrm:embed:resize')===0;if(d&&typeof d==='object'){var k=d.type||d.event||d.name;return k==='treecrm:embed:resize';}return!1;}window.addEventListener('message',function(e){if(e.origin!==O)return;if(!fr||!ir(e.data))return;var h=rh(e.data);if(h>0){fr.style.height=h+'px';if(le)le.style.display='none';}});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov&&ov.classList.contains('open'))cl();});document.addEventListener('click',function(e){if(!e.target||!e.target.closest)return;var t=e.target.closest(S);if(!t)return;e.preventDefault();op();});})();</script>\n<script id=\"pmcmobileburger\">(function(){if(window.__pmc_burger)return;window.__pmc_burger=!0;try{if(window.Webflow&&Webflow.env&&Webflow.env('design'))return;}catch(e){}function b(){var n=document.querySelector('.nav-in')||document.querySelector('nav.site-nav')||document.querySelector('.pmc-nav');if(!n||n.querySelector('.pmc-burger'))return;var bt=document.createElement('button');bt.className='pmc-burger';bt.type='button';bt.setAttribute('aria-label','Open menu');bt.setAttribute('aria-expanded','false');bt.setAttribute('aria-controls','pmc-mobile-drawer');bt.innerHTML='<span class=\"pmc-burger-bars\" aria-hidden=\"true\"><span></span><span></span><span></span></span>';n.appendChild(bt);var d=document.getElementById('pmc-mobile-drawer');if(!d){d=document.createElement('div');d.id='pmc-mobile-drawer';d.className='pmc-mobile-drawer';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-hidden','true');d.setAttribute('aria-label','Site navigation');d.innerHTML='<div class=\"pmc-mobile-drawer-inner\"><span class=\"pmc-mobile-drawer-eyebrow\">Pfender Marketing Co.</span><a href=\"/services\">Services</a><a href=\"/#plan\">90-Day Install</a><a href=\"/blog\">Blog</a><a href=\"https://app.treecrm.co/book/discovery-call\" data-pmc-book=\"true\" class=\"pmc-mobile-drawer-cta\">Book a call &rarr;</a><a href=\"tel:+17173716816\" class=\"pmc-mobile-drawer-meta\">(717) 371-6816</a></div>';document.body.appendChild(d);}function op(){d.setAttribute('data-open','');d.setAttribute('aria-hidden','false');bt.setAttribute('aria-expanded','true');bt.setAttribute('aria-label','Close menu');document.body.setAttribute('data-burger-open','');}function cl(){d.removeAttribute('data-open');d.setAttribute('aria-hidden','true');bt.setAttribute('aria-expanded','false');bt.setAttribute('aria-label','Open menu');document.body.removeAttribute('data-burger-open');}bt.addEventListener('click',function(){if(d.hasAttribute('data-open'))cl();else op();});d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.hasAttribute('data-open'))cl();});d.addEventListener('click',function(e){if(e.target===d)cl();});var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(window.innerWidth>768&&d.hasAttribute('data-open'))cl();},120);},{passive:!0});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',b);else b();})();</script>\n<script id=\"pmclpcardglow\">(function(){if(window.__pmc_lpglow)return;window.__pmc_lpglow=!0;function bind(){document.querySelectorAll('.lpw-card').forEach(function(card){if(card.__lpwGlow)return;card.__lpwGlow=!0;card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect();card.style.setProperty('--lpw-cx',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--lpw-cy',((e.clientY-r.top)/r.height*100)+'%');});});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();})();</script>\n<style>\n/* Booking popup fix - roomier modal + taller calendar frame so the time-picker is always reachable */\n#pmc-book-overlay .pb-d{max-width:560px}\n#pmc-book-overlay iframe{height:820px}\n</style>"
+      }
+    ]
+  }
+]

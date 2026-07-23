@@ -1,0 +1,87 @@
+{
+  "captured_at": "2026-07-23T18:13:11Z",
+  "host": "www.pfendermarketing.com",
+  "responses": [
+    {
+      "path": "/",
+      "status": 200,
+      "webflow_page_id": "69a0c1e3038ae1287aa80b16",
+      "artifact": "raw/production/home.html"
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "webflow_page_id": "6a1b02d9321baeb989db64e1",
+      "artifact": "raw/production/services.html"
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "webflow_page_id": "6a18dbf1d503d973ad17bb7a",
+      "artifact": "raw/production/blog.html"
+    },
+    {
+      "path": "/llms",
+      "status": 200,
+      "webflow_page_id": "6a1c7986ba03ba59ac8f6ecf",
+      "artifact": "raw/production/llms.html"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "webflow_page_id": "699f77d54f0c2a2cfe25bc0c",
+      "artifact": "raw/production/privacy.html"
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "webflow_page_id": "699f75bc7b9c0305448d6a55",
+      "artifact": "raw/production/terms.html"
+    },
+    {
+      "path": "/start",
+      "status": 301,
+      "location": "/",
+      "followed_artifact": "raw/production/start.html"
+    },
+    {
+      "path": "/case-studies",
+      "status": 301,
+      "location": "/",
+      "followed_artifact": "raw/production/case-studies.html"
+    },
+    {
+      "path": "/meeting",
+      "status": 301,
+      "location": "https://app.treecrm.co/book/discovery-call",
+      "followed_artifact": "raw/production/meeting.html"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 404,
+      "artifact": null
+    },
+    {
+      "path": "/__baseline-not-found__",
+      "status": 404,
+      "artifact": "raw/production/404.html"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "url_count": 40,
+      "blog_url_count": 34,
+      "artifact": "raw/production/sitemap.xml"
+    }
+  ],
+  "shared_stylesheet": {
+    "url": "https://cdn.prod.website-files.com/698f6b2d83529eb0de880884/css/pmc-staging.webflow.shared.74305ef56.css",
+    "integrity": "sha384-dDBe9W3VkVpFUx6qtjONB1lyau8TdFwAOQ/BI2IBvKzTQa62sia7zRXc0bPDmBnw",
+    "artifact": "raw/production/pmc-staging.webflow.shared.74305ef56.css"
+  },
+  "observed_follow_up_facts": [
+    "The production sitemap contains 40 URLs at capture time, not 47.",
+    "/llms returns 200 while /llms.txt returns 404.",
+    "These are evidence for the later Viktor SEO review. This baseline does not change them."
+  ]
+}

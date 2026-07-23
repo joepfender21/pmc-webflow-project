@@ -1,6 +1,8 @@
 # PMC Website OS
 
-Canonical source of truth: https://docs.google.com/document/d/1MGoZhT9W80bRgh4x9KGUH9JIyfenr673PrYWUFgmzWA/edit
+> Status: Historical index. The verified July 23, 2026 Website baseline and approved design system are in `baselines/2026-07-23-post-launch/`. Use that baseline before relying on the older Google Doc or May repository files.
+
+Private historical source: PMC Website OS Google Doc (withheld from the public repository).
 
 This Google Doc has 4 tabs:
 1. Operating System - design tokens, layout rules, build workflow

@@ -1,0 +1,38 @@
+[
+  [
+    {
+      "status": "success",
+      "message": "Breakpoints loaded",
+      "data": [
+        {
+          "id": "main",
+          "name": "Desktop",
+          "minWidth": null,
+          "maxWidth": null,
+          "isBase": true
+        },
+        {
+          "id": "medium",
+          "name": "Tablet",
+          "minWidth": null,
+          "maxWidth": 991,
+          "isBase": false
+        },
+        {
+          "id": "small",
+          "name": "Mobile (L)",
+          "minWidth": null,
+          "maxWidth": 767,
+          "isBase": false
+        },
+        {
+          "id": "tiny",
+          "name": "Mobile",
+          "minWidth": null,
+          "maxWidth": 479,
+          "isBase": false
+        }
+      ]
+    }
+  ]
+]

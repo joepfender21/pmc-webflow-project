@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NV7WM7ZZ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- build: 2026-04-15 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Tree CRM</title>
+    <meta name="description" content="The operating system for independent businesses. CRM, pipeline, tasks, invoices, scheduling, and automation - all in one place.">
+    <meta name="author" content="Pfender Marketing Co." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:type" content="website" />
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@PfenderMktg" />
+    
+    
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#457340" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <meta property="og:title" content="Tree CRM">
+  <meta name="twitter:title" content="Tree CRM">
+  <meta property="og:description" content="The operating system for independent businesses. CRM, pipeline, tasks, invoices, scheduling, and automation - all in one place.">
+  <meta name="twitter:description" content="The operating system for independent businesses. CRM, pipeline, tasks, invoices, scheduling, and automation - all in one place.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta property="og:image" content="https://app.treecrm.co/og-fallback.png">
+  <meta name="twitter:image" content="https://app.treecrm.co/og-fallback.png">
+  <!-- Preload the two most-used Manrope weights for faster first paint.
+       All @font-face declarations live in src/index.css; heavier Manrope
+       weights (600, 700, 800) and Unbounded (display face) load lazily
+       when first referenced. Self-hosted under SIL-OFL 1.1 — no external
+       font dependency. -->
+  <link rel="preload" href="/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-500.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="module" crossorigin src="/assets/index-DHQvbmXr.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/recharts-BGqDntNy.js">
+  <link rel="modulepreload" crossorigin href="/assets/date-fns-CZQUqMOE.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-D0qtJ_ls.css">
+</head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV7WM7ZZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"></div>
+    <!-- Dedicated mount point for shadcn Dialog/Sheet portals. Sits as a
+         sibling of #root so dialog overlays escape any transform / filter
+         / perspective / contain / backdrop-filter inside the React tree
+         that would otherwise trap their fixed positioning to a smaller
+         containing block. See src/components/ui/dialog.tsx.
+
+         The inline style is intentional — keeps the contract obvious at
+         the mount point and avoids one more cross-file lookup when this
+         is debugged later. position:fixed + inset:0 give the container
+         a viewport-sized box so DialogContent's width:100% / max-w-* and
+         the overlay's inset-0 resolve against a definite-size parent
+         instead of an empty 0×0 div (which is what produced the clipped
+         dialog content + visible bisecting border in the prior fix).
+         pointer-events:none lets clicks pass through to the page when no
+         dialog is open; Radix sets pointer-events:auto inline on the
+         active overlay/content so they still receive their own clicks. -->
+    <div id="dialog-root" style="position: fixed; inset: 0; pointer-events: none; z-index: 50;"></div>
+  </body>
+</html>

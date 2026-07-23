@@ -1,0 +1,28 @@
+{
+  "page": {
+    "name": "blog-template",
+    "id": "6a18d1b8e4361d0f5fdefb54"
+  },
+  "query": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"label\":\"html-embeds\",\"action\":\"query_elements\",\"result\":[{\"status\":\"success\",\"message\":\"Query results\",\"data\":[{\"label\":\"html-embeds\",\"total_matches\":2,\"matches\":[{\"id\":{\"component\":\"6a18d1b8e4361d0f5fdefb54\",\"element\":\"ab3875e7-7fe4-6444-076d-c61be720c611\"},\"type\":\"HtmlEmbed\",\"settings\":{\"visibility\":true}},{\"id\":{\"component\":\"6a18d1b8e4361d0f5fdefb54\",\"element\":\"70a726d9-c30e-eaba-51f7-ba517a4054cc\"},\"type\":\"HtmlEmbed\",\"styleNames\":[\"blog-cta-form\"],\"settings\":{\"visibility\":true}}]}]}]}"
+      }
+    ],
+    "isError": false
+  },
+  "settings": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"label\":\"embed-1\",\"action\":\"get_settings\",\"result\":[{\"status\":\"success\",\"message\":\"Settings retrieved\",\"data\":{\"type\":\"all_raw_settings\",\"total_matches\":4,\"matches\":[{\"key\":\"domId\",\"value\":\"\"},{\"key\":\"visibility\",\"value\":true},{\"key\":\"code\",\"value\":\"\"},{\"key\":\"attributes\",\"value\":[]}]}}]}"
+      },
+      {
+        "type": "text",
+        "text": "{\"label\":\"embed-2\",\"action\":\"get_settings\",\"result\":[{\"status\":\"success\",\"message\":\"Settings retrieved\",\"data\":{\"type\":\"all_raw_settings\",\"total_matches\":4,\"matches\":[{\"key\":\"domId\",\"value\":\"\"},{\"key\":\"visibility\",\"value\":true},{\"key\":\"code\",\"value\":\"<iframe src=\\\"https://app.treecrm.co/form/7bf452ef-40a3-49dc-800c-daed42b21ab3?embed=1\\\" title=\\\"Join the list - Pfender Marketing Co.\\\" style=\\\"width:100%;border:0;min-height:380px;border-radius:12px;\\\" loading=\\\"lazy\\\"></iframe>\"},{\"key\":\"attributes\",\"value\":[]}]}}]}"
+      }
+    ],
+    "isError": false
+  }
+}
